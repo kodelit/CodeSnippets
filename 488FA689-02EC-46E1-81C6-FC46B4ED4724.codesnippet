@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>famDispAsyncCustom</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>dispatch_queue_t backgroundQueue = dispatch_queue_create("com.funandmobile.custom_background_queue", 0);
+    dispatch_async(backgroundQueue, ^{
+        &lt;#to do in background#&gt;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            &lt;#completion_code#&gt;
+        });
+    });
+    dispatch_release(backgroundQueue);</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>488FA689-02EC-46E1-81C6-FC46B4ED4724</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>famDispAsyncCustom</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>FAM Dispatch async CUSTOM queue</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
