@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>aarcrw</string>
+	<string>outletproperty</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>ClassInterfaceMethods</string>
+		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>@property (nonatomic, assign) &lt;#type#&gt; &lt;#name#&gt;;</string>
+	<string>@property (weak, nonatomic) IBOutlet &lt;#type#&gt; *&lt;#name#&gt;;</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>A616E62C-DD16-4F9A-A039-5D657E934952</string>
+	<string>DDCAA50D-7B83-4067-AF85-F8D67DE58B8B</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>aarcrw</string>
+	<string>outletproperty</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>FAM Propoerty assign, nonatomic, readwrite</string>
+	<string>ARC Property IBOutlet, nonatomic, weak</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

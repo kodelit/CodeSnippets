@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>ssro</string>
+	<string>rrro</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>ClassInterfaceMethods</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>@property (readonly, nonatomic) &lt;#NSString#&gt; *&lt;#name#&gt;;</string>
+	<string>@property(nonatomic,readonly) &lt;#NSString#&gt; *&lt;#name#&gt;;</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>0F176E8B-05A1-4401-AB81-FFD52380B870</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>ssro</string>
+	<string>rrro</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>FAM Property nonatomic, readonly</string>
+	<string>ARC Property nonatomic, readonly</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
