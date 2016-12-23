@@ -3,22 +3,23 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>pN</string>
+	<string>animateWithDuration</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>All</string>
+		<string>CodeBlock</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>self.&lt;#property_name#&gt; = nil;
-&lt;#next#&gt;</string>
+	<string>[UIView animateWithDuration:&lt;#(animated ? .25 : .0)#&gt; delay:.0 options:UIViewAnimationOptionBeginFromCurrentState animations:&lt;#^(void)animations#&gt; completion:&lt;#^(BOOL finished)completion#&gt;];</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>04075A55-676C-4573-A8DA-2CB4E291DF12</string>
+	<string>EC5FFB3F-087D-4F96-B2FC-845EBE32CFB2</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetPlatformFamily</key>
+	<string>iphoneos</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>pN</string>
+	<string>animateWithDuration</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>FAM Property: Set nil</string>
+	<string>Default Animation Snipped</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
