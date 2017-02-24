@@ -9,7 +9,7 @@
 		<string>CodeExpression</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>&lt;#obj#&gt;==nil || [&lt;#obj#&gt; isEqual:[NSNull null]]</string>
+	<string>(&lt;#obj#&gt;==nil || [&lt;#obj#&gt; isEqual:[NSNull null]])</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>101AA13D-875D-433C-B2EA-29730190A5AE</string>
 	<key>IDECodeSnippetLanguage</key>
