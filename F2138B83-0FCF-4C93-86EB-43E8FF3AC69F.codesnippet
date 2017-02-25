@@ -9,7 +9,7 @@
 		<string>ClassImplementation</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>- (id)initWithFrame:(CGRect)frame {
+	<string>- (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self){
         &lt;#code#&gt;

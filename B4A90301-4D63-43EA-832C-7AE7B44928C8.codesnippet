@@ -3,27 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>famInit</string>
+	<string>swColor</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>ClassImplementation</string>
+		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>- (instancetype)init {
-    self = [super init];
-    if (self){
-        &lt;#code#&gt;
-    }
-    return self;
-}</string>
+	<string>UIColor(red: &lt;#int_red#&gt;/255.0, green: &lt;#int_green#&gt;/255.0, blue: &lt;#int_blue#&gt;/255.0, alpha: 1)</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>5DEE4900-B637-4C3D-B28E-2489AA6CA19E</string>
+	<string>B4A90301-4D63-43EA-832C-7AE7B44928C8</string>
 	<key>IDECodeSnippetLanguage</key>
-	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>famInit</string>
+	<string>swColor</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>FAM Init</string>
+	<string>RGB Color</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
