@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>aadelegate</string>
+	<string>wwdelegate2</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>@property(nonatomic,assign) id&lt;&lt;#type#&gt;&gt; &lt;#delegate#&gt;;</string>
+	<string>@property (nonatomic, weak) IBOutlet id&lt;&lt;#type#&gt;&gt; &lt;#delegate#&gt;;</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>7009D3AF-1D5A-48AE-BA09-7E7114DFCEDF</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>aadelegate</string>
+	<string>wwdelegate2</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>FAM Property: "delegate" nonatomic,readwrite,assign</string>
+	<string>FAM Property: "delegate" nonatomic,readwrite,weak</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

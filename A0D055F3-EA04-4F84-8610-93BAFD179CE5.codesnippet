@@ -10,7 +10,7 @@
 	</array>
 	<key>IDECodeSnippetContents</key>
 	<string>- (instancetype)initWithJSON:(NSDictionary*)json_ {
-    self = [super &lt;#initWithJSON:json_#&gt;];
+    self = [super initWithJSON:json_];
     if (self) {
         &lt;#code#&gt;
     }

@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>sssrw</string>
+	<string>www</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>All</string>
+		<string>ClassInterfaceMethods</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>@property (nonatomic, strong) &lt;#NSString#&gt; *&lt;#name#&gt;;</string>
+	<string>@property (weak, nonatomic) IBOutlet &lt;#type#&gt; *&lt;#name#&gt;;</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>A9F67298-5890-41E8-8BE1-B86E624BFB73</string>
+	<string>E5E02B0B-B5A1-49ED-86ED-B7CEC1F02500</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>sssrw</string>
+	<string>www</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>ARC Property nonatomic, readwrite, strong</string>
+	<string>FAM Property weak, nonatomic, readwrite</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

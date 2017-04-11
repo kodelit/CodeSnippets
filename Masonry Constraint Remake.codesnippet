@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>sssrw</string>
+	<string>mas_remake</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>All</string>
+		<string>CodeBlock</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>@property (nonatomic, strong) &lt;#NSString#&gt; *&lt;#name#&gt;;</string>
+	<string>[&lt;#view#&gt; mas_remakeConstraints:^(MASConstraintMaker *make){
+    &lt;#code#&gt;
+}];</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>A9F67298-5890-41E8-8BE1-B86E624BFB73</string>
+	<string>53203A7C-0C2C-493C-9CAE-8900D9AB68A8</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
-	<key>IDECodeSnippetSummary</key>
-	<string>sssrw</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>ARC Property nonatomic, readwrite, strong</string>
+	<string>Masonry Constraint Remake</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

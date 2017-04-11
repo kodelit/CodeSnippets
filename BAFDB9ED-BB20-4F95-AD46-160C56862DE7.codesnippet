@@ -11,7 +11,6 @@
 	<key>IDECodeSnippetContents</key>
 	<string>-(void) dealloc {
     &lt;#code#&gt;
-    [super dealloc];
 }</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>BAFDB9ED-BB20-4F95-AD46-160C56862DE7</string>
