@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>wwwOutlet</string>
+	<string>pjson</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>ClassInterfaceMethods</string>
+		<string>CodeBlock</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>@property (nonatomic, weak) IBOutlet &lt;#type#&gt; *&lt;#name#&gt;;</string>
+	<string>self.&lt;#property_name#&gt; = json[@"&lt;#key#&gt;"];</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>BAD5ED08-44BD-4F1D-A3D4-70CD9FA82650</string>
+	<string>90806424-0623-4079-92BC-6EEB2A24595A</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>wwwOutlet</string>
+	<string>pjson</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>FAM Property weak, nonatomic, readwrite, outlet</string>
+	<string>Property init with json</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

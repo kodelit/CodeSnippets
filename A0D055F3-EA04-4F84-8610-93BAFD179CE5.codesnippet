@@ -9,8 +9,8 @@
 		<string>ClassImplementation</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>- (instancetype)initWithJSON:(NSDictionary*)json_ {
-    self = [super initWithJSON:json_];
+	<string>- (instancetype)initWithJSON:(NSDictionary*)json {
+    self = [super initWithJSON:json];
     if (self) {
         &lt;#code#&gt;
     }
