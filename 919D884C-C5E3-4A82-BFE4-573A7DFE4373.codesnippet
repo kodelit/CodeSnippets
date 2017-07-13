@@ -3,21 +3,25 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>wwdelegate</string>
+	<string>userFrame</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>ClassInterfaceMethods</string>
+		<string>CodeBlock</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>@property (nonatomic, weak) IBOutlet id &lt;&lt;#type#&gt;&gt; &lt;#delegate#&gt;;</string>
+	<string>&lt;# view #&gt;.frame = ({
+        CGRect frame = &lt;# view #&gt;.frame;
+        &lt;# ... #&gt;
+        frame;
+    });</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>7C12890F-779A-4A42-AA03-A00F19384FF4</string>
+	<string>919D884C-C5E3-4A82-BFE4-573A7DFE4373</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>wwdelegate</string>
+	<string>Initializes a view frame inside a code block</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>FAM Property weak, nonatomic, readwrite</string>
+	<string>Set Frame</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

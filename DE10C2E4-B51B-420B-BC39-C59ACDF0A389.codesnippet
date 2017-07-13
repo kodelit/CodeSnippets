@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>wwdelegate</string>
+	<string>uLocalize</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>ClassInterfaceMethods</string>
+		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>@property (nonatomic, weak) IBOutlet id &lt;&lt;#type#&gt;&gt; &lt;#delegate#&gt;;</string>
+	<string>"&lt;#key#&gt;" = "&lt;#value#&gt;";</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>7C12890F-779A-4A42-AA03-A00F19384FF4</string>
+	<string>DE10C2E4-B51B-420B-BC39-C59ACDF0A389</string>
 	<key>IDECodeSnippetLanguage</key>
-	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<string>Xcode.SourceCodeLanguage.XcodeStrings</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>wwdelegate</string>
+	<string>Localized string definistion row</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>FAM Property weak, nonatomic, readwrite</string>
+	<string>Localizable strings entry</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

@@ -3,21 +3,19 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>wwdelegate</string>
+	<string>userStack</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>ClassInterfaceMethods</string>
+		<string>CodeBlock</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>@property (nonatomic, weak) IBOutlet id &lt;&lt;#type#&gt;&gt; &lt;#delegate#&gt;;</string>
+	<string>NSLog(@"Call Stack: %@", [NSThread callStackSymbols]);</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>7C12890F-779A-4A42-AA03-A00F19384FF4</string>
+	<string>7502C786-6283-44C9-BDCE-6E87EECAAB9D</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
-	<key>IDECodeSnippetSummary</key>
-	<string>wwdelegate</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>FAM Property weak, nonatomic, readwrite</string>
+	<string>Log Stack Trace</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

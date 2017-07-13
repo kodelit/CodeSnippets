@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>singletonImpARC</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>#pragma mark - Singleton
+#define SVARNAME(a) &lt;#classname_or_other_prefix#&gt; ## a
+static id SVARNAME(SingletonSharedInstance) = nil;
+
++(id)sharedInstance {
+    if (SVARNAME(SingletonSharedInstance) != nil) {
+        return SVARNAME(SingletonSharedInstance);
+    }
+    static dispatch_once_t onceToken;
+    dispatch_once(&amp;onceToken, ^(void){
+        SVARNAME(SingletonSharedInstance) = [[self alloc] init];
+    });
+    return SVARNAME(SingletonSharedInstance);
+}
+
++(BOOL) isAllocated {
+    return SVARNAME(SingletonSharedInstance) != nil;
+}
+
+- (id)copyWithZone:(NSZone *)zone { return self; }
+#undef SVARNAME
+#pragma mark -</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>31AA75CC-C6C3-4499-B9D3-10B7DC0DCF59</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>singletonImplementationARC</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Singleton Implementation ARC</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

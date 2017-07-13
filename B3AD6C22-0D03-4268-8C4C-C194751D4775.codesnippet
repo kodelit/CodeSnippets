@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>confirmAlertMethod</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (void)confirm&lt;#alertTopic#&gt;:(void(^)(BOOL agree))completion {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"&lt;#title#&gt;".localized
+                                                                   message:@"&lt;#message#&gt;".localized
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *action = nil;
+    action = [UIAlertAction actionWithTitle:@"YES".localized style:UIAlertActionStyleDefault
+                                    handler:^(UIAlertAction * _Nonnull action) {
+                                        if (completion) completion(YES);
+                                    }];
+    [alert addAction:action];
+    
+    action = [UIAlertAction actionWithTitle:@"NO".localized style:UIAlertActionStyleCancel
+                                    handler:^(UIAlertAction * _Nonnull action) {
+                                        if (completion) completion(NO);
+                                    }];
+    [alert addAction:action];
+//    alert.preferredAction = action;
+    [self presentViewController:alert animated:YES completion:nil];
+//    [alert present];
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>B3AD6C22-0D03-4268-8C4C-C194751D4775</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>confirmAlertMethod</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>YES/NO Alert presentation method implementation</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
