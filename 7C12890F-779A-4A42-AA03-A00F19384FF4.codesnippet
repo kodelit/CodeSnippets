@@ -17,7 +17,7 @@
 	<key>IDECodeSnippetSummary</key>
 	<string>wwdelegate</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>FAM Property weak, nonatomic, readwrite</string>
+	<string>FAM Property weak, nonatomic, readwrite, outlet, delegate</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

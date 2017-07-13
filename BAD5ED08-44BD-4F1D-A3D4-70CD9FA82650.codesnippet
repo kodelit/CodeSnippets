@@ -3,27 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>famInitWithJSON</string>
+	<string>wwwOutlet</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>ClassImplementation</string>
+		<string>ClassInterfaceMethods</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>- (instancetype)initWithJSON:(NSDictionary*)json {
-    self = [super initWithJSON:json];
-    if (self) {
-        &lt;#code#&gt;
-    }
-    return self;
-}</string>
+	<string>@property (nonatomic, weak) IBOutlet &lt;#type#&gt; *&lt;#name#&gt;;</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>A0D055F3-EA04-4F84-8610-93BAFD179CE5</string>
+	<string>BAD5ED08-44BD-4F1D-A3D4-70CD9FA82650</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>famInitWithJSON</string>
+	<string>wwwOutlet</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>FAM Init with JSON</string>
+	<string>FAM Property weak, nonatomic, readwrite, outlet</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

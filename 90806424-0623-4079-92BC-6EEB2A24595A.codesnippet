@@ -3,27 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>famInitWithJSON</string>
+	<string>pjson</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>ClassImplementation</string>
+		<string>CodeBlock</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>- (instancetype)initWithJSON:(NSDictionary*)json {
-    self = [super initWithJSON:json];
-    if (self) {
-        &lt;#code#&gt;
-    }
-    return self;
-}</string>
+	<string>self.&lt;#property_name#&gt; = json[@"&lt;#key#&gt;"];</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>A0D055F3-EA04-4F84-8610-93BAFD179CE5</string>
+	<string>90806424-0623-4079-92BC-6EEB2A24595A</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>famInitWithJSON</string>
+	<string>pjson</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>FAM Init with JSON</string>
+	<string>Property init with json</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
