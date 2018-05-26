@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>uProfile</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>NSDate *profile = [NSDate date];
+    NSLog(@"[Line %4d] %s PRIFILING: Operation done in: %f",__LINE__,__PRETTY_FUNCTION__,[[NSDate date] timeIntervalSinceDate:profile]);</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>B3E3E6D3-AF33-45A3-ACD7-4AD3021F7EA8</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>Time profiling log</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Profiling Log</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
