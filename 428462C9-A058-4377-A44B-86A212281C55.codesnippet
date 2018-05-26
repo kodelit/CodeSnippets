@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>mitCopyright</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//  Copyright (c) &lt;#2018#&gt; &lt;#Grzegorz Maciak#&gt;.
+//  This code is distributed under the terms and conditions of the MIT license.
+//  See: https://gist.github.com/kodelit/04b5ef889e23f63f3462c8595d0164d9#file-license-md</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>428462C9-A058-4377-A44B-86A212281C55</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Generic</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>MIT: Short "Copyright..." replacement for MIT Licence</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

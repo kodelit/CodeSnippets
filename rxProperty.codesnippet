@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>rxProperty</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>fileprivate lazy var _&lt;#propertyName#&gt; = BehaviorSubject&lt;&lt;#type#&gt;&gt;(value: self.&lt;#propertyName#&gt;)
+    var &lt;#propertyName#&gt;: &lt;#type#&gt; = &lt;#value#&gt; {
+        didSet {
+            _&lt;#propertyName#&gt;.onNext(&lt;#propertyName#&gt;)
+        }
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>A486FBBB-D553-46BC-8756-4B04C015C857</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>Declaration of property with fileprivet Rx BehaviorSubject</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Property with RxSwift Subject</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>usrNibRepresentableView</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>@IBInspectable public var nibName:String = ""
+    @IBOutlet public var contentView: UIView?
+    
+    public var customNibName:String? { return nil }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.commonInit()
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.commonInit()
+    }
+    
+    public func commonInit() {
+        self.loadFromNib()
+        // ...
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>235949EF-83AE-45A1-A11A-03E012144F01</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>NIBRepresentable protocol implementation for view</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>NIBRepresentable protocol implementation</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
