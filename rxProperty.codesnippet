@@ -22,7 +22,7 @@
 	<key>IDECodeSnippetSummary</key>
 	<string>Declaration of property with fileprivet Rx BehaviorSubject</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Property with RxSwift Subject</string>
+	<string>Rx: Property with RxSwift Subject</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
