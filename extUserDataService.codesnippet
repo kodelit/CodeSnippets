@@ -28,7 +28,7 @@ extension Reactive where Base:UserDataService {
 	<key>IDECodeSnippetSummary</key>
 	<string>Extension file code snippet to divide UserDataService use cases </string>
 	<key>IDECodeSnippetTitle</key>
-	<string>UserDataService specializing extension</string>
+	<string>Ext: UserDataService specializing extension</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

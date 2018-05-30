@@ -3,26 +3,28 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>usrNewPropertyNameSVar</string>
+	<string>rxSetupReactiveX</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>ClassImplementation</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>static var &lt;#name#&gt;:PropertyName { return PropertyName(rawValue: "&lt;#name#&gt;") }</string>
+	<string>func setupReactiveX() {
+        #if !TARGET_INTERFACE_BUILDER
+        
+        &lt;#code#&gt;
+        
+        #endif
+    }</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>56E11F10-0B0E-48A8-A571-39B1B19F41FC</string>
+	<string>A6AB4602-B61C-4F0E-A0A1-236185A2E4E1</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
-	<key>IDECodeSnippetPlatformFamily</key>
-	<string>iphoneos</string>
-	<key>IDECodeSnippetSummary</key>
-	<string>Variable declaration for extension of struct PropertyName </string>
 	<key>IDECodeSnippetTitle</key>
-	<string>PropertyName extension static variable</string>
+	<string>Rx: setup ReactiveX method template</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>2</integer>
+	<integer>0</integer>
 </dict>
 </plist>
