@@ -44,7 +44,7 @@ extension Reactive where Base: Rx&lt;#ClassName#&gt; {
 	<key>IDECodeSnippetSummary</key>
 	<string>Rx class override and Reactive extension implementation</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Reactive class override and extension</string>
+	<string>Rx: Reactive class override and extension</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

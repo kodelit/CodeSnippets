@@ -3,29 +3,28 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>rxProperty</string>
+	<string>rxSetupReactiveX</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>ClassImplementation</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>fileprivate lazy var _&lt;#propertyName#&gt; = BehaviorSubject&lt;&lt;#type#&gt;&gt;(value: self.&lt;#propertyName#&gt;)
-    var &lt;#propertyName#&gt;: &lt;#type#&gt; = &lt;#value#&gt; {
-        didSet {
-            _&lt;#propertyName#&gt;.onNext(&lt;#propertyName#&gt;)
-        }
+	<string>func setupReactiveX() {
+        #if !TARGET_INTERFACE_BUILDER
+        
+        &lt;#code#&gt;
+        
+        #endif
     }</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>A486FBBB-D553-46BC-8756-4B04C015C857</string>
+	<string>A6AB4602-B61C-4F0E-A0A1-236185A2E4E1</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
-	<key>IDECodeSnippetSummary</key>
-	<string>Declaration of property with fileprivet Rx BehaviorSubject</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Rx: Property with RxSwift Subject</string>
+	<string>Rx: setup ReactiveX method template</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>2</integer>
+	<integer>0</integer>
 </dict>
 </plist>

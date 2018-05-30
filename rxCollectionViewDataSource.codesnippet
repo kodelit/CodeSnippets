@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>rxCollectionViewDataSource</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>typealias Section = SectionModel&lt;String, &lt;#cell data class#&gt;&gt;
+    
+    let dataSource = RxCollectionViewSectionedReloadDataSource&lt;Section&gt;(configureCell: { (ds, collectionView, indexPath, data) -&gt; UICollectionViewCell in
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: &lt;#cell id#&gt;, for: indexPath) as! &lt;#cell class#&gt;
+        let cellData = ds[indexPath]
+        
+        // configure
+        
+        return cell
+    }, configureSupplementaryView: { (ds, collectionView, kind, indexPath) -&gt; UICollectionReusableView in
+        let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: &lt;#supplementary view id#&gt;, for: indexPath) as! &lt;#supplementary view class#&gt;
+        let section = ds[indexPath.section]
+        
+        // configure
+        
+        return view
+    })</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>32F89D93-0274-4668-BDF5-7525DDC74CBD</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>RxCollectionViewSectionedReloadDataSource</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Rx: CollectionViewDataSoruce</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
