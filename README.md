@@ -1,4 +1,4 @@
-##CodeSnippets-Swift
+## CodeSnippets-Swift  
 ![license](https://img.shields.io/badge/licencja-MIT-green.svg)
 <a title="Tap for English version" href="README-en.md" alt="British flag">
         <img align="right" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Flag_of_the_United_Kingdom.svg/28px-Flag_of_the_United_Kingdom.svg.png" /></a>
@@ -14,10 +14,10 @@ Widok po wybraniu pierwszego podpowiadanego snippeta, w tym przypadku jest on je
 
 ![autocomplited](assets/var_autocomplited.png)
 
-Na powyższym zdjęciu widać dwa placeholdery[^placeholder]: `name` i `value`, które należy zastąpić odpowiednio nazwą zmiennej i jej wartością początkową.
+Na powyższym zdjęciu widać dwa placeholdery<sup id="a_placeholder">[1](#f_placeholder)</sup>: `name` i `value`, które należy zastąpić odpowiednio nazwą zmiennej i jej wartością początkową.
 
 ---
-Snippety[^snippet] w tym repozytorium podzielone są na kategorie, nazwa kategorii jest też przedrostkiem skrótu[^shortcut] snippeta i nazwy pliku.
+Snippety<sup id="a_snippet">[2](#f_snippet)</sup> w tym repozytorium podzielone są na kategorie, nazwa kategorii jest też przedrostkiem skrótu<sup id="a_shortcut">[3](#f_shortcut)</sup> snippeta i nazwy pliku.
 
 - `usr` - zwykłe fragmenty
 
@@ -35,7 +35,7 @@ Snippety[^snippet] w tym repozytorium podzielone są na kategorie, nazwa kategor
 - brak przedrostka - mogą się zdarzyć fragmenty bez przedrostka, najczęściej bardzo krótki, często używane o bardzo skrótowych skrótach, które trzeba po prostu znać, by ich szybko użyć.
 
 
-###Lista
+### Lista
 TBD
 
 ## Licencja
@@ -43,10 +43,14 @@ Użyłem tu licencji MIT ale tylko z przyczyn formalnych, gdyż publikuje fragme
 
 Jednak prawda jest taka, że gdy fragmenty te są bardzo małe albo nie superinnowacyjne prawa autorskie i tak nie mają zastosowania wiec... Natomiast *Attribution* w przypadku MIT jest wymagane jeśli byście publikowali w całości bądź zmieniony kod, natomiast jeśli używacie jakiegoś skrawka w postaci snippetu nie popadajmy w skrajności, a skompilowanego kodu i tak nikt nie sprawdzi.
 
-[^snippet]: ***Snippet*** czyli *skrawek*, fragment, w tym przypadku fragment kodu albo po prostu tekstu, ponieważ nie musi on być kodem. Snippety to też coś w rodzaju template'ów[^template], gdyż mają placeholdery, które sugerują że powinny być zastąpione konkretną nazwą, np. nazwą klasy
+---
 
-[^placeholder]: ***Placeholder***, czyli *symbol zastępczy*, jest to określony tekst (ciąg znaków), który aplikacja zna i jest w stanie znaleźć jego wystąpienia w większym tekście a następnie zastąpić je przypisanymi wartościami.  *Placeholderem* nazywa się też szary tekst wyświetlany w polu tekstowym (UITextField) gdy pole jest puste, najczęściej będący wskazówką co w to pole powinno zostać wpisane.
+<sup id="f_placeholder">1.</sup> ***Placeholder***, czyli *symbol zastępczy*, jest to określony tekst (ciąg znaków), który aplikacja zna i jest w stanie znaleźć jego wystąpienia w większym tekście a następnie zastąpić je przypisanymi wartościami.  *Placeholderem* nazywa się też szary tekst wyświetlany w polu tekstowym (UITextField) gdy pole jest puste, najczęściej będący wskazówką co w to pole powinno zostać wpisane. [↩](#a_placeholder)
 
-[^template]: ***Template***, czyli *szablon* 
+<sup id="f_snippet">2.</sup> ***Snippet*** czyli *skrawek*, fragment, w tym przypadku fragment kodu albo po prostu tekstu, ponieważ nie musi on być kodem. Snippety to też coś w rodzaju template'ów<sup id="a_template">[4](#f_template)</sup>, gdyż mają placeholdery, które sugerują że powinny być zastąpione konkretną nazwą, np. nazwą klasy [↩](#a_snippet)
 
-[^shortcut]: ***Shortcut***, czyli skrót, w przypadku snippetu jest to tekst który należy zacząć wpisywać by xcode podpowiedział/zasugerował nam użycie tego snippeta
+<sup id="f_shortcut">3.</sup> ***Shortcut***, czyli skrót, w przypadku snippetu jest to tekst który należy zacząć wpisywać by xcode podpowiedział/zasugerował nam użycie tego snippeta [↩](#a_shortcut)
+
+<sup id="f_template">4.</sup> ***Template***, czyli *szablon* [↩](#a_template)
+
+
