@@ -9,13 +9,11 @@
 		<string>ClassImplementation</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>static var &lt;#name#&gt;:PropertyName { return PropertyName(rawValue: "&lt;#name#&gt;") }</string>
+	<string>public static var &lt;#propertyName#&gt;:String { return "&lt;#propertyName#&gt;" }</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>56E11F10-0B0E-48A8-A571-39B1B19F41FC</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
-	<key>IDECodeSnippetPlatformFamily</key>
-	<string>iphoneos</string>
 	<key>IDECodeSnippetSummary</key>
 	<string>Variable declaration for extension of struct PropertyName </string>
 	<key>IDECodeSnippetTitle</key>

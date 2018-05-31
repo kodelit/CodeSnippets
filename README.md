@@ -24,7 +24,7 @@ Snippety<sup id="a_snippet">[2](#f_snippet)</sup> w tym repozytorium podzielone 
 - `rx` - fragmenty wspierające programowanie przy użyciu RxSwift
 - `rlm` - fragmenty wispierające używanie biblioteki RealmSwift
 
-- `imp` - teksty całych implementacji class, struktur, itd.
+- `impl` - teksty całych implementacji class, struktur, itd.
 - `ext` - teksty całych plików implementacji rozszerzeń
 
 	Wrzucam całe implementacje różnych rozwiązań jako snippety, ponieważ pisząc nowy projekt nie zawsze mam dostęp do projektów, które pisałem wcześniej czy do mojego projektu bazowego, natomiast snippety wystarczy zrobić *commit* na github, po tym, gdy dodam nowy po czym zrobić *checkout* (bądź sklonować, jeśli jeszcze tego nie zrobiłem do katalogu ze snippetami xcode na innym komputerze) i wszystkie fragmenty kodu mam dostępne od razu. Przy czym należy pamiętać, że jeśli updatuje się snippety, gdy aplikacja *xcode* jest uruchomiona konieczny jest jej restart, żeby wczytała je na nowo.

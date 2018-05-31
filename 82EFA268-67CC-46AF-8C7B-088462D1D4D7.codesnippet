@@ -98,6 +98,6 @@ fileprivate func _memoize&lt;T&gt;(_ object: Any, key: UnsafeRawPointer, lazyCre
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>0</integer>
+	<integer>2</integer>
 </dict>
 </plist>

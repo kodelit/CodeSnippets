@@ -3,19 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>rxSerialScheduler</string>
+	<string>extPropertyName</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>CodeExpression</string>
+		<string>TopLevel</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>SerialDispatchQueueScheduler(qos: .default)</string>
+	<string>extension PropertyName where Owner:&lt;#Type#&gt; {
+    static var &lt;#propertyName#&gt;:String { return "&lt;#propertyName#&gt;" }
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>1D62664E-03FB-4330-8A33-236F9A9246E8</string>
+	<string>C40B0FBF-455C-40C3-8E5E-BEFE4C4EC30C</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Rx: SerialScheduler</string>
+	<string>Ext: PropertyName</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
