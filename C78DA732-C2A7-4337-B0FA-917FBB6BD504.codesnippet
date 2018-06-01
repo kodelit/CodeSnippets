@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>rxCellViewModelImplementation</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>TopLevel</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>class &lt;#CellClassName#&gt;ViewModel: ViewModel, ReactiveCellModel {
+    
+    func prepareForReuse() {
+        // Breaks previous bindings
+        self.disposeBag = DisposeBag()
+    }
+    
+    var data:&lt;#CellDataType#&gt;? = nil
+    
+    /// Sets data
+    func reload(with data: &lt;#CellDataType#&gt;) {
+        self.data = data
+    }
+    
+    /// Setups new bindings
+//    func rebind(&lt;#...#&gt;) {
+//        // setup binders if needed
+//    }
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>C78DA732-C2A7-4337-B0FA-917FBB6BD504</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Rx: CellViewModel Implementation</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>
