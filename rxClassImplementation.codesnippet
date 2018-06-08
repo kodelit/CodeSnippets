@@ -25,6 +25,8 @@ public class Rx&lt;#ClassName#&gt;: &lt;#ClassName#&gt; {
     }
 }
 
+// MARK: - &lt;#ClassName#&gt;+Rx
+
 extension Reactive where Base: Rx&lt;#ClassName#&gt; {
     
     public var &lt;#propertyName#&gt;: Observable&lt;&lt;#type#&gt;&gt; {

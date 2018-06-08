@@ -3,23 +3,19 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>rxReactiveClassExtension</string>
+	<string>markLifecycle</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>TopLevel</string>
+		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>// MARK: - &lt;#ClassName#&gt;+Rx
-
-extension Reactive where Base: &lt;#ClassName#&gt; {
-    
-}</string>
+	<string>// MARK: - Lifecycle</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>BFA71205-D72D-44B5-B005-37C13A7A652E</string>
+	<string>CD88AB60-FF47-42FA-B453-96D5C172B09F</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Rx: Reactive class extension</string>
+	<string>MARK: - Lifecycle</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

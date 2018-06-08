@@ -3,31 +3,33 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>rxCellImplementation</string>
+	<string>rxDetailViewModel</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>TopLevel</string>
+		<string>ClassImplementation</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>class &lt;#CellClassName#&gt;: UICollectionViewCell, ReactiveCell {
+	<string>// MARK: ReactiveDetailViewModel
     
-    let viewModel = &lt;#CellClassName#&gt;ViewModel()
+    var data: &lt;#DataType#&gt;? = nil
     
-    override func prepareForReuse() {
-        self.viewModel.prepareForReuse()
+func reload(with data: &lt;#DataType#&gt;) {
+        // remove previous binding
+        self.disposeBag = DisposeBag()
+        self.data = data
+        
     }
-    
-    func reload(with data: &lt;#CellDataType#&gt;) {
-        self.viewModel.reload(with: data)
-        //self.viewModel.rebind(isActive: self.rx.isActive, didUpdate: self.rx.didUpdate)
-    }
-}</string>
+
+/// Rebinds with binders and observers of the view as params
+//func rebind(...) {
+//    
+//}</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>59E8BE83-E3F8-4817-AFB7-86ECC9E3B086</string>
+	<string>B44645FE-F7DC-4490-9A20-3B502D595F2F</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Rx: Cell implementation</string>
+	<string>Rx: ReactiveDetailViewModel protocol implementation</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
