@@ -3,36 +3,27 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>rxRefreshableViewModel</string>
+	<string>rxBinderProperty</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>ClassImplementation</string>
+		<string>TopLevel</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>// MARK: ReactiveRefreshableViewModel
-    
-    var data: &lt;#DataType#&gt;? = nil
-    
-func reload(with data: &lt;#DataType#&gt;) {
-        // remove previous binding
-        self.disposeBag = DisposeBag()
-        self.data = data
-        
-    }
-
-/// Rebinds with binders and observers of the view as params
-//func rebind(...) {
-//    
-//}</string>
+	<string>var set&lt;#PropertyName#&gt;: Binder&lt;&lt;#type#&gt;&gt; {
+        return Binder&lt;&lt;#type#&gt;&gt;(base, binding: { target, value in
+            target.&lt;#propertyName#&gt; = value
+        })
+    }</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>B44645FE-F7DC-4490-9A20-3B502D595F2F</string>
+	<string>913FD2DF-DBC5-4FB0-B210-36B72328D14B</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Rx: ReactiveDetailViewModel protocol implementation</string>
+	<string>Rx: Binder property</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>2</integer>
+	<integer>0</integer>
 </dict>
 </plist>
