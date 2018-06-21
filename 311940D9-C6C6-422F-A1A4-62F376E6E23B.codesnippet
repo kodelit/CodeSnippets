@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>extUIView+Nib</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>TopLevel</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//
+//  UIView+Nib.swift
+//
+//
+//  Created by Grzegorz Maciak on 21.06.2018.
+//  Copyright (c) 2018 Grzegorz Maciak.
+//  This code is distributed under the terms and conditions of the MIT license.
+//  See: https://gist.github.com/kodelit/04b5ef889e23f63f3462c8595d0164d9#file-license-md
+
+import Foundation
+
+// MARK: - View instance from Nib
+
+public protocol ViewInstanceFromNib:AnyObject {
+    static var nib:UINib { get }
+    static func instantiate() -&gt; Self?
+}
+
+public extension ViewInstanceFromNib where Self:UIView
+{
+    public static var nib:UINib {
+        return UINib(nibName: NSStringFromClass(self).components(separatedBy: ".").last!, bundle: Bundle(for: self))
+    }
+    
+    public static func instantiate() -&gt; Self? {
+        if let view = self.nib.instantiate(withOwner: nil, options: nil).first! as? Self {
+            return view
+        }
+        return nil
+    }
+}
+
+public extension ViewInstanceFromNib where Self:UITableViewCell
+{
+    static var defaultCellId:String {
+        return NSStringFromClass(self).components(separatedBy: ".").last!
+    }
+}
+
+extension UIView: ViewInstanceFromNib {}
+
+// MARK: - View loading from Nib (for IB)
+
+public protocol ViewLoadingFromNib:AnyObject {
+    var customNibName:String? { get }
+    var contentView: UIView? { get set }
+    init(frame: CGRect)
+    init?(coder aDecoder: NSCoder)
+    func commonInitFromNib()
+}
+
+public extension ViewLoadingFromNib where Self:UIView {
+    public var customNibName:String? { return nil }
+    
+    public func commonInitFromNib() {
+        if self.contentView == nil {
+            let nibName = self.customNibName ?? NSStringFromClass(type(of: self)).components(separatedBy: ".").last!
+            let nib = UINib(nibName: nibName, bundle: Bundle(for: type(of: self)))
+            nib.instantiate(withOwner: self, options: nil)
+            
+            if let view = contentView {
+                view.frame = self.bounds
+                view.translatesAutoresizingMaskIntoConstraints = false
+                self.addSubview(view)
+                
+                NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "H:|[view]|", options: [], metrics: nil, views: ["view": view]))
+                NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "V:|[view]|", options: [], metrics: nil, views: ["view": view]))
+            }
+        }
+    }
+}
+
+
+// MARK: - Example
+
+//class CustomView: UIView {
+//    @IBOutlet public var contentView: UIView?
+//    open var customNibName:String? { return nil }
+//
+//    override init(frame: CGRect) {
+//        super.init(frame: frame)
+//        self.commonInitFromNib()
+//    }
+//
+//    required public init?(coder aDecoder: NSCoder) {
+//        super.init(coder: aDecoder)
+//        self.commonInitFromNib()
+//    }
+//
+//    override var intrinsicContentSize: CGSize {
+//        return CGSize(width: UIViewNoIntrinsicMetric, height: UIViewNoIntrinsicMetric)
+//    }
+//}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>311940D9-C6C6-422F-A1A4-62F376E6E23B</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetPlatformFamily</key>
+	<string>iphoneos</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>Support for loading and instantiating views from Nib (Xib)</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Ext: UIView+Nib.swift</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>

@@ -3,22 +3,24 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>docSingleLine</string>
+	<string>propClassNibReferenceProperty</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>/// &lt;#description#&gt;</string>
+	<string>static var nib:UINib {
+        return UINib(nibName: NSStringFromClass(self).components(separatedBy: ".").last!, bundle: Bundle(for: self))
+    }</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>546DFDAB-E533-4C3B-B2C5-993C4830F1C4</string>
+	<string>038171C4-E783-47FA-8973-A53199488115</string>
 	<key>IDECodeSnippetLanguage</key>
-	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<string>Xcode.SourceCodeLanguage.Generic</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Single line documentation comment</string>
+	<string>Prop: Static NIB file reference property</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>2</integer>
+	<integer>0</integer>
 </dict>
 </plist>

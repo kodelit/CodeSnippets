@@ -9,7 +9,7 @@
 		<string>TopLevel</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>class &lt;#CellClassName#&gt;ViewModel: ViewModel, ReactiveCellModel {
+	<string>class &lt;#CellClassName#&gt;ViewModel: RxViewModel &amp; ReactiveCellViewModel {
     
     func prepareForReuse() {
         // Breaks previous bindings
