@@ -43,7 +43,14 @@ public extension ViewInstanceFromNib where Self:UIView
 
 public extension ViewInstanceFromNib where Self:UITableViewCell
 {
-    static var defaultCellId:String {
+    static var defaultReuseId:String {
+        return NSStringFromClass(self).components(separatedBy: ".").last!
+    }
+}
+
+public extension ViewInstanceFromNib where Self:UITableViewHeaderFooterView
+{
+    static var defaultReuseId:String {
         return NSStringFromClass(self).components(separatedBy: ".").last!
     }
 }
@@ -116,6 +123,6 @@ public extension ViewLoadingFromNib where Self:UIView {
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>0</integer>
+	<integer>2</integer>
 </dict>
 </plist>
