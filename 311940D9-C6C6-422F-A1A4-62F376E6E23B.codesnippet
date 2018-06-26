@@ -24,7 +24,7 @@ import Foundation
 
 public protocol ViewInstanceFromNib:AnyObject {
     static var nib:UINib { get }
-    static func instantiate() -&gt; Self?
+    static func instantiate(nib:UINib?) -&gt; Self?
 }
 
 public extension ViewInstanceFromNib where Self:UIView
@@ -33,8 +33,8 @@ public extension ViewInstanceFromNib where Self:UIView
         return UINib(nibName: NSStringFromClass(self).components(separatedBy: ".").last!, bundle: Bundle(for: self))
     }
     
-    public static func instantiate() -&gt; Self? {
-        if let view = self.nib.instantiate(withOwner: nil, options: nil).first! as? Self {
+    public static func instantiate(nib:UINib? = nil) -&gt; Self? {
+        if let view = (nib ?? self.nib).instantiate(withOwner: nil, options: nil).first! as? Self {
             return view
         }
         return nil
@@ -71,10 +71,13 @@ public extension ViewLoadingFromNib where Self:UIView {
     public var customNibName:String? { return nil }
     
     public func commonInitFromNib() {
-        if self.contentView == nil {
-            let nibName = self.customNibName ?? NSStringFromClass(type(of: self)).components(separatedBy: ".").last!
-            let nib = UINib(nibName: nibName, bundle: Bundle(for: type(of: self)))
-            nib.instantiate(withOwner: self, options: nil)
+        if contentView == nil {
+            if let nibName = self.customNibName {
+                let nib = UINib(nibName: nibName, bundle: Bundle(for: type(of: self)))
+                nib.instantiate(withOwner: self, options: nil)
+            }else{
+                Self.nib.instantiate(withOwner: self, options: nil)
+            }
             
             if let view = contentView {
                 view.frame = self.bounds
@@ -91,16 +94,17 @@ public extension ViewLoadingFromNib where Self:UIView {
 
 // MARK: - Example
 
-//class CustomView: UIView {
+//class CustomView: UIView, ViewLoadingFromNib {
 //    @IBOutlet public var contentView: UIView?
-//    open var customNibName:String? { return nil }
+//    @IBInspectable public var nibName:String? = nil
+//    open var customNibName:String? { return nibName }
 //
-//    override init(frame: CGRect) {
+//    public required override init(frame: CGRect) {
 //        super.init(frame: frame)
 //        self.commonInitFromNib()
 //    }
 //
-//    required public init?(coder aDecoder: NSCoder) {
+//    public required init?(coder aDecoder: NSCoder) {
 //        super.init(coder: aDecoder)
 //        self.commonInitFromNib()
 //    }
