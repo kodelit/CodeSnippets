@@ -59,15 +59,16 @@ extension UIView: ViewInstanceFromNib {}
 
 // MARK: - View loading from Nib (for IB)
 
-public protocol ViewLoadingFromNib:AnyObject {
-    var customNibName:String? { get }
+public protocol NIBRepresentable:AnyObject {
     var contentView: UIView? { get set }
+    var customNibName:String? { get }
+    
     init(frame: CGRect)
     init?(coder aDecoder: NSCoder)
-    func commonInitFromNib()
+    func commonInitFromNib() // might but in most cases default implementation should not be overriden
 }
 
-public extension ViewLoadingFromNib where Self:UIView {
+public extension NIBRepresentable where Self:UIView {
     public var customNibName:String? { return nil }
     
     public func commonInitFromNib() {
@@ -94,8 +95,10 @@ public extension ViewLoadingFromNib where Self:UIView {
 
 // MARK: - Example
 
-//class CustomView: UIView, ViewLoadingFromNib {
+//@IBDesignable
+//class CustomView: UIView, NIBRepresentable {
 //    @IBOutlet public var contentView: UIView?
+//
 //    @IBInspectable public var nibName:String? = nil
 //    open var customNibName:String? { return nibName }
 //
@@ -112,8 +115,7 @@ public extension ViewLoadingFromNib where Self:UIView {
 //    override var intrinsicContentSize: CGSize {
 //        return CGSize(width: UIViewNoIntrinsicMetric, height: UIViewNoIntrinsicMetric)
 //    }
-//}
-</string>
+//}</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>311940D9-C6C6-422F-A1A4-62F376E6E23B</string>
 	<key>IDECodeSnippetLanguage</key>

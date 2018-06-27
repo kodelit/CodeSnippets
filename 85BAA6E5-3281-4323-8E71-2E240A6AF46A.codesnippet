@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>docMultilineComment</string>
+	<string>docLists</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
@@ -11,19 +11,29 @@
 	<key>IDECodeSnippetContents</key>
 	<string>/** &lt;#short description#&gt;
  
- &lt;#description#&gt;   
+ &lt;#description#&gt;
+ 
+ Utilize:
+ - `&lt;#...DataService#&gt;`
+ 
+ Stores:
+ - `&lt;#DataModel#&gt;`
+ 
+ Observes:
+ - &lt;#observer name#&gt;
+ 
+ Generate:
+ - `&lt;#DataModel#&gt;`
  */</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>D1D0ED8C-2506-4157-B28B-9542BF0190B0</string>
+	<string>85BAA6E5-3281-4323-8E71-2E240A6AF46A</string>
 	<key>IDECodeSnippetLanguage</key>
-	<string>Xcode.SourceCodeLanguage.Swift</string>
-	<key>IDECodeSnippetSummary</key>
-	<string>Only description section</string>
+	<string>Xcode.SourceCodeLanguage.Generic</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Multiline documentation comment</string>
+	<string>Multiline comment with common lists of tasks of the class</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>2</integer>
+	<integer>0</integer>
 </dict>
 </plist>

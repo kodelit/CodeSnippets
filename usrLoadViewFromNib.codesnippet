@@ -3,26 +3,28 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>implLoadViewFromNib</string>
+	<string>implCustomNIBRepresentable</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>ClassImplementation</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
 	<string>@IBOutlet public var contentView: UIView?
-    open var customNibName:String? { return nil }
+
+@IBInspectable public var nibName:String? = nil
+open var customNibName:String? { return nibName }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.commonInit()
+        self.customInitFromNib()
     }
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.commonInit()
+        self.customInitFromNib()
     }
     
-    public func commonInit() {
+    public func customInitFromNib() {
     if self.contentView == nil {
         UINib(nibName: self.customNibName ?? NSStringFromClass(type(of: self)).components(separatedBy: ".").last!,
               bundle: Bundle(for: type(of: self))).instantiate(withOwner: self, options: nil)
@@ -52,8 +54,10 @@
 	<string>B6B1662E-DEBA-4D5A-975C-E9048E4034DC</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>Implementation of NIBRepresentable protocol witch customInitFromNib() function implementation</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Impl: Loading View from NIB implementation</string>
+	<string>Impl: Custom NIBRepresentable protocol implementation</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
