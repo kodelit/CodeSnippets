@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>extInt+Random</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>TopLevel</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//
+//  Int+Random.swift
+//
+//
+//  Created by Grzegorz Maciak on 21.02.2018.
+//  Copyright (c) 2018 Grzegorz Maciak.
+//  This code is distributed under the terms and conditions of the MIT license.
+//  See: https://gist.github.com/kodelit/04b5ef889e23f63f3462c8595d0164d9#file-license-md
+
+import Foundation
+
+public extension UInt32 {
+    public static var random:Int {
+        return Int(arc4random_uniform(UInt32.max))
+    }
+    
+    public var random:Int {
+        return Int(arc4random_uniform(self))
+    }
+}
+
+public extension Int {
+    public static var random:Int {
+        return UInt32.random
+    }
+    
+    public var random:Int {
+        return (UInt32(exactly: self) ?? UInt32.max).random
+    }
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>B6952A2F-53D7-4FB7-A9F1-1120CFA9992A</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Ext: Int+Random</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
