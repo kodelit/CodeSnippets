@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>extPropertyName</string>
+	<string>implJsonKey</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>TopLevel</string>
@@ -20,25 +20,26 @@
 
 import Foundation
 
-public struct PropertyName&lt;Owner&gt; {
+public struct JsonKey&lt;Owner&gt; {
     static var id:String { return "id" }
     static var guid:String { return "guid" }
-    static var value:String { return "value" }
+    static var value:String { return "v" }
+    static var timeStamp:String { return "ts" }
 }
 
-public protocol PropertyNameProviding {
+public protocol JsonKeyProviding {
     associatedtype CompatibleType
-    static var propertyName: PropertyName&lt;CompatibleType&gt;.Type { get }
-    var key: PropertyName&lt;CompatibleType&gt;.Type { get }
+    static var jsonKey: JsonKey&lt;CompatibleType&gt;.Type { get }
+    var jsonKey: JsonKey&lt;CompatibleType&gt;.Type { get }
 }
 
-extension PropertyNameProviding {
-    public static var propertyName: PropertyName&lt;Self&gt;.Type {
-        return PropertyName&lt;Self&gt;.self
+extension JsonKeyProviding {
+    public static var jsonKey: JsonKey&lt;Self&gt;.Type {
+        return JsonKey&lt;Self&gt;.self
     }
-
-    public var key: PropertyName&lt;Self&gt;.Type {
-        return PropertyName&lt;Self&gt;.self
+    
+    public var jsonKey: JsonKey&lt;Self&gt;.Type {
+        return JsonKey&lt;Self&gt;.self
     }
 }
 </string>
@@ -46,8 +47,10 @@ extension PropertyNameProviding {
 	<string>BDCED7C9-AF03-4425-85A8-5CF527CC4CEB</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>JsonKeyProviding protocol and JsonKey struct implemntation file</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Ext: PropertyName</string>
+	<string>Impl: JsonKey</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

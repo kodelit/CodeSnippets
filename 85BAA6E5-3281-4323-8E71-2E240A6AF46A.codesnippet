@@ -9,7 +9,8 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>/** &lt;#short description#&gt;
+	<string>/**
+ &lt;#short description#&gt;
  
  &lt;#description#&gt;
  
@@ -24,6 +25,9 @@
  
  Generate:
  - `&lt;#DataModel#&gt;`
+ 
+ Dependencies:
+ - `&lt;#Framework or class#&gt;
  */</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>85BAA6E5-3281-4323-8E71-2E240A6AF46A</string>
