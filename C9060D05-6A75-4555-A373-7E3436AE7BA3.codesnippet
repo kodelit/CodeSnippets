@@ -3,28 +3,29 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>docMultilineComment</string>
+	<string>docFunc</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
 	<string>/**
- &lt;#short description#&gt;
- 
- &lt;#description#&gt;   
- */</string>
+     &lt;#short description#&gt;
+     
+     &lt;#description#&gt;
+     
+     - Parameters:
+         - &lt;#param name#&gt;:
+     */</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>D1D0ED8C-2506-4157-B28B-9542BF0190B0</string>
+	<string>C9060D05-6A75-4555-A373-7E3436AE7BA3</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
-	<key>IDECodeSnippetSummary</key>
-	<string>Only description section</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Multiline documentation comment</string>
+	<string>Function documentation comment</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>2</integer>
+	<integer>0</integer>
 </dict>
 </plist>
