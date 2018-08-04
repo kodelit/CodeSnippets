@@ -1,0 +1,37 @@
+#!/bin/sh
+
+SCRIPTPATH="$( cd -P "$( dirname "$0" )" && pwd )"
+cd "${SCRIPTPATH}"
+
+find . -depth 1 -type f -iname '*.codesnippet' | while read file; do
+	echo "file: $file"
+	keyFound=false
+	match=
+	while read p; do
+		# echo $p
+		match=
+		if [ $keyFound = false ] ; then
+			match=$(grep -n -o '<key>IDECodeSnippetCompletionPrefix</key>' <<< $p)
+			
+			if [[ -n "$match" ]] ; then
+				echo "keyFound: $match"
+				keyFound=true
+			fi
+		else
+			fileName=$(grep -n -o -e '<string>.*<.*' <<< $p)
+			# remove prefix (</string>)
+			fileName=${fileName#*<string>}
+			# remove sufix (</string> or </ string>)
+			fileName=${fileName%<*}.codesnippet
+
+			echo "New name for file: '$file' is '$fileName'"
+			keyFound=false
+
+			if [[ -n "$fileName" ]] ; then
+				mv "$file" "${fileName}"
+			fi
+		fi
+	done < $file
+done
+
+#find . -depth 1 -type f -iname '*.codesnippet' | while read file; do echo "file: $file"; done

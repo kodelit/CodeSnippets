@@ -3,21 +3,19 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>extPropertyName</string>
+	<string>appCoreKit</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>TopLevel</string>
+		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>extension PropertyName where Owner:&lt;#Type#&gt; {
-    static var &lt;#propertyName#&gt;:String { return "&lt;#propertyName#&gt;" }
-}</string>
+	<string>//  ApplicationCoreKit</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>C40B0FBF-455C-40C3-8E5E-BEFE4C4EC30C</string>
+	<string>5E6BD96E-C391-4EB4-9E10-AEA3EB196937</string>
 	<key>IDECodeSnippetLanguage</key>
-	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<string>Xcode.SourceCodeLanguage.Generic</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Ext: PropertyName</string>
+	<string>ACK</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
