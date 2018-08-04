@@ -3,21 +3,26 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>usrJsonKeyStaticVar</string>
+	<string>usrAlertPlaceholder</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>ClassImplementation</string>
+		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>public static var &lt;#propertyName#&gt;:String { return "&lt;#propertyName#&gt;" }</string>
+	<string>let placeholderAlert = UIAlertController(title: "&lt;#title#&gt;",
+                                      message: "&lt;#message#&gt;",
+                                      preferredStyle: .alert)
+        
+        placeholderAlert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        placeholderAlert.present(on: self)</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>56E11F10-0B0E-48A8-A571-39B1B19F41FC</string>
+	<string>77753A7A-C00C-45D9-95F6-6436C69952AC</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
-	<key>IDECodeSnippetSummary</key>
-	<string>Variable declaration for extension of struct PropertyName </string>
+	<key>IDECodeSnippetPlatformFamily</key>
+	<string>iphoneos</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>JsonKey extension static variable</string>
+	<string>Placeholder alert</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

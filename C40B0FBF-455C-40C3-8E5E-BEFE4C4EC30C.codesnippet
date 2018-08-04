@@ -3,38 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>docLists</string>
+	<string>extJsonKey</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>All</string>
+		<string>TopLevel</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>/**
- &lt;#short description#&gt;
- 
- &lt;#description#&gt;
- 
- Utilize:
- - `&lt;#...DataService#&gt;`
- 
- Stores:
- - `&lt;#DataModel#&gt;`
- 
- Observes:
- - &lt;#observer name#&gt;
- 
- Generate:
- - `&lt;#DataModel#&gt;`
- 
- Dependencies:
- - `&lt;#Framework or class#&gt;
- */</string>
+	<string>extension JsonKey where Owner:&lt;#Type#&gt; {
+    static var &lt;#propertyName#&gt;:String { return "&lt;#propertyName#&gt;" }
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>85BAA6E5-3281-4323-8E71-2E240A6AF46A</string>
+	<string>C40B0FBF-455C-40C3-8E5E-BEFE4C4EC30C</string>
 	<key>IDECodeSnippetLanguage</key>
-	<string>Xcode.SourceCodeLanguage.Generic</string>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Multiline comment with common lists of tasks of the class</string>
+	<string>Ext: JsonKey Extension</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

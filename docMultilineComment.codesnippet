@@ -9,7 +9,8 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>/** &lt;#short description#&gt;
+	<string>/**
+ &lt;#short description#&gt;
  
  &lt;#description#&gt;   
  */</string>
