@@ -4,7 +4,6 @@ SCRIPTPATH="$( cd -P "$( dirname "$0" )" && pwd )"
 cd "${SCRIPTPATH}"
 
 find . -depth 1 -type f -iname '*.codesnippet' | while read file; do
-	echo "file: $file"
 	keyFound=false
 	match=
 	while read p; do
@@ -14,7 +13,6 @@ find . -depth 1 -type f -iname '*.codesnippet' | while read file; do
 			match=$(grep -n -o '<key>IDECodeSnippetCompletionPrefix</key>' <<< $p)
 			
 			if [[ -n "$match" ]] ; then
-				echo "keyFound: $match"
 				keyFound=true
 			fi
 		else
@@ -33,5 +31,3 @@ find . -depth 1 -type f -iname '*.codesnippet' | while read file; do
 		fi
 	done < $file
 done
-
-#find . -depth 1 -type f -iname '*.codesnippet' | while read file; do echo "file: $file"; done
