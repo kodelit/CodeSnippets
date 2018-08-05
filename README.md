@@ -24,10 +24,10 @@ Snippety<sup id="a_snippet">[2](#f_snippet)</sup> w tym repozytorium podzielone 
 - `rx` - fragmenty wspierające programowanie przy użyciu RxSwift
 - `rlm` - fragmenty wispierające używanie biblioteki RealmSwift
 
-- `impl` - teksty całych implementacji class, struktur, itd.
+- `impl` - teksty całych implementacji class, struktur, itd. (elementy bazy kodu)
 - `ext` - teksty całych plików implementacji rozszerzeń
 
-	Wrzucam całe implementacje różnych rozwiązań jako snippety, ponieważ pisząc nowy projekt nie zawsze mam dostęp do projektów, które pisałem wcześniej czy do mojego projektu bazowego, natomiast snippety wystarczy zrobić *commit* na github, po tym, gdy dodam nowy po czym zrobić *checkout* (bądź sklonować, jeśli jeszcze tego nie zrobiłem do katalogu ze snippetami xcode na innym komputerze) i wszystkie fragmenty kodu mam dostępne od razu. Przy czym należy pamiętać, że jeśli updatuje się snippety, gdy aplikacja *xcode* jest uruchomiona konieczny jest jej restart, żeby wczytała je na nowo.
+	Wrzucam całe implementacje różnych rozwiązań jako snippety, ponieważ pisząc nowy projekt nie zawsze mam dostęp do projektów, które pisałem wcześniej czy do mojego projektu bazowego, natomiast snippety wystarczy zrobić *commit* na github, po tym, gdy dodam nowy po czym zrobić *checkout* (bądź sklonować, jeśli jeszcze tego nie zrobiłem do __katalogu ze snippetami xcode__<sup id="a_snippet">[4](#f_snippet)</sup> na innym komputerze) i wszystkie fragmenty kodu mam dostępne od razu. Przy czym należy pamiętać, że jeśli updatuje się snippety, gdy aplikacja *xcode* jest uruchomiona konieczny jest jej restart, żeby wczytała je na nowo.
 	
 - `example` - przykłady, najczęściej przykłady implementacji jakiś rozwiązań nie będące ich szablonami
 
@@ -49,10 +49,17 @@ Jednak prawda jest taka, że gdy fragmenty te są bardzo małe albo nie superinn
 
 <sup id="f_placeholder">1.</sup> ***Placeholder***, czyli *symbol zastępczy*, jest to określony tekst (ciąg znaków), który aplikacja zna i jest w stanie znaleźć jego wystąpienia w większym tekście a następnie zastąpić je przypisanymi wartościami.  *Placeholderem* nazywa się też szary tekst wyświetlany w polu tekstowym (UITextField) gdy pole jest puste, najczęściej będący wskazówką co w to pole powinno zostać wpisane. [↩](#a_placeholder)
 
-<sup id="f_snippet">2.</sup> ***Snippet*** czyli *skrawek*, fragment, w tym przypadku fragment kodu albo po prostu tekstu, ponieważ nie musi on być kodem. Snippety to też coś w rodzaju template'ów<sup id="a_template">[4](#f_template)</sup>, gdyż mają placeholdery, które sugerują że powinny być zastąpione konkretną nazwą, np. nazwą klasy [↩](#a_snippet)
+<sup id="f_snippet">2.</sup> ***Snippet*** czyli *skrawek*, fragment, w tym przypadku fragment kodu albo po prostu tekstu, ponieważ nie musi on być kodem. Snippety to też coś w rodzaju template'ów<sup id="a_template">[5](#f_template)</sup>, gdyż mają placeholdery, które sugerują że powinny być zastąpione konkretną nazwą, np. nazwą klasy [↩](#a_snippet)
 
 <sup id="f_shortcut">3.</sup> ***Shortcut***, czyli skrót, w przypadku snippetu jest to tekst który należy zacząć wpisywać by xcode podpowiedział/zasugerował nam użycie tego snippeta [↩](#a_shortcut)
 
-<sup id="f_template">4.</sup> ***Template***, czyli *szablon* [↩](#a_template)
+<sup id="a_snippet">[4](#f_snippet)</sup> ***Katalog 'CodeSnippets' xcode*** (_~/Library/Developer/Xcode/UserData/CodeSnippets_), czyli katalog w którym przechowywane są pliki snippetów zdefiniowanych przez użytkownika w xcode.
+
+Tylda (~) oznacza twój katalog domowy czyli pełna ścieżka de facto wygląda tak:
+_/Users/[nazwa_wojego_konta]/Library/Developer/Xcode/UserData/CodeSnippets_
+
+W katalogu tym znajdują się pliki typu _plist_ ale z rozszerzeniem _.codesnippet_. Do tego katalogu możesz zrobić _chechkout_ swojego repozytorium ze swoimi snippetami, tam też znajdziesz te już zdefiniowane przez Ciebie wcześniej.
+
+<sup id="f_template">5.</sup> ***Template***, czyli *szablon* [↩](#a_template)
 
 
