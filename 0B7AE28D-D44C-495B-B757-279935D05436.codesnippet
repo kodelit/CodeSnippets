@@ -3,23 +3,23 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>usrDispatchMainAsyncAfter</string>
+	<string>usrAnimateView</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>CodeExpression</string>
-		<string>CodeBlock</string>
-		<string>TopLevel</string>
+		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>DispatchQueue.main.asyncAfter(deadline: .now() + DispatchTimeInterval.milliseconds(delay), execute: {
-    &lt;#code#&gt;
-                })</string>
+	<string>UIView.animate(withDuration: 0.25, delay: 0.0, options: .beginFromCurrentState, animations: {
+                &lt;#animations#&gt;
+            })</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>021F513C-4AA7-45F6-AA24-0BE34C4600CB</string>
+	<string>0B7AE28D-D44C-495B-B757-279935D05436</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetPlatformFamily</key>
+	<string>iphoneos</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>DispatchQueue.main.asyncAfter</string>
+	<string>Animate View</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

@@ -3,23 +3,33 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>usrDispatchMainAsyncAfter</string>
+	<string>implViewCommonInit</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>CodeExpression</string>
-		<string>CodeBlock</string>
-		<string>TopLevel</string>
+		<string>ClassImplementation</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>DispatchQueue.main.asyncAfter(deadline: .now() + DispatchTimeInterval.milliseconds(delay), execute: {
-    &lt;#code#&gt;
-                })</string>
+	<string>@IBOutlet public var contentView: UIView?
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.commonInit()
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.commonInit()
+    }
+    
+    public func commonInit() {
+        
+    }</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>021F513C-4AA7-45F6-AA24-0BE34C4600CB</string>
+	<string>98FA0EC8-E97E-4FE6-B650-FF4F18D0581A</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>DispatchQueue.main.asyncAfter</string>
+	<string>Impl: View common Init</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

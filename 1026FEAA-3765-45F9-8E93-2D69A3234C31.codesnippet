@@ -3,23 +3,19 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>usrDispatchMainAsyncAfter</string>
+	<string>varCustomTag</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>CodeExpression</string>
-		<string>CodeBlock</string>
-		<string>TopLevel</string>
+		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>DispatchQueue.main.asyncAfter(deadline: .now() + DispatchTimeInterval.milliseconds(delay), execute: {
-    &lt;#code#&gt;
-                })</string>
+	<string>var &lt;#name#&gt;Tag:Int { return "\(ObjectIdentifier(self).hashValue)_&lt;#name#&gt;".hashValue }</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>021F513C-4AA7-45F6-AA24-0BE34C4600CB</string>
+	<string>1026FEAA-3765-45F9-8E93-2D69A3234C31</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>DispatchQueue.main.asyncAfter</string>
+	<string>var: customTag</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
