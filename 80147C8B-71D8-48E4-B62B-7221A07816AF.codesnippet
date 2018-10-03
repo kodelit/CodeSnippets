@@ -9,7 +9,7 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>var &lt;#binder#&gt;:((&lt;#observable#&gt;) -&gt; Disposable) {
+	<string>var &lt;#binder#&gt;:((&lt;#ObservableType#&gt;) -&gt; Disposable) {
         return { (source) -&gt; Disposable in
             let transformation = source
             

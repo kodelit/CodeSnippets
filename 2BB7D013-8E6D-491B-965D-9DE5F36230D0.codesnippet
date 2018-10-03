@@ -3,26 +3,34 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>rxVarTBinder</string>
+	<string>rxTextObservable</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>let binding:((&lt;#ObservableType#&gt;) -&gt; Disposable) = { (source) -&gt; Disposable in
-                let transformation = source
-                
-                return transformation.bind(to: &lt;#targetBinder#&gt;)
-            }</string>
+	<string>.do(onNext: { item in
+    print(" onNext: \(String(describing: item))")
+}, onError: { (error) in
+    print(" onError: \(error)")
+}, onCompleted: {
+    print(" onCompleted")
+}, onSubscribe: {
+    print(" onSubscribe")
+}, onSubscribed: {
+    print(" onSubscribed")
+}, onDispose: {
+    print(" onDispose")
+})</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>6370CBF0-088C-47A5-8D23-4244198E8D92</string>
+	<string>2BB7D013-8E6D-491B-965D-9DE5F36230D0</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Rx: Var: Local Transforming binder variable</string>
+	<string>Rx: Observable Test</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>2</integer>
+	<integer>0</integer>
 </dict>
 </plist>
