@@ -3,31 +3,23 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>rxTextObservable</string>
+	<string>extServiceDependencyClassExtension</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>.do(onNext: { item in
-    print(" onNext: \(String(describing: item))")
-}, onError: { (error) in
-    print(" onError: \(error)")
-}, onCompleted: {
-    print(" onCompleted")
-}, onSubscribe: {
-    print(" onSubscribe")
-}, onSubscribed: {
-    print(" onSubscribed")
-}, onDispose: {
-    print(" onDispose")
-})</string>
+	<string>// MARK: - &lt;#ClassName#&gt;+ServiceDependency
+
+extension ServiceDependency where Dependent:&lt;#ClassName#&gt; {
+    public var &lt;#serviceName#&gt;:&lt;#ServiceClassName#&gt; { return &lt;#ServiceClassName#&gt;.shared }
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>2BB7D013-8E6D-491B-965D-9DE5F36230D0</string>
+	<string>EC0BB949-392F-4851-8906-DF00CC277EE5</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Rx: Observable Test</string>
+	<string>Ext: ServiceDependency class extension</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
