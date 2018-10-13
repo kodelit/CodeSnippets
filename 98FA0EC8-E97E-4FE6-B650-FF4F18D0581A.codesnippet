@@ -3,24 +3,33 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>rxVarBinder</string>
+	<string>implViewCommonInit</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>ClassImplementation</string>
-		<string>TopLevel</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>var &lt;#binder#&gt;: Binder&lt;&lt;#type#&gt;&gt; {
-        return Binder&lt;&lt;#type#&gt;&gt;(base, binding: { target, value in
-            &lt;#binding code#&gt;
-        })
+	<string>@IBOutlet public var contentView: UIView?
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.commonInit()
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.commonInit()
+    }
+    
+    public func commonInit() {
+        
     }</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>913FD2DF-DBC5-4FB0-B210-36B72328D14B</string>
+	<string>98FA0EC8-E97E-4FE6-B650-FF4F18D0581A</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Rx: Binder variable</string>
+	<string>Impl: View common Init</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

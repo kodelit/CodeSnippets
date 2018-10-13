@@ -3,24 +3,23 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>rxVarBinder</string>
+	<string>usrDispatchMainAsyncAfter</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>ClassImplementation</string>
+		<string>CodeExpression</string>
+		<string>CodeBlock</string>
 		<string>TopLevel</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>var &lt;#binder#&gt;: Binder&lt;&lt;#type#&gt;&gt; {
-        return Binder&lt;&lt;#type#&gt;&gt;(base, binding: { target, value in
-            &lt;#binding code#&gt;
-        })
-    }</string>
+	<string>DispatchQueue.main.asyncAfter(deadline: .now() + DispatchTimeInterval.milliseconds(delay), execute: {
+    &lt;#code#&gt;
+                })</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>913FD2DF-DBC5-4FB0-B210-36B72328D14B</string>
+	<string>021F513C-4AA7-45F6-AA24-0BE34C4600CB</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Rx: Binder variable</string>
+	<string>DispatchQueue.main.asyncAfter</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

@@ -3,24 +3,25 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>rxVarBinder</string>
+	<string>usrAnimateViewWithCompletion</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>ClassImplementation</string>
-		<string>TopLevel</string>
+		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>var &lt;#binder#&gt;: Binder&lt;&lt;#type#&gt;&gt; {
-        return Binder&lt;&lt;#type#&gt;&gt;(base, binding: { target, value in
-            &lt;#binding code#&gt;
-        })
-    }</string>
+	<string>UIView.animate(withDuration: 0.25, delay: 0.0, options: .beginFromCurrentState, animations: {
+                
+            }, completion:{ (finished) in
+                
+            })</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>913FD2DF-DBC5-4FB0-B210-36B72328D14B</string>
+	<string>42726554-98AB-4F92-9603-6A99D64F724B</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetPlatformFamily</key>
+	<string>iphoneos</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Rx: Binder variable</string>
+	<string>Animate View with completion</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

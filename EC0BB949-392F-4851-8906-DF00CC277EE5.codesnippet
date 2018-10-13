@@ -3,24 +3,23 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>rxVarBinder</string>
+	<string>extServiceDependencyClassExtension</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>ClassImplementation</string>
-		<string>TopLevel</string>
+		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>var &lt;#binder#&gt;: Binder&lt;&lt;#type#&gt;&gt; {
-        return Binder&lt;&lt;#type#&gt;&gt;(base, binding: { target, value in
-            &lt;#binding code#&gt;
-        })
-    }</string>
+	<string>// MARK: - &lt;#ClassName#&gt;+ServiceDependency
+
+extension ServiceDependency where Dependent:&lt;#ClassName#&gt; {
+    public var &lt;#serviceName#&gt;:&lt;#ServiceClassName#&gt; { return &lt;#ServiceClassName#&gt;.shared }
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>913FD2DF-DBC5-4FB0-B210-36B72328D14B</string>
+	<string>EC0BB949-392F-4851-8906-DF00CC277EE5</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Rx: Binder variable</string>
+	<string>Ext: ServiceDependency class extension</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

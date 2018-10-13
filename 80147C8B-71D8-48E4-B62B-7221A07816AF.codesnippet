@@ -3,24 +3,25 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>rxVarBinder</string>
+	<string>rxVarTBinder</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>ClassImplementation</string>
-		<string>TopLevel</string>
+		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>var &lt;#binder#&gt;: Binder&lt;&lt;#type#&gt;&gt; {
-        return Binder&lt;&lt;#type#&gt;&gt;(base, binding: { target, value in
-            &lt;#binding code#&gt;
-        })
+	<string>var &lt;#binder#&gt;:((&lt;#ObservableType#&gt;) -&gt; Disposable) {
+        return { (source) -&gt; Disposable in
+            let transformation = source
+            
+            return transformation.bind(to: &lt;#targetBinder#&gt;)
+        }
     }</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>913FD2DF-DBC5-4FB0-B210-36B72328D14B</string>
+	<string>80147C8B-71D8-48E4-B62B-7221A07816AF</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Rx: Binder variable</string>
+	<string>Rx: Var: Transforming Binder variable</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

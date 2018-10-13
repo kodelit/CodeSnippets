@@ -12,7 +12,7 @@
 	<string>fileprivate lazy var _&lt;#propertyName#&gt; = BehaviorSubject&lt;&lt;#type#&gt;&gt;(value: &lt;#initialValue#&gt;)
 var &lt;#propertyName#&gt;: &lt;#type#&gt; {
     get { return (try? _&lt;#propertyName#&gt;.value()) ?? &lt;#defaultValue#&gt; }
-    set { _&lt;#propertyName#&gt;.onNext(&lt;#propertyName#&gt;) }
+    set { _&lt;#propertyName#&gt;.onNext(newValue) }
 }</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>A486FBBB-D553-46BC-8756-4B04C015C857</string>

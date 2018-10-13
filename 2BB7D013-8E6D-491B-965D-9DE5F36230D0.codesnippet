@@ -3,24 +3,31 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>rxVarBinder</string>
+	<string>rxTestObservable</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>ClassImplementation</string>
-		<string>TopLevel</string>
+		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>var &lt;#binder#&gt;: Binder&lt;&lt;#type#&gt;&gt; {
-        return Binder&lt;&lt;#type#&gt;&gt;(base, binding: { target, value in
-            &lt;#binding code#&gt;
-        })
-    }</string>
+	<string>.do(onNext: { item in
+    print(" onNext: \(String(describing: item))")
+}, onError: { (error) in
+    print(" onError: \(error)")
+}, onCompleted: {
+    print(" onCompleted")
+}, onSubscribe: {
+    print(" onSubscribe")
+}, onSubscribed: {
+    print(" onSubscribed")
+}, onDispose: {
+    print(" onDispose")
+})</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>913FD2DF-DBC5-4FB0-B210-36B72328D14B</string>
+	<string>2BB7D013-8E6D-491B-965D-9DE5F36230D0</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Rx: Binder variable</string>
+	<string>Rx: Observable Test</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
