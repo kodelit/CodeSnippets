@@ -3,23 +3,29 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>rxVarTBinder</string>
+	<string>implRawRepresentable</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>let binding:((&lt;#ObservableType#&gt;) -&gt; Disposable) = { (source) -&gt; Disposable in
-                let transformation = source
-                
-                return transformation.bind(to: &lt;#targetBinder#&gt;)
-            }</string>
+	<string>public struct &lt;#Name#&gt;:RawRepresentable, Equatable {
+    public var rawValue: String
+    
+    public init(rawValue: String) {
+        self.rawValue = rawValue
+    }
+    
+    public static func == (lhs: &lt;#Name#&gt;, rhs: &lt;#Name#&gt;) -&gt; Bool {
+        return lhs.rawValue == rhs.rawValue
+    }
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>6370CBF0-088C-47A5-8D23-4244198E8D92</string>
+	<string>9D911B1E-CD65-4E14-9B6C-37E6B370A2B0</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Rx: Var: Local Transforming binder variable</string>
+	<string>Impl: Struct RawReplresentable, Equatable</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
