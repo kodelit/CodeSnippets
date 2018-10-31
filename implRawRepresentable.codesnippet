@@ -9,15 +9,11 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>public struct &lt;#Name#&gt;:RawRepresentable, Equatable {
+	<string>public struct &lt;#Name#&gt;: RawRepresentable, Equatable {
     public var rawValue: String
     
     public init(rawValue: String) {
         self.rawValue = rawValue
-    }
-    
-    public static func == (lhs: &lt;#Name#&gt;, rhs: &lt;#Name#&gt;) -&gt; Bool {
-        return lhs.rawValue == rhs.rawValue
     }
 }</string>
 	<key>IDECodeSnippetIdentifier</key>
