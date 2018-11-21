@@ -3,31 +3,20 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>rxTestObservable</string>
+	<string>docDependenciesList</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>do(onNext: { item in
-    print(" onNext: \(String(describing: item))")
-}, onError: { (error) in
-    print(" onError: \(error)")
-}, onCompleted: {
-    print(" onCompleted")
-}, onSubscribe: {
-    print(" onSubscribe")
-}, onSubscribed: {
-    print(" onSubscribed")
-}, onDispose: {
-    print(" onDispose")
-})</string>
+	<string>// Dependencies:
+// - &lt;#dependency file#&gt;</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>2BB7D013-8E6D-491B-965D-9DE5F36230D0</string>
+	<string>2B162DE0-7BEB-4774-A8FB-1E93AAD3C669</string>
 	<key>IDECodeSnippetLanguage</key>
-	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<string>Xcode.SourceCodeLanguage.Generic</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Rx: Observable Test</string>
+	<string>DOC: Dependencies list</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
