@@ -3,22 +3,24 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>varDefaultTag</string>
+	<string>varCustomIdentifier</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>fileprivate var defaultTag:Int { return ObjectIdentifier(self).hashValue }</string>
+	<string>fileprivate var &lt;#ownedObjectName#&gt;RuntimeIdentifier:String {
+        return "\(ObjectIdentifier(self).hashValue)_&lt;#ownedObjectName#&gt;"
+    }</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>A27CB918-35AD-4944-95A8-848FA780F0F5</string>
+	<string>22670741-30B6-4C72-B6C7-24E6138B5D4A</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Var: Default runtime TAG of an object</string>
+	<string>Var: Custom runtime Identifier</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>2</integer>
+	<integer>0</integer>
 </dict>
 </plist>

@@ -3,22 +3,22 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>varDefaultTag</string>
+	<string>inlineRandomInt</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>fileprivate var defaultTag:Int { return ObjectIdentifier(self).hashValue }</string>
+	<string>self.random(in: Int.min...Int.max)</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>A27CB918-35AD-4944-95A8-848FA780F0F5</string>
+	<string>25E5CA81-93F1-4936-B09A-B2E4DD063579</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Var: Default runtime TAG of an object</string>
+	<string>Inline: Random Int</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>2</integer>
+	<integer>0</integer>
 </dict>
 </plist>

@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>usrRadToDeg</string>
+	<string>inlineRadToDeg</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>CodeExpression</string>
@@ -15,7 +15,7 @@
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Inline conversion of radians to degrees</string>
+	<string>Inline: Conversion of Radians to Degrees</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

@@ -3,22 +3,22 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>varCustomTag</string>
+	<string>inlineTimestamp</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>var &lt;#name#&gt;Tag:Int { return "\(ObjectIdentifier(self).hashValue)_&lt;#name#&gt;".hashValue }</string>
+	<string>Date().timeIntervalSince1970</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>1026FEAA-3765-45F9-8E93-2D69A3234C31</string>
+	<string>BB7E7E1F-DCE2-46F6-B6B9-FA1A6885352C</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>var: customTag</string>
+	<string>Inline: Timestamp (TimeInterval, Double)</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
-	<integer>2</integer>
+	<integer>0</integer>
 </dict>
 </plist>

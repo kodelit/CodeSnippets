@@ -20,6 +20,7 @@ Na powyższym zdjęciu widać dwa placeholdery<sup id="a_placeholder">[1](#f_pla
 Snippety<sup id="a_snippet">[2](#f_snippet)</sup> w tym repozytorium podzielone są na kategorie, nazwa kategorii jest też przedrostkiem skrótu<sup id="a_shortcut">[3](#f_shortcut)</sup> snippeta i nazwy pliku.
 
 - `usr` - zwykłe fragmenty
+- `inline` - proste wyrażenia, bądź obliczenia
 
 - `rx` - fragmenty wspierające programowanie przy użyciu RxSwift
 - `rlm` - fragmenty wispierające używanie biblioteki RealmSwift
