@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>ext-IdentifiableByTag</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>TopLevel</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//
+//  IdentifiableByTag.swift
+//  IdentifiableByTag
+//
+//  Created by Grzegorz Maciak on 27.05.2018.
+//  Copyright (c) 2018 Grzegorz Maciak.
+//  This code is distributed under the terms and conditions of the MIT license.
+//  See: https://gist.github.com/kodelit/04b5ef889e23f63f3462c8595d0164d9#file-license-md
+
+import UIKit
+
+public struct IdentifyingTag: RawRepresentable, ExpressibleByIntegerLiteral, CustomStringConvertible {
+
+    public var rawValue: Int = 0
+
+    public init?(rawValue: Int) {
+        self.rawValue = rawValue
+    }
+
+    public init(integerLiteral value: Int) {
+        self.rawValue = value
+    }
+
+    public var description: String {
+        return "\(self.rawValue)"
+    }
+}
+
+public protocol IdentifiableByTag {
+    var tag: Int { get set }
+}
+
+public extension IdentifiableByTag {
+    var customTag:IdentifyingTag {
+        get { return IdentifyingTag(rawValue: self.tag)! }
+        set { self.tag = newValue.rawValue}
+    }
+}
+
+extension UIView: IdentifiableByTag {
+    public func viewWithTag(_ tag: IdentifyingTag) -&gt; UIView? {
+        return self.viewWithTag(tag.rawValue)
+    }
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>C543C688-BAEB-4700-A951-8962B91DE89C</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetPlatformFamily</key>
+	<string>iphoneos</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Ext: IdentifiableByTag</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

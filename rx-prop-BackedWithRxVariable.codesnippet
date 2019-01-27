@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>rx-prop-BackedWithRxVariable</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>fileprivate lazy var _&lt;#propertyName#&gt; = BehaviorRelay&lt;&lt;#type#&gt;&gt;(value: &lt;#initialValue#&gt;)
+var &lt;#propertyName#&gt;: &lt;#type#&gt; {
+    get { return _&lt;#propertyName#&gt;.value }
+    set { _&lt;#propertyName#&gt;.accept(newValue) }
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>A486FBBB-D553-46BC-8756-4B04C015C857</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>Declaration of property backed with BehaviorRelay</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Rx: Property with RxSwift Subject</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

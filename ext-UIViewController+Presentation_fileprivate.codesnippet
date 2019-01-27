@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>ext-UIViewController+Presentation_fileprivate</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>TopLevel</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>extension UIViewController {
+    fileprivate func present(on presenter:UIViewController? = nil, animated:Bool = false, didShow:((Bool) -&gt; Void)? = nil) {
+        var presenter = presenter ?? UIApplication.shared.keyWindow?.rootViewController
+        while presenter?.presentedViewController != nil
+            &amp;&amp; !presenter!.presentedViewController!.isBeingDismissed
+        {
+            presenter = presenter?.presentedViewController!
+            if presenter === self {
+                presenter = nil
+                break
+            }
+        }
+        
+        if let target = presenter {
+            target.present(self, animated: animated, completion: {
+                didShow?(true)
+            })
+        }else{
+            didShow?(false)
+        }
+    }
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>AA58B569-3958-4B15-92D3-713F3DFAF864</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Ext: UIViewController + Presentation ( fileprivate )</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

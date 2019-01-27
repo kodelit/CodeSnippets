@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>func-InstantiateViewFromNib</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>static func instantiate&lt;T&gt;(nibName:String? = nil, bundle:Bundle? = nil) -&gt; T? where T:&lt;#ClassName#&gt; {
+        let targetBundle = bundle ?? Bundle(for: self)
+        let targetNibName = nibName != nil &amp;&amp; !nibName!.isEmpty ? nibName! : NSStringFromClass(self).components(separatedBy: ".").last!
+        if let view = targetBundle.loadNibNamed(targetNibName, owner: nil, options: nil)?.first as? T {
+            return view
+        }
+        return nil
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>8CDC05CA-20D4-45C0-880C-735656294E21</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>Implementation of method for instantiating views from nib.</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Func: Instantiate view from nib</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

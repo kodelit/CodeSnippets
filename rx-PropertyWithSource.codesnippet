@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>rx-PropertyWithSource</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>fileprivate lazy var _&lt;#propertyName#&gt;Source = PublishSubject&lt;Observable&lt;&lt;#Type#&gt;&gt;&gt;()
+fileprivate lazy var _&lt;#propertyName#&gt;:BehaviorRelay&lt;&lt;#Type#&gt;&gt; = {
+let subject = BehaviorRelay&lt;&lt;#Type#&gt;&gt;(value: &lt;#initialValue#&gt;)
+_&lt;#propertyName#&gt;Source.switchLatest().bind(to: subject).disposed(by: &lt;#disposeBag#&gt;)
+return subject
+}()
+var &lt;#propertyName#&gt;: &lt;#type#&gt; {
+get { return _&lt;#propertyName#&gt;.value }
+    set { _&lt;#propertyName#&gt;.accept(newValue) }
+        }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>A5BC0331-5431-426F-83B3-7300D21DE161</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>Declaration of property backed with BehaviorRelay, and source PublishSubject as a additional reactive source</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Rx: Property with Source subject</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
