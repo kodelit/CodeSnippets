@@ -1,13 +1,12 @@
 shortcut | name | language | platform | summary | file name (if different than shortcut)|  
 ---|---|---|---|---|---|
-var-JsonKeyStatic|JsonKey extension static variable|Swift|All|Variable declaration for extension of struct PropertyName ||
 var-DefaultTag|Var: Default runtime TAG of an object|Swift|All|||
 var-CustomTag|Var: Custom runtime TAG |Swift|All|Used to identify owned objects or view in hierarchy somehow associated  with `self`||
 var-CustomIdentifier|Var: Custom runtime Identifier|Swift|All|||
 usr-RecurciveLockMetodUse|Recurcive lock/unlock to use in method|Swift|All|||
 usr-RGBColorInit|UIColor initializing with RGB values in range 0...255|Swift|All|||
 usr-PresentController|Controller presentation method implementation|Swift|iphoneos|Implementation of the method to handle different controller presentation issues||
-usr-PointInside|Point Inside, converted|Swift|All|Checing is point inside view with conversion from other (source) view||
+usr-PointInside|Point Inside, converted|Swift|All|Checking is point inside view with conversion from other (source) view||
 usr-NotIB|Target not Interface Builder directive|Swift|All|||
 usr-LoadContentFromNib|Load content view from nib|Swift|iphoneos|||
 usr-DispatchMainAsyncAfter|DispatchQueue.main.asyncAfter|Swift|All|||
@@ -73,11 +72,10 @@ ext-UIApplication+Rx|Ext: UIApplication+Rx|Swift|All|||
 ext-ObjcExceptionCatcher|Ext: ObjC exception chatcher |Objective-C|All|Header (.h) file with inline method to catch objc exeptions in swift||
 ext-Memoization|Ext: Memoization|Swift|All|||
 ext-IdentifiableByTag|Ext: IdentifiableByTag|Swift|iphoneos|||
-doc-func-|Function documentation comment|Swift|All|||
-doc-SingleLine|Single line documentation comment|Swift|All|||
+doc-SingleLineComment|Single line documentation comment|Swift|All|||
 doc-MultilineComment|Multiline documentation comment|Swift|All|Only description section||
-doc-Lists|Multiline comment with common lists of tasks of the class|Generic|All|||
+doc-FunctionOverview|Function documentation comment|Swift|All|||
+doc-FileOverview|Multiline comment with common lists of tasks of the class, dependencies, etc.|Generic|All|||
 doc-DependenciesList|DOC: Dependencies list|Generic|All|||
 classBody-ViewCommonInit|Class Body: View common Init|Swift|All|||
 classBody-NIBRepresentableView|Class Body: NIBRepresentable view|Swift|iphoneos|||
-|ACK|Swift|iphoneos|summary|5E6BD96E-C391-4EB4-9E10-AEA3EB196937|
