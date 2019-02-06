@@ -9,7 +9,7 @@
 		<string>CodeExpression</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>SerialDispatchQueueScheduler(qos: .default)</string>
+	<string>SerialDispatchQueueScheduler(qos: .background)</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>1D62664E-03FB-4330-8A33-236F9A9246E8</string>
 	<key>IDECodeSnippetLanguage</key>
