@@ -3,25 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>rx-prop-BackedWithRxVariable</string>
+	<string>usr-checkIfWeakSelfExists</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>fileprivate lazy var _&lt;#propertyName#&gt; = BehaviorRelay&lt;&lt;#type#&gt;&gt;(value: &lt;#initialValue#&gt;)
-var &lt;#propertyName#&gt;: &lt;#type#&gt; {
-    get { return _&lt;#propertyName#&gt;.value }
-    set { _&lt;#propertyName#&gt;.accept(newValue) }
-}</string>
+	<string>guard let target = self else { return }</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>A486FBBB-D553-46BC-8756-4B04C015C857</string>
+	<string>EB2199BB-C7B7-4E83-9703-975BC41F85C9</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>Declaration of property backed with BehaviorRelay</string>
+	<string>guard let target = self ...</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Rx: Property with RxSwift Subject</string>
+	<string>Check if weak self exists</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

@@ -9,11 +9,12 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>//  Created by &lt;#Author#&gt; on &lt;#Nov 16 '17 at 15:10#&gt;.
-//  Copyright © 2017 &lt;#Author#&gt;.
-//
+	<string>//
 //  Source: &lt;#https://stackoverflow.com/...#&gt;
-//  Licence: Publicly available user contributions licensed under [cc by-sa 3.0](https://creativecommons.org/licenses/by-sa/3.0/) with [attribution required](https://stackoverflow.blog/2009/06/25/attribution-required/).
+//  Author: [&lt;#author_name#&gt;](&lt;#https://stackoverflow.com/users/...#&gt;)
+//  Licence: Publicly available user contributions licensed under
+//      [cc by-sa 3.0](https://creativecommons.org/licenses/by-sa/3.0/) with
+//      [attribution required](https://stackoverflow.blog/2009/06/25/attribution-required/).
 //</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>40F89D79-A0C2-4FA3-83F7-DDDB7475CA5B</string>
