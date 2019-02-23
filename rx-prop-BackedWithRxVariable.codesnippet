@@ -6,7 +6,7 @@
 	<string>rx-prop-BackedWithRxVariable</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>ClassImplementation</string>
+		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
 	<string>fileprivate lazy var _&lt;#propertyName#&gt; = BehaviorRelay&lt;&lt;#type#&gt;&gt;(value: &lt;#initialValue#&gt;)

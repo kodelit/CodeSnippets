@@ -3,19 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>rx-SerialScheduler</string>
+	<string>usr-checkIfWeakSelfExists</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>CodeExpression</string>
+		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>SerialDispatchQueueScheduler(qos: .background)</string>
+	<string>guard let target = self else { return }</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>1D62664E-03FB-4330-8A33-236F9A9246E8</string>
+	<string>EB2199BB-C7B7-4E83-9703-975BC41F85C9</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>guard let target = self ...</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Rx: SerialScheduler</string>
+	<string>Check if weak self exists</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
