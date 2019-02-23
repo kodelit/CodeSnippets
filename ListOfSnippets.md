@@ -60,6 +60,7 @@ inline-RandomInt|Inline: Random Int||Swift|All||
 inline-RadToDeg|Inline: Conversion of Radians to Degrees||Swift|All||
 impl-ServiceDependency|Impl: Service Dependency|Simplified access to required services|Swift|All||
 impl-RawRepresentable|Impl: Struct RawReplresentable, Equatable||Swift|All||
+impl-PodspecFile|Impl: Podspec|.podspec file implementation template|Ruby|All||
 impl-NibRepresentable|Impl: NIBRepresentable protocol|NIBRepresentable protocol implementation for view|Swift|All||
 impl-ManualTransitionManager|Impl: Manual Transition Manager|Requires: RxSwift|Swift|All||
 ifAvailable|if #availabl(...,*)||Swift|All||
