@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>podspec_dependencies</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>#            ss.dependency "&lt;#DevelopmentPodName#&gt;", '~&gt; &lt;#version#&gt;', :path =&gt; '&lt;#./Relative/Local/Path#&gt;'
+#            ss.dependency "&lt;#PodName#&gt;", '~&gt; &lt;#version#&gt;' #, :git =&gt; '&lt;#https://github.com/...#&gt;'
+#            ss.dependency "#{s.name}/&lt;#Core#&gt;" # other subspec
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>99780934-A8B8-428F-B1B1-607347B85607</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Ruby</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Podspec: dependencies declaration</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>rx_prop_ReactiveDelegate</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>/// Reactive delegate proxy
+    public var delegate: DelegateProxy&lt;&lt;#ClassName#&gt;, &lt;#ClassName#&gt;Delegate&gt; {
+        return Rx&lt;#ClassName#&gt;DelegateProxy.proxy(for: base)
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>4368D544-A62C-4716-8891-6728C4ABAA33</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Rx: Reactive delegate (proxy) property</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

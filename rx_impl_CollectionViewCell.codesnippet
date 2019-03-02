@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>rx_impl_CollectionViewCell</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>TopLevel</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>class &lt;#CellClassName#&gt;: UICollectionViewCell, ReactiveCell {
+    
+    let viewModel = &lt;#CellClassName#&gt;ViewModel()
+    
+    override func prepareForReuse() {
+        self.viewModel.prepareForReuse()
+    }
+    
+    func reload(with data: &lt;#CellDataType#&gt;) {
+        self.viewModel.reload(with: data)
+        //self.viewModel.rebind(isActive: self.rx.isActive, didUpdate: self.rx.didUpdate)
+    }
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>59E8BE83-E3F8-4817-AFB7-86ECC9E3B086</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Rx Impl: Collection View Cell implementation</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

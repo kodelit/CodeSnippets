@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>usr_PresentController</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>/// Controller presentation helper
+public func present(_ controller:UIViewController, on presenter:UIViewController?, didShowOn:((UIViewController) -&gt; Void)? = nil) {
+    var presenter = presenter ?? UIApplication.shared.keyWindow?.rootViewController
+    while presenter?.presentedViewController != nil {
+        presenter = presenter?.presentedViewController!
+        if presenter === self {
+            presenter = nil
+            break
+        }
+    }
+    
+    if let target = presenter {
+        target.present(controller, animated: true, completion: {
+            didShowOn?(target)
+        })
+    }
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>47663501-767C-4C69-BBA9-CCB1370CA83C</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetPlatformFamily</key>
+	<string>iphoneos</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>Implementation of the method to handle different controller presentation issues</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Controller presentation method implementation</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>rx_RefreshableViewModel</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>// MARK: ReactiveRefreshableViewModel
+    
+    var data: &lt;#DataType#&gt;? = nil
+    
+func reload(with data: &lt;#DataType#&gt;) {
+        // remove previous binding
+        self.disposeBag = DisposeBag()
+        self.data = data
+        
+    }
+
+/// Rebinds with binders and observers of the view as params
+//func rebind(...) {
+//    
+//}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>B44645FE-F7DC-4490-9A20-3B502D595F2F</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Rx: ReactiveDetailViewModel protocol implementation</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>rx_example_ControlProperty</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>extension Reactive where Base: UISearchBar {
+    /// Reactive wrapper for `text` property.
+    public var value: ControlProperty&lt;String?&gt; {
+        let source: Observable&lt;String?&gt; = Observable.deferred { [weak searchBar = self.base as UISearchBar] () -&gt; Observable&lt;String?&gt; in
+            let text = searchBar?.text
+            
+            return (searchBar?.rx.delegate.methodInvoked(#selector(UISearchBarDelegate.searchBar(_:textDidChange:))) ?? Observable.empty())
+            .map { a in
+                return a[1] as? String
+            }
+            .startWith(text)
+        }
+        
+        let bindingObserver = UIBindingObserver(UIElement: self.base) { (searchBar, text: String?) in
+            searchBar.text = text
+        }
+        
+        return ControlProperty(values: source, valueSink: bindingObserver)
+    }
+}
+
+extension Reactive where Base: UISegmentedControl {
+        /// Reactive wrapper for `selectedSegmentIndex` property.
+        public var selectedSegmentIndex: ControlProperty&lt;Int&gt; {
+            return value
+        }
+        
+        /// Reactive wrapper for `selectedSegmentIndex` property.
+        public var value: ControlProperty&lt;Int&gt; {
+            return UIControl.rx.value(
+                self.base,
+                getter: { segmentedControl in
+                    segmentedControl.selectedSegmentIndex
+            }, setter: { segmentedControl, value in
+                segmentedControl.selectedSegmentIndex = value
+            }
+            )
+        }
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>329F0792-9505-4D95-AD39-2E200D00561D</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Generic</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Example: Rx ControlProperty</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
