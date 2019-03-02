@@ -39,28 +39,41 @@ Snippety<sup id="a_snippet">[2](#f_snippet)</sup> w tym repozytorium podzielone 
 - `mit` - teksty i nagłówki dotyczące licencji MIT
 
 - brak przedrostka - mogą się zdarzyć fragmenty bez przedrostka, najczęściej bardzo krótki, często używane o bardzo skrótowych skrótach, które trzeba po prostu znać, by ich szybko użyć.
+- inne - zdażają się też inne przedrostki, jednak nie są one już tak istotne by je tu omawiać, można je samemu wyszukac na [liście](ListOfSnippets.md)
 
-> UWAGA: Jeśli używamy wymienionych przedrostków, ich wielkość znaków powinna być zachowana, a jeśli używamy więcej niż jednego powinny być oddzielone za pomocą myślnika `-` zarówno od siebie nawzajem jak i od właściwej nazwy snippetu. Nazwa snippetu powinna natomiast być napisana w stylu `PascalCase` czyli `KazdaPierwszaLieteraSlowaDuza`. Przykład: `rx-func-SetupReactiveX`
+> UWAGA: Jeśli używamy wymienionych przedrostków, wielkość ich znaków powinna być zachowana, a jeśli używamy więcej niż jednego powinny być oddzielone za pomocą jednego z 3 znaków: `-`,`_` lub `:`, zarówno od siebie nawzajem jak i od właściwej nazwy snippetu. Gdy jednak uruchomimy *CodeSnippetsNormalisation* program ten podmieni separatory na obecnie w nim zdefiniowany jako domyślny. Nazwa snippetu powinna natomiast być napisana w stylu `PascalCase` czyli `KazdaPierwszaLieteraSlowaDuza`. Przykład: `rx-func-SetupReactiveX`
 
 
 ### Lista
-Lista snippet’ów dostępna jest [tutaj](ListOfSnippets.md) i jest generowana automatycznie przez mały program `fix_snippet_file_name`.
+Lista snippet’ów dostępna jest [tutaj](ListOfSnippets.md) i jest generowana automatycznie przez mały program `CodeSnippetsNormalisation `.
 
-Aby więc uaktualnić listę bądź poprawić i ujednolicić nazwy plików po dodaniu nowego snippetu, nie trzeba edytować wszystkiego ręcznie, wystarczy uruchomić wspomniany program (najlepiej, jeśli ma on ikonkę terminala, klikając na niego, jeśli nie ma trzeba uruchomić go z terminala)
+Aby więc uaktualnić listę bądź poprawić i ujednolicić nazwy plików po dodaniu nowego snippetu, nie trzeba edytować wszystkiego ręcznie, wystarczy uruchomić wspomniany program. Najlepiej, jeśli ma on ikonkę terminala, klikając na niego, jeśli nie ma trzeba uruchomić go z [Terminal](/Applications/Utilities/Terminal.app)'a wpisać w nim: 
 
-Głównym zadaniem owego programu jest jednak:
+`~/Library/Developer/Xcode/UserData/CodeSnippets/CodeSnippetsNormalisation`
+
+Głównym zadaniem owego programu jest:
 
 - poprawianie skrótów tak by były spójne z przyjętą konwencją;
 - zmiana nazw plików by brzmiały tak samo jak skróty, co ułatwia ich rozpoznanie.
 
 	Domyślna nazwa pliku nadawana przez xcode jest taka sama jak wartość identyfikatora danego snippet’u tudzież bardzo nieczytelna
 	
-> Kod programu `fix_snippet_file_name` jest dostępny na GitHub ([tutaj]()), jest on napisany w *Swift* i można go sobie dowolnie modyfikować, należy pamiętać tylko że po zbudowaniu, *Xcode* sam skopuje go do katalogu ze snippet’ami podmieniając istniejącą wersję (skrypt *"Copy built file to snippets dir"* w zakładce *"Build Phases"* w ustawieniach projektu dla targetu o "zaskakującej" nazwie *`fix_snippet_file_name`*)
+- generowanie aktualnej listy snippetów.
+	
+	Dodatkowo jeśli uruchomimy go z terminala z parametrem `--gen-details` wygeneruje on w podkatalogu `/details` oddzielny plik dla każdego snippet'a, do którego będzie można nawigować z listy i rzucić okiem na kod. Żeby to zrobić należy otworzyć [Terminal](/Applications/Utilities/Terminal.app) i wpisać w nim:
+	
+	`~/Library/Developer/Xcode/UserData/CodeSnippets/CodeSnippetsNormalisation --gen-details`
+
+	
+	
+> Kod programu `CodeSnippetsNormalisation ` jest dostępny na GitHub ([tutaj](https://github.com/kodelit/CodeSnippetsNormalisation)), jest on napisany w *Swift* i można go sobie dowolnie modyfikować, należy pamiętać tylko że po zbudowaniu, *Xcode* sam skopuje go do katalogu ze snippet’ami podmieniając istniejącą wersję (skrypt *"Copy built file to snippets dir"* w zakładce *"Build Phases"* w ustawieniach projektu dla targetu o "zaskakującej" nazwie *CodeSnippetsNormalisation* )
+
 
 ## Licencja
 Użyłem tu licencji MIT, ale tylko z przyczyn czysto formalnych i jasności intencji, gdyż publikuje fragmenty kodu. Dlatego dla większych fragmentów kodu, jeśli takie się tu znajdują a nie zawierają licencji ma zastosowanie licencja MIT
 
 Jednak prawda jest taka, że gdy fragmenty te są bardzo małe albo nie superinnowacyjne prawa autorskie i tak nie mają zastosowania wiec... Natomiast *Attribution* w przypadku MIT jest wymagane jeśli byście publikowali w całości bądź zmieniony kod, natomiast jeśli używacie jakiegoś skrawka w postaci snippetu lub ze snippetu... nie popadajmy w skrajności, a skompilowanego kodu i tak nikt nie sprawdzi.
+
 
 ---
 
