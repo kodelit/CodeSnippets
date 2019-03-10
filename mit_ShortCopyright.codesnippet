@@ -3,21 +3,23 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>podspec_dependencies</string>
+	<string>mit_ShortCopyright</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>#            ss.dependency "&lt;#PodName#&gt;", '~&gt; &lt;#version#&gt;' #
-#            ss.dependency "#{s.name}/&lt;#Core#&gt;" # other subspec
-</string>
+	<string>//  Copyright © 2019 kodelit. All rights reserved.
+//  This code is distributed under the terms and conditions of the MIT license.
+//  See: https://opensource.org/licenses/MIT</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>99780934-A8B8-428F-B1B1-607347B85607</string>
+	<string>7DCD4787-46AE-4A6E-A62B-B0416EF8A92B</string>
 	<key>IDECodeSnippetLanguage</key>
-	<string>Xcode.SourceCodeLanguage.Ruby</string>
+	<string>Xcode.SourceCodeLanguage.Generic</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>kodelit private copyright</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Podspec: dependencies declaration</string>
+	<string>MIT: Short "Copyright..." for kodelit</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

@@ -48,6 +48,7 @@ shortcut | name | summary | language | platform |
 `prop_WithAssociatedObject`|[Extension Property](details/prop_WithAssociatedObject.md)|Associated Object Property|Swift|All|
 `prop_ClassNibReferenceProperty`|[Prop: Static NIB file reference property](details/prop_ClassNibReferenceProperty.md)||Generic|All|
 `podspec_dependencies`|[Podspec: dependencies declaration](details/podspec_dependencies.md)||Ruby|All|
+`mit_ShortCopyright`|[MIT: Short "Copyright..." for kodelit](details/mit_ShortCopyright.md)|kodelit private copyright|Generic|All|
 `mit_ShortComment`|[MIT: Short comment under the "Copyright..." clause for MIT Licence](details/mit_ShortComment.md)||Generic|All|
 `mit_Licence`|[MIT: Licence with copyright notice](details/mit_Licence.md)|Replace standard Apple Copyright comment line with this text|Generic|All|
 `mit_InspiredCopyright`|[MIT: Short "Copyright..." for inspired code](details/mit_InspiredCopyright.md)|Insired means modified or reused code of someone else|Generic|All|
@@ -85,5 +86,6 @@ shortcut | name | summary | language | platform |
 `doc_FunctionOverview`|[Function documentation comment](details/doc_FunctionOverview.md)||Swift|All|
 `doc_FileOverview`|[Multiline comment with common lists of tasks of the class, dependencies, etc.](details/doc_FileOverview.md)||Generic|All|
 `doc_DependenciesList`|[DOC: Dependencies list](details/doc_DependenciesList.md)||Generic|All|
+`classBody_WebViewController`|[ClassBody: WebViewController](details/classBody_WebViewController.md)|Basic implementation of WebViewController body|Swift|All|
 `classBody_ViewCommonInit`|[Class Body: View common Init](details/classBody_ViewCommonInit.md)||Swift|All|
 `classBody_NIBRepresentableView`|[Class Body: NIBRepresentable view](details/classBody_NIBRepresentableView.md)||Swift|iphoneos|

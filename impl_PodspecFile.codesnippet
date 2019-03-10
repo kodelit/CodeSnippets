@@ -37,7 +37,7 @@ Pod::Spec.new do |s|
     end
 
     s.subspec 'FirebaseMessaging' do |ss|
-        ss.dependency "&lt;#PodName#&gt;", '~&gt; &lt;#version#&gt;'
+        ss.dependency '&lt;#PodName#&gt;', '~&gt; &lt;#version#&gt;'
         ss.dependency "#{s.name}/&lt;#Core#&gt;" # other subspec
         subspecName = ss.name.split(File::SEPARATOR).last
         ss.source_files  = "Source/#{subspecName}/**/*.swift"
