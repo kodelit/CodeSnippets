@@ -6,6 +6,7 @@
 	<string>rx_ReactiveClassExtension</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
+		<string>CodeExpression</string>
 		<string>TopLevel</string>
 	</array>
 	<key>IDECodeSnippetContents</key>

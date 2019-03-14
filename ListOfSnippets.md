@@ -59,6 +59,7 @@ shortcut | name | summary | language | platform |
 `mark_Init`|[MARK: Init](details/mark_Init.md)||Generic|All|
 `mark_ExternalDataInput`|[MARK: External Data Input ](details/mark_ExternalDataInput.md)||Generic|All|
 `mark_Actions`|[MARK: - Actions](details/mark_Actions.md)||Swift|All|
+`layout_VisualFormat`|[Layout: VisualFormat](details/layout_VisualFormat.md)|Constraints declaration in visual format|Generic|All|
 `inline_TimestampAsUInt`|[Inline: Timestamp as UInt](details/inline_TimestampAsUInt.md)||Swift|All|
 `inline_Timestamp`|[Inline: Timestamp (TimeInterval, Double)](details/inline_Timestamp.md)||Swift|All|
 `inline_Tag`|[Inline: Default runtime TAG of an object](details/inline_Tag.md)|Idetifies object in runtime, might be use to set View tag to find view later in views hierarchy|Swift|All|
