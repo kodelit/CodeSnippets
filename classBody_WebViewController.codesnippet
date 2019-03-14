@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>classBody_WebViewController</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    @IBOutlet weak var webView:WKWebView!
+    var urlToLoad:URL? = nil
+
+    override func loadView() {
+        super.loadView()
+        let config = WKWebViewConfiguration()
+        if #available(iOS 10.0, *) {
+            config.dataDetectorTypes = WKDataDetectorTypes.all
+        }
+
+        let webView = WKWebView(frame: self.view.bounds, configuration: config)
+        webView.scrollView.showsVerticalScrollIndicator = false
+        webView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        self.view.addSubview(webView)
+        self.webView = webView
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.reload()
+    }
+
+    func reload() {
+        if let url = self.urlToLoad {
+            let request = URLRequest(url: url)
+            self.webView.load(request)
+        }
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>1179AABA-1EBD-4316-911E-006B3B7AC53E</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>Basic implementation of WebViewController body</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>ClassBody: WebViewController</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
