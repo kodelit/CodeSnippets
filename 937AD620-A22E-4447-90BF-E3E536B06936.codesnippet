@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string></string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    // MARK: - Accessibility
+
+    private func setNeedsNotifyAccessibilityLayoutChanged(view: UIView?) {
+        setNeedsNotifyAcessibility(notification: .layoutChanged, argument: view)
+    }
+
+    private func setNeedsNotifyAccessibilityScreenChanged(view: UIView?) {
+        setNeedsNotifyAcessibility(notification: .screenChanged, argument: view)
+    }
+
+    private var needsNotifyAccessibility = false
+
+    private func setNeedsNotifyAcessibility(notification: UIAccessibility.Notification, argument: Any?) {
+        if UIAccessibility.isVoiceOverRunning &amp;&amp; !needsNotifyAccessibility {
+            needsNotifyAccessibility = true
+            DispatchQueue.main.async { [weak self] in
+                if let needsUpdate = self?.needsNotifyAccessibility, needsUpdate {
+                    self?.needsNotifyAccessibility = false
+                    UIAccessibility.post(notification: notification, argument: argument)
+                }
+            }
+        }
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>937AD620-A22E-4447-90BF-E3E536B06936</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Accessibility: Notification</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
