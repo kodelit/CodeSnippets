@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string></string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>// MARK: - Xcode Preview
+// Works from Xcode 11 and macOS 10.15
+
+import SwiftUI
+
+struct &lt;#Name#&gt;ViewControllerRepresentable: UIViewControllerRepresentable {
+    @available(iOS 13.0, *)
+    func makeUIViewController(context: UIViewControllerRepresentableContext&lt;&lt;#Name#&gt;ViewControllerRepresentable&gt;) -&gt; &lt;#Name#&gt;ViewController {
+        // let bundle = Bundle(for: &lt;#Name#&gt;ViewController.self)
+        // let storyboard = UIStoryboard(name: "Main", bundle: bundle)
+        // return storyboard.instantiateViewController(identifier: "&lt;#Name#&gt;ViewController")
+        return &lt;#Name#&gt;ViewController(nibName: nil, bundle: nil)
+    }
+
+    @available(iOS 13.0, *)
+    func updateUIViewController(_ uiViewController: &lt;#Name#&gt;ViewController, context: UIViewControllerRepresentableContext&lt;&lt;#Name#&gt;ViewControllerRepresentable&gt;) {
+
+    }
+}
+
+struct UIKit&lt;#Name#&gt;ViewControllerProvider: PreviewProvider {
+    static var previews: &lt;#Name#&gt;ViewControllerRepresentable {
+        &lt;#Name#&gt;ViewControllerRepresentable()
+    }
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>AA421301-EF32-4192-9902-99339818D192</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetPlatformFamily</key>
+	<string>macosx</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>usr_xcodePreview</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Xcode View Controller Preview</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
