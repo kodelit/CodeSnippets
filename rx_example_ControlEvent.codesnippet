@@ -38,7 +38,8 @@ extension Reactive where Base: UICollectionView {
         
         return ControlEvent(events: source)
     }
-}</string>
+}
+</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>238A521F-B7DB-487A-99C2-3714606A8364</string>
 	<key>IDECodeSnippetLanguage</key>
