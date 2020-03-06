@@ -1,8 +1,8 @@
 ## Snippets list:
 
 
-shortcut | name | summary | language | platform |
----|---|---|---|---|
+shortcut | name | summary | language | platform | file name (if different than shortcut) |
+---|---|---|---|---|---|
 `var_DefaultTag`|[Var: Default runtime TAG of an object](details/var_DefaultTag.md)||Swift|All|
 `var_CustomTag`|[Var: Custom runtime TAG ](details/var_CustomTag.md)|Used to identify owned objects or view in hierarchy somehow associated  with `self`|Swift|All|
 `var_CustomIdentifier`|[Var: Custom runtime Identifier](details/var_CustomIdentifier.md)||Swift|All|
@@ -90,3 +90,4 @@ shortcut | name | summary | language | platform |
 `classBody_WebViewController`|[ClassBody: WebViewController](details/classBody_WebViewController.md)|Basic implementation of WebViewController body|Swift|All|
 `classBody_ViewCommonInit`|[Class Body: View common Init](details/classBody_ViewCommonInit.md)||Swift|All|
 `classBody_NIBRepresentableView`|[Class Body: NIBRepresentable view](details/classBody_NIBRepresentableView.md)||Swift|iphoneos|
+ |[usr_xcodePreviewVC](details/A559603A-0D3F-4C9F-88F5-449E15CCA431.md)||Swift|iphoneos|A559603A-0D3F-4C9F-88F5-449E15CCA431|

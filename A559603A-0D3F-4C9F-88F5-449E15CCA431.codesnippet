@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>usr_xcodePreviewVC</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>// MARK: - Xcode Preview
+// Works from Xcode 11 and macOS 10.15
+
+#if canImport(SwiftUI) &amp;&amp; DEBUG
+import SwiftUI
+
+@available(iOS 13.0, tvOS 13.0, *)
+struct &lt;#Name#&gt;ViewControllerRepresentable: UIViewControllerRepresentable {
+    typealias ViewController = &lt;#Name#&gt;ViewController
+
+    func makeUIViewController(context: Context) -&gt; ViewController {
+        // let bundle = Bundle(for: StartViewController.self)
+        // let storyboard = UIStoryboard(name: "Main", bundle: bundle)
+        // return storyboard.instantiateViewController(identifier: "&lt;#Name#&gt;ViewController")
+        return ViewController(nibName: nil, bundle: nil)
+    }
+
+    func updateUIViewController(_ uiViewController: ViewController, context: Context) {}
+}
+
+@available(iOS 13.0, tvOS 13.0, *)
+struct UIKit&lt;#Name#&gt;ViewControllerProvider: PreviewProvider {
+    static var previews: &lt;#Name#&gt;ViewControllerRepresentable { &lt;#Name#&gt;ViewControllerRepresentable() }
+}
+
+#endif
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>A559603A-0D3F-4C9F-88F5-449E15CCA431</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetPlatformFamily</key>
+	<string>iphoneos</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>usr_xcodePreviewVC</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
