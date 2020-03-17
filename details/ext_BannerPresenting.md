@@ -1,10 +1,10 @@
 # Ext: BannerPresenting
-- **shortcut**:  
+- **shortcut**: `ext_BannerPresenting`
 - **language**: Swift
 - **platform**: 
 
 ## Summary
-extBannerPresenting
+
 
 ## Code:
 ```swift
@@ -29,16 +29,16 @@ extension <#NotificationName#>Presenting {
 
     @discardableResult
     private func add<#NotificationName#>View() -> TextViewWithActionView {
-        let <#notificationName#>View = TextViewWithActionView.loadFromBundle()
-        <#notificationName#>View.setupTextViewWithAction(messageText: LocalizedStrings.Inbox.accountInactiveTitle,
+        let view = TextViewWithActionView.loadFromBundle()
+        view.setupTextViewWithAction(messageText: LocalizedStrings.Inbox.accountInactiveTitle,
                                                     actionText: LocalizedStrings.Inbox.accountInactiveAction,
                                                     accessibilityActionDescription: LocalizedStrings.Inbox.accountInactiveAccessibilityAction)
-        <#notificationName#>View.alertImageIsHidden = false
-        <#notificationName#>View.viewAlignment = .left
-        //<#notificationName#>View.textFontStyle = DefaultFontStyle.inboxSentActivityText
-        actionViewContainer[<#notificationName#>ViewKey] = <#notificationName#>View
+        view.alertImageIsHidden = false
+        view.viewAlignment = .left
+        //view.textFontStyle = DefaultFontStyle.inboxSentActivityText
+        actionViewContainer[<#notificationName#>ViewKey] = view
         setup<#NotificationName#>View()
-        return <#notificationName#>View
+        return view
     }
 }
 ```

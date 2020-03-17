@@ -1,12 +1,14 @@
 ## Snippets list:
 
 
-shortcut | name | summary | language | platform | file name (if different than shortcut) |
----|---|---|---|---|---|
+shortcut | name | summary | language | platform |
+---|---|---|---|---|
 `var_DefaultTag`|[Var: Default runtime TAG of an object](details/var_DefaultTag.md)||Swift|All|
 `var_CustomTag`|[Var: Custom runtime TAG ](details/var_CustomTag.md)|Used to identify owned objects or view in hierarchy somehow associated  with `self`|Swift|All|
 `var_CustomIdentifier`|[Var: Custom runtime Identifier](details/var_CustomIdentifier.md)||Swift|All|
-`usr_xcodePreviewVC`|[usr_xcodePreviewVC](details/usr_xcodePreviewVC.md)||Swift|iphoneos|
+`usr_xcodePreviewVC`|[Xcode Preview of the View Controller](details/usr_xcodePreviewVC.md)||Swift|iphoneos|
+`usr_xcodePreviewV`|[Xcode Preview of the View](details/usr_xcodePreviewV.md)||Swift|iphoneos|
+`usr_needsNotifyAccessibility`|[Accessibility: Notification](details/usr_needsNotifyAccessibility.md)||Swift|All|
 `usr_checkIfWeakSelfExists`|[Check if weak self exists](details/usr_checkIfWeakSelfExists.md)|guard let target = self ...|Swift|All|
 `usr_RecurciveLockMetodUse`|[Recurcive lock/unlock to use in method](details/usr_RecurciveLockMetodUse.md)||Swift|All|
 `usr_RGBColorInit`|[UIColor initializing with RGB values in range 0...255](details/usr_RGBColorInit.md)||Swift|All|
@@ -69,7 +71,7 @@ shortcut | name | summary | language | platform | file name (if different than s
 `inline_RandomInt`|[Inline: Random Int](details/inline_RandomInt.md)||Swift|All|
 `inline_RadToDeg`|[Inline: Conversion of Radians to Degrees](details/inline_RadToDeg.md)||Swift|All|
 `impl_ServiceDependency`|[Impl: Service Dependency](details/impl_ServiceDependency.md)|Simplified access to required services|Swift|All|
-`impl_RawRepresentable`|[Impl: Struct RawReplresentable, Equatable](details/impl_RawRepresentable.md)||Swift|All|
+`impl_RawRepresentableStruct`|[Impl: Struct RawReplresentable, Equatable](details/impl_RawRepresentableStruct.md)||Swift|All|
 `impl_PodspecFile`|[Impl: Podspec](details/impl_PodspecFile.md)|.podspec file implementation template|Ruby|All|
 `impl_NibRepresentable`|[Impl: NIBRepresentable protocol](details/impl_NibRepresentable.md)|NIBRepresentable protocol implementation for view|Swift|All|
 `impl_ManualTransitionManager`|[Impl: Manual Transition Manager](details/impl_ManualTransitionManager.md)|Requires: RxSwift|Swift|All|
@@ -83,6 +85,7 @@ shortcut | name | summary | language | platform | file name (if different than s
 `ext_ObjcExceptionCatcher`|[Ext: ObjC exception chatcher ](details/ext_ObjcExceptionCatcher.md)|Header (.h) file with inline method to catch objc exeptions in swift|Objective-C|All|
 `ext_Memoization`|[Ext: Memoization](details/ext_Memoization.md)||Swift|All|
 `ext_IdentifiableByTag`|[Ext: IdentifiableByTag](details/ext_IdentifiableByTag.md)||Swift|iphoneos|
+`ext_BannerPresenting`|[Ext: BannerPresenting](details/ext_BannerPresenting.md)||Swift|All|
 `doc_SingleLineComment`|[Single line documentation comment](details/doc_SingleLineComment.md)||Swift|All|
 `doc_MultilineComment`|[Multiline documentation comment](details/doc_MultilineComment.md)|Only description section|Swift|All|
 `doc_FunctionOverview`|[Function documentation comment](details/doc_FunctionOverview.md)||Swift|All|
@@ -91,6 +94,3 @@ shortcut | name | summary | language | platform | file name (if different than s
 `classBody_WebViewController`|[ClassBody: WebViewController](details/classBody_WebViewController.md)|Basic implementation of WebViewController body|Swift|All|
 `classBody_ViewCommonInit`|[Class Body: View common Init](details/classBody_ViewCommonInit.md)||Swift|All|
 `classBody_NIBRepresentableView`|[Class Body: NIBRepresentable view](details/classBody_NIBRepresentableView.md)||Swift|iphoneos|
- |[Xcode View Controller Preview](details/AA421301-EF32-4192-9902-99339818D192.md)|usr_xcodePreview|Swift|macosx|AA421301-EF32-4192-9902-99339818D192|
- |[Accessibility: Notification](details/937AD620-A22E-4447-90BF-E3E536B06936.md)||Swift|All|937AD620-A22E-4447-90BF-E3E536B06936|
- |[Ext: BannerPresenting](details/B8A13650-0694-4D9A-BC0E-663B95158146.md)|extBannerPresenting|Swift|All|B8A13650-0694-4D9A-BC0E-663B95158146|

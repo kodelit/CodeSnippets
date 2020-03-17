@@ -8,7 +8,7 @@ Insired means modified or reused code of someone else
 
 ## Code:
 ```generic
-//  Copyright © 2019 kodelit.
+//  Copyright © 2020 kodelit.
 //  Licensed under the MIT license.
 //
 //  Inspired by: <#source name#>

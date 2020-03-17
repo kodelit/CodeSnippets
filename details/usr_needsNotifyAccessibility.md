@@ -1,5 +1,5 @@
 # Accessibility: Notification
-- **shortcut**:  
+- **shortcut**: `usr_needsNotifyAccessibility`
 - **language**: Swift
 - **platform**: 
 

@@ -1,4 +1,4 @@
-# usr_xcodePreviewVC
+# Xcode Preview of the View Controller
 - **shortcut**: `usr_xcodePreviewVC`
 - **language**: Swift
 - **platform**: iphoneos

@@ -12,7 +12,7 @@ Replace standard Apple Copyright comment line with this text
 
 // This code is distributed under the terms and conditions of the MIT License:
 
-// Copyright © 2019 kodelit.
+// Copyright © 2020 kodelit.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
