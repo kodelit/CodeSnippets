@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string></string>
+	<string>ext_BannerPresenting</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
@@ -30,16 +30,16 @@ extension &lt;#NotificationName#&gt;Presenting {
 
     @discardableResult
     private func add&lt;#NotificationName#&gt;View() -&gt; TextViewWithActionView {
-        let &lt;#notificationName#&gt;View = TextViewWithActionView.loadFromBundle()
-        &lt;#notificationName#&gt;View.setupTextViewWithAction(messageText: LocalizedStrings.Inbox.accountInactiveTitle,
+        let view = TextViewWithActionView.loadFromBundle()
+        view.setupTextViewWithAction(messageText: LocalizedStrings.Inbox.accountInactiveTitle,
                                                     actionText: LocalizedStrings.Inbox.accountInactiveAction,
                                                     accessibilityActionDescription: LocalizedStrings.Inbox.accountInactiveAccessibilityAction)
-        &lt;#notificationName#&gt;View.alertImageIsHidden = false
-        &lt;#notificationName#&gt;View.viewAlignment = .left
-        //&lt;#notificationName#&gt;View.textFontStyle = DefaultFontStyle.inboxSentActivityText
-        actionViewContainer[&lt;#notificationName#&gt;ViewKey] = &lt;#notificationName#&gt;View
+        view.alertImageIsHidden = false
+        view.viewAlignment = .left
+        //view.textFontStyle = DefaultFontStyle.inboxSentActivityText
+        actionViewContainer[&lt;#notificationName#&gt;ViewKey] = view
         setup&lt;#NotificationName#&gt;View()
-        return &lt;#notificationName#&gt;View
+        return view
     }
 }</string>
 	<key>IDECodeSnippetIdentifier</key>
@@ -47,7 +47,7 @@ extension &lt;#NotificationName#&gt;Presenting {
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>extBannerPresenting</string>
+	<string></string>
 	<key>IDECodeSnippetTitle</key>
 	<string>Ext: BannerPresenting</string>
 	<key>IDECodeSnippetUserSnippet</key>
