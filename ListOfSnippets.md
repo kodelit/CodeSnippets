@@ -6,6 +6,7 @@ shortcut | name | summary | language | platform | file name (if different than s
 `var_DefaultTag`|[Var: Default runtime TAG of an object](details/var_DefaultTag.md)||Swift|All|
 `var_CustomTag`|[Var: Custom runtime TAG ](details/var_CustomTag.md)|Used to identify owned objects or view in hierarchy somehow associated  with `self`|Swift|All|
 `var_CustomIdentifier`|[Var: Custom runtime Identifier](details/var_CustomIdentifier.md)||Swift|All|
+`usr_xcodePreviewVC`|[usr_xcodePreviewVC](details/usr_xcodePreviewVC.md)||Swift|iphoneos|
 `usr_checkIfWeakSelfExists`|[Check if weak self exists](details/usr_checkIfWeakSelfExists.md)|guard let target = self ...|Swift|All|
 `usr_RecurciveLockMetodUse`|[Recurcive lock/unlock to use in method](details/usr_RecurciveLockMetodUse.md)||Swift|All|
 `usr_RGBColorInit`|[UIColor initializing with RGB values in range 0...255](details/usr_RGBColorInit.md)||Swift|All|
@@ -90,4 +91,6 @@ shortcut | name | summary | language | platform | file name (if different than s
 `classBody_WebViewController`|[ClassBody: WebViewController](details/classBody_WebViewController.md)|Basic implementation of WebViewController body|Swift|All|
 `classBody_ViewCommonInit`|[Class Body: View common Init](details/classBody_ViewCommonInit.md)||Swift|All|
 `classBody_NIBRepresentableView`|[Class Body: NIBRepresentable view](details/classBody_NIBRepresentableView.md)||Swift|iphoneos|
- |[usr_xcodePreviewVC](details/A559603A-0D3F-4C9F-88F5-449E15CCA431.md)||Swift|iphoneos|A559603A-0D3F-4C9F-88F5-449E15CCA431|
+ |[Xcode View Controller Preview](details/AA421301-EF32-4192-9902-99339818D192.md)|usr_xcodePreview|Swift|macosx|AA421301-EF32-4192-9902-99339818D192|
+ |[Accessibility: Notification](details/937AD620-A22E-4447-90BF-E3E536B06936.md)||Swift|All|937AD620-A22E-4447-90BF-E3E536B06936|
+ |[Ext: BannerPresenting](details/B8A13650-0694-4D9A-BC0E-663B95158146.md)|extBannerPresenting|Swift|All|B8A13650-0694-4D9A-BC0E-663B95158146|

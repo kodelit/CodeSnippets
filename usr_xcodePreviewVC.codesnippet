@@ -45,7 +45,7 @@ struct UIKit&lt;#Name#&gt;ViewControllerProvider: PreviewProvider {
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>usr_xcodePreviewVC</string>
+	<string>Xcode Preview of the View Controller</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

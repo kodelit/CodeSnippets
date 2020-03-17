@@ -1,5 +1,5 @@
 # usr_xcodePreviewVC
-- **shortcut**:  
+- **shortcut**: `usr_xcodePreviewVC`
 - **language**: Swift
 - **platform**: iphoneos
 
