@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string></string>
+	<string>usr_xcodePreviewVC</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
@@ -12,38 +12,40 @@
 	<string>// MARK: - Xcode Preview
 // Works from Xcode 11 and macOS 10.15
 
+#if canImport(SwiftUI) &amp;&amp; DEBUG
 import SwiftUI
 
+@available(iOS 13.0, tvOS 13.0, *)
 struct &lt;#Name#&gt;ViewControllerRepresentable: UIViewControllerRepresentable {
-    @available(iOS 13.0, *)
-    func makeUIViewController(context: UIViewControllerRepresentableContext&lt;&lt;#Name#&gt;ViewControllerRepresentable&gt;) -&gt; &lt;#Name#&gt;ViewController {
-        // let bundle = Bundle(for: &lt;#Name#&gt;ViewController.self)
+    typealias ViewController = &lt;#Name#&gt;ViewController
+
+    func makeUIViewController(context: Context) -&gt; ViewController {
+        // let bundle = Bundle(for: StartViewController.self)
         // let storyboard = UIStoryboard(name: "Main", bundle: bundle)
         // return storyboard.instantiateViewController(identifier: "&lt;#Name#&gt;ViewController")
-        return &lt;#Name#&gt;ViewController(nibName: nil, bundle: nil)
+        return ViewController(nibName: nil, bundle: nil)
     }
 
-    @available(iOS 13.0, *)
-    func updateUIViewController(_ uiViewController: &lt;#Name#&gt;ViewController, context: UIViewControllerRepresentableContext&lt;&lt;#Name#&gt;ViewControllerRepresentable&gt;) {
-
-    }
+    func updateUIViewController(_ uiViewController: ViewController, context: Context) {}
 }
 
+@available(iOS 13.0, tvOS 13.0, *)
 struct UIKit&lt;#Name#&gt;ViewControllerProvider: PreviewProvider {
-    static var previews: &lt;#Name#&gt;ViewControllerRepresentable {
-        &lt;#Name#&gt;ViewControllerRepresentable()
-    }
-}</string>
+    static var previews: &lt;#Name#&gt;ViewControllerRepresentable { &lt;#Name#&gt;ViewControllerRepresentable() }
+}
+
+#endif
+</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>AA421301-EF32-4192-9902-99339818D192</string>
+	<string>A559603A-0D3F-4C9F-88F5-449E15CCA431</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetPlatformFamily</key>
-	<string>macosx</string>
+	<string>iphoneos</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>usr_xcodePreview</string>
+	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Xcode View Controller Preview</string>
+	<string>Xcode Preview of the View Controller</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

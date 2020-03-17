@@ -12,17 +12,9 @@
 	<string>public struct &lt;#Name#&gt;: Hashable, RawRepresentable, Equatable, ExpressibleByStringLiteral {
     public var rawValue: String
 
-    public init(_ rawValue:String) {
-        self.rawValue = rawValue
-    }
-
-    public init(rawValue: String) {
-        self.rawValue = rawValue
-    }
-
-    public init(stringLiteral value: String) {
-        self.rawValue = value
-    }
+    public init(_ rawValue: String) { self.rawValue = rawValue }
+    public init(rawValue: String) { self.rawValue = rawValue }
+    public init(stringLiteral value: String) { self.rawValue = value }
 }</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>9D911B1E-CD65-4E14-9B6C-37E6B370A2B0</string>

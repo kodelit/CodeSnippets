@@ -36,4 +36,5 @@ extension Reactive where Base: UICollectionView {
         return ControlEvent(events: source)
     }
 }
+
 ```

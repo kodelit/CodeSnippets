@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>usr_xcodePreviewV</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>// MARK: - Xcode Preview
+// Works from Xcode 11 and macOS 10.15
+
+#if canImport(SwiftUI) &amp;&amp; DEBUG
+import SwiftUI
+
+@available(iOS 13.0, tvOS 13.0, *)
+struct &lt;#Name#&gt;ViewRepresentable: UIViewRepresentable {
+    typealias View = &lt;#Name#&gt;
+
+    func makeUIView(context: Context) -&gt; UIView {
+        let container = UIView()
+        //container.backgroundColor = .black
+        let view = &lt;#Name#&gt;(frame: .zero)
+        //view.frame = &lt;#frame#&gt;
+        //view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        //container.addSubview(view)
+
+        // or
+
+        view.translatesAutoresizingMaskIntoConstraints = false
+        container.addSubview(view)
+        NSLayoutConstraint.activate([
+            view.centerXAnchor.constraint(equalTo: container.centerXAnchor),
+            view.centerYAnchor.constraint(equalTo: container.centerYAnchor),
+            view.leadingAnchor.constraint(greaterThanOrEqualTo: container.layoutMarginsGuide.leadingAnchor)
+        ])
+        // setup view here
+
+        return container
+    }
+
+    func updateUIView(_ uiView: UIView, context: UIViewRepresentableContext&lt;&lt;#Name#&gt;ViewRepresentable&gt;) {}
+}
+
+@available(iOS 13.0, tvOS 13.0, *)
+struct UIKit&lt;#Name#&gt;ViewProvider: PreviewProvider {
+    static var previews: &lt;#Name#&gt;ViewRepresentable { &lt;#Name#&gt;ViewRepresentable() }
+}
+#endif</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>E2891117-2F03-4174-95D1-52AB3AA65677</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetPlatformFamily</key>
+	<string>iphoneos</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Xcode Preview of the View</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
