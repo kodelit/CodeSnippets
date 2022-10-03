@@ -3,27 +3,35 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>impl_RawRepresentableStruct</string>
+	<string>impl_dynamicCodingKeys</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>public struct &lt;#Name#&gt;: Hashable, RawRepresentable, Equatable, ExpressibleByStringLiteral {
-    public typealias RawValue = &lt;#String#&gt;
-    public let rawValue: RawValue
+	<string>    struct CodingKeys: CodingKey {
+        //static let devicetypes = CodingKeys(stringValue: "devicetypes")
+        //static let runtimes = CodingKeys(stringValue: "runtimes")
+        //static let devices = CodingKeys(stringValue: "devices")
 
-    public init(rawValue: RawValue) { self.rawValue = rawValue }
-    public init(stringLiteral value: RawValue) { self.rawValue = value }
-}</string>
+        var stringValue: String
+        init(stringValue: String) {
+            self.stringValue = stringValue
+        }
+
+        let intValue: Int? = nil
+        init?(intValue: Int) {
+            return nil
+        }
+    }</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>9D911B1E-CD65-4E14-9B6C-37E6B370A2B0</string>
+	<string>1FFC3A58-B86E-493E-B82F-0090C875E8CF</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Impl: Struct RawReplresentable, Equatable</string>
+	<string>Impl: Dynamic CodingKeys</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

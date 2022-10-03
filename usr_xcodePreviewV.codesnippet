@@ -11,18 +11,19 @@
 	<key>IDECodeSnippetContents</key>
 	<string>// MARK: - Xcode Preview
 // Works from Xcode 11 and macOS 10.15
+// swiftlint:disable type_name
 
 #if canImport(SwiftUI) &amp;&amp; DEBUG
 import SwiftUI
 
 @available(iOS 13.0, tvOS 13.0, *)
-struct &lt;#Name#&gt;ViewRepresentable: UIViewRepresentable {
+struct &lt;#Name#&gt;Representable: UIViewRepresentable {
     typealias View = &lt;#Name#&gt;
 
     func makeUIView(context: Context) -&gt; UIView {
         let container = UIView()
         //container.backgroundColor = .black
-        let view = &lt;#Name#&gt;(frame: .zero)
+        let view = View(frame: .zero)
         //view.frame = &lt;#frame#&gt;
         //view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         //container.addSubview(view)
@@ -41,14 +42,15 @@ struct &lt;#Name#&gt;ViewRepresentable: UIViewRepresentable {
         return container
     }
 
-    func updateUIView(_ uiView: UIView, context: UIViewRepresentableContext&lt;&lt;#Name#&gt;ViewRepresentable&gt;) {}
+    func updateUIView(_ uiView: UIView, context: UIViewRepresentableContext&lt;&lt;#Name#&gt;Representable&gt;) {}
 }
 
 @available(iOS 13.0, tvOS 13.0, *)
-struct UIKit&lt;#Name#&gt;ViewProvider: PreviewProvider {
-    static var previews: &lt;#Name#&gt;ViewRepresentable { &lt;#Name#&gt;ViewRepresentable() }
+struct UIKit&lt;#Name#&gt;Provider: PreviewProvider {
+    static var previews: &lt;#Name#&gt;Representable { &lt;#Name#&gt;Representable() }
 }
-#endif</string>
+#endif
+// swiftlint:enable type_name</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>E2891117-2F03-4174-95D1-52AB3AA65677</string>
 	<key>IDECodeSnippetLanguage</key>

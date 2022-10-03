@@ -11,6 +11,7 @@
 	<key>IDECodeSnippetContents</key>
 	<string>// MARK: - Xcode Preview
 // Works from Xcode 11 and macOS 10.15
+// swiftlint:disable type_name
 
 #if canImport(SwiftUI) &amp;&amp; DEBUG
 import SwiftUI
@@ -35,7 +36,7 @@ struct UIKit&lt;#Name#&gt;ViewControllerProvider: PreviewProvider {
 }
 
 #endif
-</string>
+// swiftlint:enable type_name</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>A559603A-0D3F-4C9F-88F5-449E15CCA431</string>
 	<key>IDECodeSnippetLanguage</key>
