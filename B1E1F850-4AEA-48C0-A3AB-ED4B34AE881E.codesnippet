@@ -3,21 +3,22 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>mark_UIUpdate</string>
+	<string>rxc_notifierPropertySubject</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>All</string>
+		<string>ClassImplementation</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>// MARK: UI Update</string>
+	<string>static private var &lt;#didDoSometing#&gt;Subject = PassthroughSubject&lt;Void, Never&gt;()
+var &lt;#didDoSometing#&gt;Publisher: AnyPublisher&lt;Void, Never&gt; { Self.&lt;#didDoSometing#&gt;Notifier.eraseToAnyPublisher() }</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>B119604E-9E50-4509-9E4E-D93FB7A5017A</string>
+	<string>B1E1F850-4AEA-48C0-A3AB-ED4B34AE881E</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string></string>
+	<string>A publiser to notify about event</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>MARK: UI Update</string>
+	<string>Combine: Notifier Property Subject</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

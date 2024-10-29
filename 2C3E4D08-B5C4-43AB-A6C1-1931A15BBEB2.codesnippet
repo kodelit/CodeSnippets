@@ -3,21 +3,43 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>mark_UIUpdate</string>
+	<string>impl_tca_dependencyInterface</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>// MARK: UI Update</string>
+	<string>import ComposableArchitecture
+import Foundation
+
+public struct &lt;#InterfaceName#&gt; {
+
+}
+
+extension &lt;#InterfaceName#&gt;: DependencyKey {
+    public static let liveValue: &lt;#InterfaceName#&gt; = {
+        // Dependencies
+
+        return &lt;#InterfaceName#&gt;(
+
+        )
+    }()
+}
+
+extension DependencyValues {
+    var &lt;#dependencyName#&gt;: &lt;#InterfaceName#&gt; {
+        get { self[&lt;#InterfaceName#&gt;.self] }
+        set { self[&lt;#InterfaceName#&gt;.self] = newValue }
+    }
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>B119604E-9E50-4509-9E4E-D93FB7A5017A</string>
+	<string>2C3E4D08-B5C4-43AB-A6C1-1931A15BBEB2</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>MARK: UI Update</string>
+	<string>My Code Snippet</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

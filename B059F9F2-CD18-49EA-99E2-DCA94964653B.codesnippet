@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>bodySetupMethods</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    private func contentViewLayout(_ view: some View) -&gt; some View {
+        view
+            //.frame(maxHeight: .infinity)
+            //.padding(.bottom, 16)
+            //.hideTabbar()
+            //.containerStyle(&lt;#...#&gt;)
+    }
+
+    private func observers(_ view: some View) -&gt; some View {
+        view
+            // .onAppear(perform: viewModel.onAppear)
+            // .onReceive
+            // .loadingScreen(isPresented: $viewModel.isLoading)
+            //.overlayAll(
+            //    isPresented: $viewModel.&lt;#flag#&gt;,
+            //    size: .custom(375),
+            //    overlay: {
+            //        &lt;#content_view#&gt;
+            //    }
+            //)
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>B059F9F2-CD18-49EA-99E2-DCA94964653B</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>SwiftUI: body .setup() modifier methods implementations</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

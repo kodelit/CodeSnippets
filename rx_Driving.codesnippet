@@ -13,7 +13,9 @@
 	<key>IDECodeSnippetIdentifier</key>
 	<string>A9C7455F-5431-46FA-8C65-E1E124A36468</string>
 	<key>IDECodeSnippetLanguage</key>
-	<string>Xcode.SourceCodeLanguage.Generic</string>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
 	<key>IDECodeSnippetTitle</key>
 	<string>Rx: Driving</string>
 	<key>IDECodeSnippetUserSnippet</key>

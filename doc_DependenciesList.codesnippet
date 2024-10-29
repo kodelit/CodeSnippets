@@ -15,7 +15,9 @@
 	<key>IDECodeSnippetIdentifier</key>
 	<string>2B162DE0-7BEB-4774-A8FB-1E93AAD3C669</string>
 	<key>IDECodeSnippetLanguage</key>
-	<string>Xcode.SourceCodeLanguage.Generic</string>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
 	<key>IDECodeSnippetTitle</key>
 	<string>DOC: Dependencies list</string>
 	<key>IDECodeSnippetUserSnippet</key>

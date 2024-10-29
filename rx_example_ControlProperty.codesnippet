@@ -51,7 +51,9 @@ extension Reactive where Base: UISegmentedControl {
 	<key>IDECodeSnippetIdentifier</key>
 	<string>329F0792-9505-4D95-AD39-2E200D00561D</string>
 	<key>IDECodeSnippetLanguage</key>
-	<string>Xcode.SourceCodeLanguage.Generic</string>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
 	<key>IDECodeSnippetTitle</key>
 	<string>Example: Rx ControlProperty</string>
 	<key>IDECodeSnippetUserSnippet</key>

@@ -3,21 +3,42 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>mark_UIUpdate</string>
+	<string>impl_tca_ReducerStruct</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>// MARK: UI Update</string>
+	<string>import ComposableArchitecture
+import Foundation
+
+@Reducer
+struct &lt;#Name#&gt;Feature {
+    @ObservableState
+    struct State: Equatable {
+
+    }
+    enum Action {
+        case onViewFistAppear
+    }
+
+    var body: some ReducerOf&lt;Self&gt; {
+        Reduce { state, action in
+            switch action {
+            case .onViewFistAppear:
+                return .none
+            }
+        }
+    }
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>B119604E-9E50-4509-9E4E-D93FB7A5017A</string>
+	<string>59847B2D-19EF-49A6-8346-F100ABDD8BD3</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>MARK: UI Update</string>
+	<string>Impl: Struct Reducer</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

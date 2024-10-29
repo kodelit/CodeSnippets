@@ -75,7 +75,7 @@ extension UIViewController: ViewControllerPresentation {
 	<key>IDECodeSnippetIdentifier</key>
 	<string>EE262D5C-8A4A-4961-BAB6-70A60A51C52C</string>
 	<key>IDECodeSnippetLanguage</key>
-	<string>Xcode.SourceCodeLanguage.Generic</string>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
 	<string>UIViewController enstension and protocol allowing convinient display of the modal view controller</string>
 	<key>IDECodeSnippetTitle</key>

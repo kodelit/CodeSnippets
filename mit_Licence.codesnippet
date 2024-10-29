@@ -36,7 +36,7 @@
 	<key>IDECodeSnippetIdentifier</key>
 	<string>EB84007F-0C0F-47AA-B2F1-D99DEDEC62B2</string>
 	<key>IDECodeSnippetLanguage</key>
-	<string>Xcode.SourceCodeLanguage.Generic</string>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
 	<string>Replace standard Apple Copyright comment line with this text</string>
 	<key>IDECodeSnippetTitle</key>

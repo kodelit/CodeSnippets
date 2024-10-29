@@ -14,7 +14,7 @@
     public let rawValue: RawValue
 
     public init(rawValue: RawValue) { self.rawValue = rawValue }
-    public init(stringLiteral value: RawValue) { self.rawValue = value }
+    public init(stringLiteral value: RawValue) { self.init(rawValue: value) }
 }</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>9D911B1E-CD65-4E14-9B6C-37E6B370A2B0</string>

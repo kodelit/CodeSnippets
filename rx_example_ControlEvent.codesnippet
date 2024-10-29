@@ -43,7 +43,9 @@ extension Reactive where Base: UICollectionView {
 	<key>IDECodeSnippetIdentifier</key>
 	<string>238A521F-B7DB-487A-99C2-3714606A8364</string>
 	<key>IDECodeSnippetLanguage</key>
-	<string>Xcode.SourceCodeLanguage.Generic</string>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
 	<key>IDECodeSnippetTitle</key>
 	<string>Example: Rx ControlEvent</string>
 	<key>IDECodeSnippetUserSnippet</key>

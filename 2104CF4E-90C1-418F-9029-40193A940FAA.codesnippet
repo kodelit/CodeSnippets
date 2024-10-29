@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>mark_UIUpdate</string>
+	<string>omniAnalytics</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>// MARK: UI Update</string>
+	<string>@LazyInjected(Container.analytics) private var analytics: AnalyticsApi</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>B119604E-9E50-4509-9E4E-D93FB7A5017A</string>
+	<string>2104CF4E-90C1-418F-9029-40193A940FAA</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>MARK: UI Update</string>
+	<string>OmniApp analytics dependency</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

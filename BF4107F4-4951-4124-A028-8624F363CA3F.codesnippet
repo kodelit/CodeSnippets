@@ -3,21 +3,26 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>mark_UIUpdate</string>
+	<string>rxc_staticPropertySubject</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>// MARK: UI Update</string>
+	<string>    private static var &lt;#name#&gt;Subject = CurrentValueSubject&lt;&lt;#Type#&gt;, Never&gt;(&lt;#value#&gt;)
+    var &lt;#name#&gt;Publisher: AnyPublisher&lt;&lt;#Type#&gt;, Never&gt; { Self.&lt;#name#&gt;Subject.eraseToAnyPublisher() }
+    var &lt;#name#&gt;: &lt;#Type#&gt; {
+        get { Self.&lt;#name#&gt;Subject.value }
+        set { Self.&lt;#name#&gt;Subject.send(newValue) }
+    }</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>B119604E-9E50-4509-9E4E-D93FB7A5017A</string>
+	<string>BF4107F4-4951-4124-A028-8624F363CA3F</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>MARK: UI Update</string>
+	<string>Combine: Static Property Subject</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

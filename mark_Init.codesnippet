@@ -13,7 +13,9 @@
 	<key>IDECodeSnippetIdentifier</key>
 	<string>BAD222DB-5292-4A72-B739-FB8A548A3D5D</string>
 	<key>IDECodeSnippetLanguage</key>
-	<string>Xcode.SourceCodeLanguage.Generic</string>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
 	<key>IDECodeSnippetTitle</key>
 	<string>MARK: Init</string>
 	<key>IDECodeSnippetUserSnippet</key>
