@@ -1,11 +1,13 @@
 # DOC: Dependencies list
 - **shortcut**: `doc_DependenciesList`
-- **language**: Generic
+- **language**: Swift
 - **platform**: 
+
+## Summary
 
 
 ## Code:
-```generic
+```swift
 // Dependencies:
 // - <#dependency file#>
 

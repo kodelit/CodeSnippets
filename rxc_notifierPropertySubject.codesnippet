@@ -3,26 +3,22 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>rxc_propertySubject</string>
+	<string>rxc_notifierPropertySubject</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>ClassImplementation</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>private var &lt;#name#&gt;Subject = CurrentValueSubject&lt;&lt;#Type#&gt;, Never&gt;(&lt;#value#&gt;)
-var &lt;#name#&gt;Publisher: AnyPublisher&lt;&lt;#Type#&gt;, Never&gt; { &lt;#name#&gt;Subject.eraseToAnyPublisher() }
-var &lt;#name#&gt;: &lt;#Type#&gt; {
-    get { &lt;#name#&gt;Subject.value }
-    set { &lt;#name#&gt;Subject.send(newValue) }
-}</string>
+	<string>private static var &lt;#didDoSometing#&gt;Subject = PassthroughSubject&lt;Void, Never&gt;()
+var &lt;#didDoSometing#&gt;Publisher: AnyPublisher&lt;Void, Never&gt; { Self.&lt;#didDoSometing#&gt;Subject.eraseToAnyPublisher() }</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>B7CC3739-D8CF-4817-A36A-223EC611F482</string>
+	<string>B1E1F850-4AEA-48C0-A3AB-ED4B34AE881E</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string></string>
+	<string>A publiser to notify about event</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Combine: Property Subject </string>
+	<string>Combine: Notifier Property Subject</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

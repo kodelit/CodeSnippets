@@ -3,26 +3,26 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>rxc_staticPropertySubject</string>
+	<string>impl_RawStringRepresentableStruct</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>    private static var &lt;#name#&gt;Subject = CurrentValueSubject&lt;&lt;#Type#&gt;, Never&gt;(&lt;#value#&gt;)
-    var &lt;#name#&gt;Publisher: AnyPublisher&lt;&lt;#Type#&gt;, Never&gt; { Self.&lt;#name#&gt;Subject.eraseToAnyPublisher() }
-    var &lt;#name#&gt;: &lt;#Type#&gt; {
-        get { Self.&lt;#name#&gt;Subject.value }
-        set { Self.&lt;#name#&gt;Subject.send(newValue) }
-    }</string>
+	<string>public struct &lt;#Name#&gt;: Codable, Hashable, RawRepresentable, Equatable, ExpressibleByStringLiteral {
+    
+    public let rawValue: String
+    public init(rawValue: String) { self.rawValue = rawValue }
+    public init(stringLiteral value: String) { self.init(rawValue: value) }
+}</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>BF4107F4-4951-4124-A028-8624F363CA3F</string>
+	<string>9D911B1E-CD65-4E14-9B6C-37E6B370A2B0</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Combine: Static Property Subject</string>
+	<string>Impl: Struct raw String replresentable, Equatable, Codable</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

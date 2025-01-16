@@ -1,11 +1,13 @@
 # Example: Rx ControlProperty
 - **shortcut**: `rx_example_ControlProperty`
-- **language**: Generic
+- **language**: Swift
 - **platform**: 
+
+## Summary
 
 
 ## Code:
-```generic
+```swift
 extension Reactive where Base: UISearchBar {
     /// Reactive wrapper for `text` property.
     public var value: ControlProperty<String?> {

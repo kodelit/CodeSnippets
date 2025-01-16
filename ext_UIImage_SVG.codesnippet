@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>ext_UIImage_SVG</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>import UIKit
+
+extension UIImage {
+    static func with(svg data: Data?) -&gt; UIImage? {
+        guard let data,
+              let svg = SVG(data) else {
+            return nil
+        }
+        let render = UIGraphicsImageRenderer(size: svg.size)
+        let uiImage = render.image { context in
+            svg.draw(in: context.cgContext)
+        }
+        return uiImage
+    }
+}
+
+// MARK: - Private CoreSVG Framework
+
+/// Full credit for the `CoreSVG` private framework code  goes to Oliver Atkinson, for creating this [SVG.swift](https://gist.github.com/ollieatkinson/eb87a82fcb5500d5561fed8b0900a9f7) gist.
+@objc
+final fileprivate class CGSVGDocument: NSObject {}
+
+// private var CGSVGDocumentRetain: (@convention(c) (CGSVGDocument?) -&gt; Unmanaged&lt;CGSVGDocument&gt;?) = load("CGSVGDocumentRetain")
+private var CGSVGDocumentRetain: (@convention(c) (CGSVGDocument?) -&gt; Unmanaged&lt;CGSVGDocument&gt;?) = load("==gbpFGdlJFduVWb1N2bEdkVTd0Q".deobfuscated)
+
+// private var CGSVGDocumentRelease: (@convention(c) (CGSVGDocument?) -&gt; Void) = load("CGSVGDocumentRelease")
+private var CGSVGDocumentRelease: (@convention(c) (CGSVGDocument?) -&gt; Void) = load("=U2chVGblJFduVWb1N2bEdkVTd0Q".deobfuscated)
+
+// private var CGSVGDocumentCreateFromData: (@convention(c) (CFData?, CFDictionary?) -&gt; Unmanaged&lt;CGSVGDocument&gt;?) = load("CGSVGDocumentCreateFromData")
+private var CGSVGDocumentCreateFromData: (@convention(c) (CFData?, CFDictionary?) -&gt; Unmanaged&lt;CGSVGDocument&gt;?) = load("hRXYE12byZUZ0FWZyNEduVWb1N2bEdkVTd0Q".deobfuscated)
+
+// private var CGSVGDocumentWriteToData: (@convention(c) (CGSVGDocument?, CFData?, CFDictionary?) -&gt; Void) = load("CGSVGDocumentWriteToData")
+private var CGSVGDocumentWriteToData: (@convention(c) (CGSVGDocument?, CFData?, CFDictionary?) -&gt; Void) = load("hRXYE9GVlRXaydFduVWb1N2bEdkVTd0Q".deobfuscated)
+
+// private var CGContextDrawSVGDocument: (@convention(c) (CGContext?, CGSVGDocument?) -&gt; Void) = load("CGContextDrawSVGDocument")
+private var CGContextDrawSVGDocument: (@convention(c) (CGContext?, CGSVGDocument?) -&gt; Void) = load("05WZtV3YvR0RWN1dhJHR0hXZ052bDd0Q".deobfuscated)
+
+// private var CGSVGDocumentGetCanvasSize: (@convention(c) (CGSVGDocument?) -&gt; CGSize) = load("CGSVGDocumentGetCanvasSize")
+private var CGSVGDocumentGetCanvasSize: (@convention(c) (CGSVGDocument?) -&gt; CGSize) = load("=UmepN1chZnbhNEdldEduVWb1N2bEdkVTd0Q".deobfuscated)
+
+#if canImport(UIKit)
+// private typealias ImageWithCGSVGDocument = @convention(c) (AnyObject, Selector, CGSVGDocument) -&gt; UIImage
+private typealias ImageWithCGSVGDocument = @convention(c) (AnyObject, Selector, CGSVGDocument) -&gt; UIImage
+#endif
+
+// private var ImageWithCGSVGDocumentSEL: Selector = NSSelectorFromString("_imageWithCGSVGDocument:")
+private var ImageWithCGSVGDocumentSEL: Selector = NSSelectorFromString("6Qnbl1Wdj9GRHZ1UHNEa0l2VldWYtl2X".deobfuscated)
+
+// private let CoreSVG = dlopen("/System/Library/PrivateFrameworks/CoreSVG.framework/CoreSVG", RTLD_NOW)
+private let CoreSVG = dlopen("=ckVTVmcvN0LrJ3b3VWbhJnZuckVTVmcvN0LztmcvdXZtFmcGVGdhZXayB1L5JXYyJWaM9SblR3c5N1L".deobfuscated, RTLD_NOW)
+
+extension String {
+    fileprivate var deobfuscated: String { Data(base64Encoded: String(reversed()))!.string }
+}
+
+extension Data {
+    fileprivate var string: String { String(decoding: self, as: UTF8.self) }
+}
+
+
+fileprivate func load&lt;T&gt;(_ name: String) -&gt; T {
+    unsafeBitCast(dlsym(CoreSVG, name), to: T.self)
+}
+
+final fileprivate class SVG {
+    deinit { CGSVGDocumentRelease(document) }
+
+    let document: CGSVGDocument
+
+    convenience init?(_ value: String) {
+        guard let data = value.data(using: .utf8) else { return nil }
+        self.init(data)
+    }
+
+    init?(_ data: Data) {
+        guard let document = CGSVGDocumentCreateFromData(data as CFData, nil)?.takeUnretainedValue() else { return nil }
+        guard CGSVGDocumentGetCanvasSize(document) != .zero else { return nil }
+        self.document = document
+    }
+
+    var size: CGSize {
+        CGSVGDocumentGetCanvasSize(document)
+    }
+
+    func image() -&gt; UIImage? {
+        let ImageWithCGSVGDocument = unsafeBitCast(UIImage.method(for: ImageWithCGSVGDocumentSEL), to: ImageWithCGSVGDocument.self)
+        let image = ImageWithCGSVGDocument(UIImage.self, ImageWithCGSVGDocumentSEL, document)
+        return image
+    }
+
+    func draw(in context: CGContext) {
+        draw(in: context, size: size)
+    }
+
+    func draw(in context: CGContext, size target: CGSize) {
+        var target = target
+
+        let ratio = (
+            x: target.width / size.width,
+            y: target.height / size.height
+        )
+
+        let rect = (
+            document: CGRect(origin: .zero, size: size), ()
+        )
+
+        let scale: (x: CGFloat, y: CGFloat)
+
+        if target.width &lt;= 0 {
+            scale = (ratio.y, ratio.y)
+            target.width = size.width * scale.x
+        } else if target.height &lt;= 0 {
+            scale = (ratio.x, ratio.x)
+            target.width = size.width * scale.y
+        } else {
+            let min = min(ratio.x, ratio.y)
+            scale = (min, min)
+            target.width = size.width * scale.x
+            target.height = size.height * scale.y
+        }
+
+        let transform = (
+            scale: CGAffineTransform(scaleX: scale.x, y: scale.y),
+            aspect: CGAffineTransform(translationX: (target.width / scale.x - rect.document.width) / 2, y: (target.height / scale.y - rect.document.height) / 2)
+        )
+
+        context.translateBy(x: 0, y: target.height)
+        context.scaleBy(x: 1, y: -1)
+        context.concatenate(transform.scale)
+        context.concatenate(transform.aspect)
+
+        CGContextDrawSVGDocument(context, document)
+    }
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>92F84F36-3785-4281-9942-532A96D10BEB</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Ext: UIImage+SVG</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

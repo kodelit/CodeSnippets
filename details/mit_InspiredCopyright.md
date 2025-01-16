@@ -1,14 +1,14 @@
 # MIT: Short "Copyright..." for inspired code
 - **shortcut**: `mit_InspiredCopyright`
-- **language**: Generic
+- **language**: Swift
 - **platform**: 
 
 ## Summary
 Insired means modified or reused code of someone else
 
 ## Code:
-```generic
-//  Copyright © 2020 kodelit.
+```swift
+//  Copyright © 2022 Grzegorz Maciak.
 //  Licensed under the MIT license.
 //
 //  Inspired by: <#source name#>

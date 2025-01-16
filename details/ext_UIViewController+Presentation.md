@@ -1,13 +1,13 @@
 # Ext: UIViewController+Presentation.swift
 - **shortcut**: `ext_UIViewController+Presentation`
-- **language**: Generic
+- **language**: Swift
 - **platform**: 
 
 ## Summary
 UIViewController enstension and protocol allowing convinient display of the modal view controller
 
 ## Code:
-```generic
+```swift
 //
 //  UIViewController+Presentation.swift
 //

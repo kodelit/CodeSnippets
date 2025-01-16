@@ -3,22 +3,38 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>rxc_notifierPropertySubject</string>
+	<string>test_againstMemoryLeaks</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>ClassImplementation</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>static private var &lt;#didDoSometing#&gt;Subject = PassthroughSubject&lt;Void, Never&gt;()
-var &lt;#didDoSometing#&gt;Publisher: AnyPublisher&lt;Void, Never&gt; { Self.&lt;#didDoSometing#&gt;Notifier.eraseToAnyPublisher() }</string>
+	<string>typealias Sut = &lt;#TypeName#&gt;
+    
+    func createSut() -&gt; Sut {
+        let sut = &lt;#TypeName#&gt;()
+        return sut
+    }
+    
+    func test_againstMemoryLeaks() {
+        // given
+        var sut: Sut? = createSut()
+        weak var weakSut = sut
+        
+        // when
+        sut = nil
+        
+        // then
+        XCTAssertNil(weakSut)
+    }</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>B1E1F850-4AEA-48C0-A3AB-ED4B34AE881E</string>
+	<string>6F74A892-4384-4FAE-8753-CF92053E1F5B</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>A publiser to notify about event</string>
+	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Combine: Notifier Property Subject</string>
+	<string>Test: Against Memory Leaks</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

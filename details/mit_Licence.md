@@ -1,18 +1,18 @@
 # MIT: Licence with copyright notice
 - **shortcut**: `mit_Licence`
-- **language**: Generic
+- **language**: Swift
 - **platform**: 
 
 ## Summary
 Replace standard Apple Copyright comment line with this text
 
 ## Code:
-```generic
+```swift
 //
 
 // This code is distributed under the terms and conditions of the MIT License:
 
-// Copyright © 2020 kodelit.
+// Copyright © 2022 Grzegorz Maciak.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal

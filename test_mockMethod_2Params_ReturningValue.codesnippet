@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>test_mockMethod_2Params_ReturningValue</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>private(set) var &lt;#name#&gt;Counter: Int = 0
+private(set) var &lt;#name#&gt;Parameters: (&lt;#FirstType#&gt;, &lt;#SecondType#&gt;)?
+/// - warning: Property is forcefully unwrap in order to prevent false positives. expect test crash when value is not set but is used in test.
+var &lt;#name#&gt;MockedResponse: &lt;#ReturnType#&gt;!
+func &lt;#name#&gt;(_ first: &lt;#FirstType#&gt;, _ second: &lt;#SecondType#&gt;) -&gt; &lt;#ReturnType#&gt; {
+    &lt;#name#&gt;Counter += 1
+    &lt;#name#&gt;Parameters = (first, second)
+    return &lt;#name#&gt;MockedResponse
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>0C7A53F8-A96D-45DB-B129-0AD9923AC4DD</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Tests: Mock method with 2 params, returning value</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

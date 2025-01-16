@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>ext_taskRetrying</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>import Foundation
+
+extension Task where Failure == Error {
+    /// [Source](https://www.swiftbysundell.com/articles/retrying-an-async-swift-task/)
+    @discardableResult static func retrying(
+        priority: TaskPriority? = nil,
+        maxRetryCount: Int = 3,
+        retryDelay: TimeInterval = 1,
+        operation: @Sendable @escaping () async throws -&gt; Success
+    ) -&gt; Task {
+        Task(priority: priority) {
+            for _ in 0..&lt;maxRetryCount {
+                do {
+                    return try await operation()
+                } catch {
+                    let oneSecond = TimeInterval(1_000_000_000)
+                    let delay = UInt64(oneSecond * retryDelay)
+                    try await Task&lt;Never, Never&gt;.sleep(nanoseconds: delay)
+                }
+            }
+            
+            try Task&lt;Never, Never&gt;.checkCancellation()
+            return try await operation()
+        }
+    }
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>1AD9C58C-5279-4949-8839-BDCCB509F421</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Ext: Task + Retrying</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>

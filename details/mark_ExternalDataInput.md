@@ -1,10 +1,12 @@
 # MARK: External Data Input 
 - **shortcut**: `mark_ExternalDataInput`
-- **language**: Generic
+- **language**: Swift
 - **platform**: 
+
+## Summary
 
 
 ## Code:
-```generic
+```swift
 // MARK: External Data Input
 ```

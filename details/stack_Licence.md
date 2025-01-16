@@ -1,13 +1,13 @@
 # Stack: Licence
 - **shortcut**: `stack_Licence`
-- **language**: Generic
+- **language**: Swift
 - **platform**: 
 
 ## Summary
 Licence with copyright and soruce for StackOverflow code
 
 ## Code:
-```generic
+```swift
 //
 //  Source: <#https://stackoverflow.com/...#>
 //  Author: [<#author_name#>](<#https://stackoverflow.com/users/...#>)

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>impl_cornerRadiusStyle</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>import SwiftUI
+
+/// Documentation: https://www.figma.com/design/bDlQbmunNLTW1JUCTgp3s1/Viva-UI-2.0?node-id=4953-32113&amp;t=zTOplDUzLxv5WsDP-4
+struct CornerRadius: RawRepresentable, ExpressibleByFloatLiteral, ExpressibleByIntegerLiteral {
+
+    let rawValue: CGFloat
+    init(rawValue: CGFloat) { self.rawValue = rawValue }
+    init(floatLiteral value: FloatLiteralType) { self.rawValue = value }
+    init(integerLiteral value: IntegerLiteralType) { self.init(rawValue: CGFloat(value)) }
+}
+
+struct BorderWidth: Hashable, RawRepresentable, Equatable, ExpressibleByFloatLiteral, ExpressibleByIntegerLiteral {
+    static let zero: Self = 0
+    static let `default`: Self = 1.5
+
+    let rawValue: CGFloat
+    init(rawValue: CGFloat) { self.rawValue = rawValue }
+    init(floatLiteral value: FloatLiteralType) { self.init(rawValue: value) }
+    init(integerLiteral value: IntegerLiteralType) { self.init(rawValue: CGFloat(value)) }
+}
+
+private struct CornerRadiusStyle: ViewModifier {
+    var radius: CornerRadius
+    var corners: UIRectCorner
+    var borderWidth: BorderWidth = .zero
+    var borderColor: Color?
+
+    struct CornerRadiusShape: Shape {
+        var radius = CGFloat.infinity
+        var corners = UIRectCorner.allCorners
+
+        func path(in rect: CGRect) -&gt; Path {
+            let path = UIBezierPath(roundedRect: rect, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+            return Path(path.cgPath)
+        }
+    }
+
+    func body(content: Content) -&gt; some View {
+        content
+            .clipShape(CornerRadiusShape(radius: radius.rawValue, corners: corners))
+            .if(borderWidth != .zero) { view in
+                if let borderColor {
+                    view
+                        .overlay(
+                            CornerRadiusShape(radius: radius.rawValue, corners: corners)
+                                .stroke(borderColor, lineWidth: borderWidth.rawValue)
+                        )
+                        // The following padding is to avoid the borders beeing clipped
+                        // by the super view by drawing them whole inside
+                        .padding(borderWidth.rawValue / 2)
+                } else {
+                    view
+                }
+            }
+    }
+}
+
+extension View {
+    func customCorners(_ corners: UIRectCorner, radius: CornerRadius = .default, borderWidth: BorderWidth = .zero, borderColor: Color? = nil) -&gt; some View {
+        ModifiedContent(content: self, modifier: CornerRadiusStyle(radius: radius, corners: corners, borderWidth: borderWidth, borderColor: borderColor))
+    }
+
+    @ViewBuilder func customCornerRadius(_ radius: CornerRadius, borderWidth: BorderWidth = .zero, borderColor: Color = .clear) -&gt; some View {
+        // We are using cornerRadius instead of clipShape because we need the overlay below which needs to have the same (fixed) corner radius when the button is displayed with bigger font (accessibility)
+        cornerRadius(radius.rawValue)
+            .if(borderWidth != .zero) { view in
+                view
+                    .overlay(
+                        RoundedRectangle(cornerRadius: radius.rawValue)
+                            .stroke(borderColor, lineWidth: borderWidth.rawValue)
+                    )
+                    // The following padding is to avoid the borders beeing clipped
+                    // by the super view by drawing them whole inside
+                    .padding(borderWidth.rawValue / 2)
+            }
+    }
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>0E4F2775-F39E-44FD-8C5B-96A97F4034B5</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Impl: CornerRadius style</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

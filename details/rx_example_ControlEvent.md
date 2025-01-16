@@ -1,11 +1,13 @@
 # Example: Rx ControlEvent
 - **shortcut**: `rx_example_ControlEvent`
-- **language**: Generic
+- **language**: Swift
 - **platform**: 
+
+## Summary
 
 
 ## Code:
-```generic
+```swift
 public extension Reactive where Base: UIViewController {
     
     /// Reactive wrapper for `viewDidLoad` message `UIViewController:viewDidLoad:`.

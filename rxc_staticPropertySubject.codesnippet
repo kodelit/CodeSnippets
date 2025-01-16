@@ -3,43 +3,26 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>impl_tca_dependencyInterface</string>
+	<string>rxc_staticPropertySubject</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>import ComposableArchitecture
-import Foundation
-
-public struct &lt;#InterfaceName#&gt; {
-
-}
-
-extension &lt;#InterfaceName#&gt;: DependencyKey {
-    public static let liveValue: &lt;#InterfaceName#&gt; = {
-        // Dependencies
-
-        return &lt;#InterfaceName#&gt;(
-
-        )
-    }()
-}
-
-extension DependencyValues {
-    var &lt;#dependencyName#&gt;: &lt;#InterfaceName#&gt; {
-        get { self[&lt;#InterfaceName#&gt;.self] }
-        set { self[&lt;#InterfaceName#&gt;.self] = newValue }
+	<string>    private static var &lt;#name#&gt;Subject = CurrentValueSubject&lt;&lt;#Type#&gt;, Never&gt;(&lt;#value#&gt;)
+    private var &lt;#name#&gt;: &lt;#Type#&gt; {
+        get { Self.&lt;#name#&gt;Subject.value }
+        set { Self.&lt;#name#&gt;Subject.send(newValue) }
     }
-}</string>
+    var &lt;#name#&gt;Publisher: AnyPublisher&lt;&lt;#Type#&gt;, Never&gt; { Self.&lt;#name#&gt;Subject.eraseToAnyPublisher() }</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>2C3E4D08-B5C4-43AB-A6C1-1931A15BBEB2</string>
+	<string>BF4107F4-4951-4124-A028-8624F363CA3F</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>My Code Snippet</string>
+	<string>Combine: Static Property Subject</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

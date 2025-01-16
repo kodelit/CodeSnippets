@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>impl_AsyncContentView_AsyncContentDwonloader</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>import Combine
+import SwiftUICore
+// Depends on: LazyAsyncValueCache
+
+/// Protocol defining the interface for downloader allowing to (re)load the data on demand and cache it.
+///
+/// Describes interface of the object ment to be used in tandem with ``AsyncContentView``, the wrapper for the lazily loaded content which requires data to be loaded first.
+/// It's similar to the ``RefreshableView`` but it's state depends on the ``AsyncContentDownloader`` value loading which is a single activity
+/// instead of depending on ``ActivityController`` which may represent several activites.
+protocol AsyncContentDownloading&lt;ContentModel&gt;: ObservableObject {
+    associatedtype ContentModel
+    @MainActor var value: ContentModel? { get set }
+    
+    /// Returns value form the cache or loads it if it's not loaded yet.
+    func loadValueIfNeeded(animated: Bool) async
+    /// Resets the cache and loads the value again.
+    func reloadValue(animated: Bool) async
+}
+
+/// View wrapping the lazily loaded content which requires data to be loaded first.
+///
+/// AsyncContentView depends on the ``AsyncContentDownloading`` interface implementation which is responsible for loading the data for the view.
+/// When data are being (re)load, the view will display the placeholder view untill the data are ready.
+struct AsyncContentView&lt;T, Content, Placeholder&gt;: View where Content: View, Placeholder: View {
+    private let asyncContentDowlnoader: any AsyncContentDownloading&lt;T&gt;
+    @ViewBuilder let content: (_ data: T) -&gt; Content
+    @ViewBuilder let indicator: () -&gt; Placeholder
+    
+    init(
+        asyncContentDowlnoader: any AsyncContentDownloading&lt;T&gt;,
+        @ViewBuilder content: @escaping (_ data: T) -&gt; Content,
+        @ViewBuilder indicator: @escaping () -&gt; Placeholder
+    ) {
+        self.asyncContentDowlnoader = asyncContentDowlnoader
+        self.content = content
+        self.indicator = indicator
+    }
+    
+    var body: some View {
+        if let data = asyncContentDowlnoader.value {
+            content(data)
+        } else {
+            indicator()
+        }
+    }
+}
+
+/// Default implementation of the protocol ``AsyncContentDownloading``, allowing to (re)load the data on demand and cache it.
+///
+/// This object is ment to be used in tandem with ``AsyncContentView``, the wrapper for the lazily loaded content which requires data to be loaded first.
+@MainActor class AsyncContentDownloader&lt;T&gt;: ObservableObject, AsyncContentDownloading {
+    private var cache: LazyAsyncValueCache&lt;T?&gt;
+    @Published var value: T?
+    
+    init(preloadedValue: T? = nil, loader: @escaping @Sendable () async throws -&gt; T?) {
+        cache = .init(loader: loader)
+    }
+    
+    func loadValueIfNeeded(animated: Bool = true) async {
+        await reload(animated: animated, value: cache.getValue)
+    }
+    
+    func reloadValue(animated: Bool = true) async {
+        await reload(animated: animated, value: cache.reloadValue)
+    }
+    
+    private func reload(animated: Bool = true, functionName: StaticString = #function, value: @escaping () async throws -&gt; T?) async {
+        //try? await Task.sleep(nanoseconds: 3_000_000_000)
+        do {
+            guard let value = try await value() else {
+                log.debug("Failed to (re)load `\(T.self)` with `\(functionName)`, content is not available.")
+                return
+            }
+            log.debug("Did (re)load `\(T.self)` with `\(functionName)`.")
+            if animated {
+                withAnimation {
+                    self.value = value
+                }
+            } else {
+                self.value = value
+            }
+        } catch {
+            log.error("Could not (re)load `\(T.self)` with `\(functionName)`, error: \(error)")
+        }
+    }
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>506A60CD-B610-4285-B37D-2452257F3091</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>View which is presenting placeholder untill the content is downloaded.</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Impl: AsyncContentView and AsyncContentDwonloader</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

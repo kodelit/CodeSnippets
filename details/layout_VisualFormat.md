@@ -1,13 +1,13 @@
 # Layout: VisualFormat
 - **shortcut**: `layout_VisualFormat`
-- **language**: Generic
+- **language**: Swift
 - **platform**: 
 
 ## Summary
 Constraints declaration in visual format
 
 ## Code:
-```generic
+```swift
          <#viewName#>.translatesAutoresizingMaskIntoConstraints = false
          self.addSubview(<#viewName#>)
          

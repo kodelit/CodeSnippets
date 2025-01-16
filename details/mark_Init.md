@@ -1,10 +1,12 @@
 # MARK: Init
 - **shortcut**: `mark_Init`
-- **language**: Generic
+- **language**: Swift
 - **platform**: 
+
+## Summary
 
 
 ## Code:
-```generic
+```swift
 // MARK: - Init
 ```

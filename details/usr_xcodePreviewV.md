@@ -10,18 +10,19 @@
 ```swift
 // MARK: - Xcode Preview
 // Works from Xcode 11 and macOS 10.15
+// swiftlint:disable type_name
 
 #if canImport(SwiftUI) && DEBUG
 import SwiftUI
 
 @available(iOS 13.0, tvOS 13.0, *)
-struct <#Name#>ViewRepresentable: UIViewRepresentable {
+struct <#Name#>Representable: UIViewRepresentable {
     typealias View = <#Name#>
 
     func makeUIView(context: Context) -> UIView {
         let container = UIView()
         //container.backgroundColor = .black
-        let view = <#Name#>(frame: .zero)
+        let view = View(frame: .zero)
         //view.frame = <#frame#>
         //view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         //container.addSubview(view)
@@ -40,12 +41,13 @@ struct <#Name#>ViewRepresentable: UIViewRepresentable {
         return container
     }
 
-    func updateUIView(_ uiView: UIView, context: UIViewRepresentableContext<<#Name#>ViewRepresentable>) {}
+    func updateUIView(_ uiView: UIView, context: UIViewRepresentableContext<<#Name#>Representable>) {}
 }
 
 @available(iOS 13.0, tvOS 13.0, *)
-struct UIKit<#Name#>ViewProvider: PreviewProvider {
-    static var previews: <#Name#>ViewRepresentable { <#Name#>ViewRepresentable() }
+struct UIKit<#Name#>Provider: PreviewProvider {
+    static var previews: <#Name#>Representable { <#Name#>Representable() }
 }
 #endif
+// swiftlint:enable type_name
 ```
