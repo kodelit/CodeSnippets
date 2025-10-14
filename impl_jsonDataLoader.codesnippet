@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>impl_jsonDataLoader</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>import Foundation
+
+public enum JsonDataLoadingError: Swift.Error {
+    case fileNotFound(fileName: String)
+}
+
+// MARK: - Loading model from JSON String or Data
+
+/// JSON data loading protocol.
+///
+/// Protocol is used in order to enabling dependency incjection and make the implementation replacable.
+public protocol JsonDataLoading {
+    func loadFrom&lt;T: Decodable&gt;(json: String) throws -&gt; T
+    func loadFrom&lt;T: Decodable&gt;(json data: Data) throws -&gt; T
+}
+
+public extension JsonDataLoading {
+    func loadFrom&lt;T: Decodable&gt;(json: String) throws -&gt; T {
+        try T.loadFrom(json: json)
+    }
+
+    func loadFrom&lt;T: Decodable&gt;(json data: Data) throws -&gt; T {
+        try T.loadFrom(json: data)
+    }
+}
+
+// MARK: - Loading model from JSON file
+
+/// JSON data loading protocol.
+///
+/// Protocol is used in order to enabling dependency incjection and make the implementation replacable.
+public protocol JsonFileDataLoading {
+    func loadFrom&lt;T: Decodable&gt;(jsonFileName: String) throws -&gt; T
+}
+
+public struct BundleJsonDataLoader: JsonFileDataLoading {
+    public let bundle: Bundle
+    public let decoder: JSONDecoder
+
+    public init(bundle: Bundle = .main, decoder: JSONDecoder = JSONDecoder()) {
+        self.bundle = bundle
+        self.decoder = decoder
+    }
+
+    /// Create instance of Decodable type T from the json file with the given name which is embeded in the main Bundle.
+    ///
+    /// - parameter jsonFileName: JSON file name without extension in the bundle.
+    public func loadFrom&lt;T: Decodable&gt;(jsonFileName: String) throws -&gt; T {
+        try bundle.loadData(jsonFileName: jsonFileName)
+    }
+}
+
+// MARK: - Decodable protocol extension for loading model from JSON data
+
+/// - warning: This extension should not be used directly in code but for implementing `JsonFileDataLoading` or `JsonDataLoading` protocol.
+/// Implementing these protocols and use them in the app allows to mock, replace and inject their different implementations for different cases.
+public extension Decodable {
+    /// Loads list of items of type Self from the json file with the given name which is embeded in the main Bundle.
+    ///
+    /// - parameter bundle: defalut value is `Bundle.main`.
+    /// - parameter name: JSON file name without extension in the bundle.
+    /// - parameter decoder: default value is default `JSONDecoder()`
+    ///
+    /// - warning: This method should not be used directly in code but only for implementing workers.
+    /// In order to support Dependency Injection we need workers which might be mocked, replaced and injected when needed.
+    /// Using methods like following, outside the worker implementation makes the code depandant on real types which the method extends and which cannot be mocked making the code less testable.
+    static func loadFrom(bundle: Bundle = .main, jsonFile name: String, decoder: JSONDecoder = JSONDecoder()) throws -&gt; [Self] {
+        try Bundle.main.loadData(jsonFileName: name, decoder: decoder) ?? []
+    }
+
+    /// Create instance of Self from the json file with the given name which is embeded in the main Bundle.
+    ///
+    /// - parameter bundle: defalut value is `Bundle.main`.
+    /// - parameter name: JSON file name without extension in the bundle.
+    /// - parameter decoder: default value is default `JSONDecoder()`
+    ///
+    /// - warning: This method should not be used directly in code but only for implementing workers.
+    /// In order to support Dependency Injection we need workers which might be mocked, replaced and injected when needed.
+    /// Using methods like following, outside the worker implementation makes the code depandant on real types which the method extends and which cannot be mocked making the code less testable.
+    static func loadFrom(bundle: Bundle = .main, jsonFile name: String, decoder: JSONDecoder = JSONDecoder()) throws -&gt; Self? {
+        try Bundle.main.loadData(jsonFileName: name, decoder: decoder)
+    }
+
+    /// - warning: This method should not be used directly in code but only for implementing workers.
+    /// In order to support Dependency Injection we need workers which might be mocked, replaced and injected when needed.
+    /// Using methods like following, outside the worker implementation makes the code depandant on real types which the method extends and which cannot be mocked making the code less testable.
+    static func loadFrom(json: String, decoder: JSONDecoder = JSONDecoder()) throws -&gt; [Self] {
+        let data = json.data(using: .utf8) ?? Data()
+        return try loadFrom(json: data, decoder: decoder)
+    }
+
+    /// - warning: This method should not be used directly in code but only for implementing workers.
+    /// In order to support Dependency Injection we need workers which might be mocked, replaced and injected when needed.
+    /// Using methods like following, outside the worker implementation makes the code depandant on real types which the method extends and which cannot be mocked making the code less testable.
+    static func loadFrom(json: String, decoder: JSONDecoder = JSONDecoder()) throws -&gt; Self {
+        let data = json.data(using: .utf8) ?? Data()
+        return try loadFrom(json: data, decoder: decoder)
+    }
+
+    /// - warning: This method should not be used directly in code but only for implementing workers.
+    /// In order to support Dependency Injection we need workers which might be mocked, replaced and injected when needed.
+    /// Using methods like following, outside the worker implementation makes the code depandant on real types which the method extends and which cannot be mocked making the code less testable.
+    static func loadFrom(json data: Data, decoder: JSONDecoder = JSONDecoder()) throws -&gt; [Self] {
+        try decoder.decode([Self].self, from: data)
+    }
+
+    /// - warning: This method should not be used directly in code but only for implementing workers.
+    /// In order to support Dependency Injection we need workers which might be mocked, replaced and injected when needed.
+    /// Using methods like following, outside the worker implementation makes the code depandant on real types which the method extends and which cannot be mocked making the code less testable.
+    static func loadFrom(json data: Data, decoder: JSONDecoder = JSONDecoder()) throws -&gt; Self {
+        try decoder.decode(Self.self, from: data)
+    }
+}
+
+// MARK: - Bundle extension for loading model from JSON data
+
+public extension Bundle {
+    /// - warning: This method should not be used directly in code but only for implementing workers.
+    /// In order to support Dependency Injection we need workers which might be mocked, replaced and injected when needed.
+    /// Using methods like following, outside the worker implementation makes the code depandant on real types which the method extends and which cannot be mocked making the code less testable.
+    func loadData&lt;T: Decodable&gt;(jsonFileName: String, decoder: JSONDecoder = JSONDecoder()) throws -&gt; T {
+        if let jsonPath  = self.path(forResource: jsonFileName, ofType: "json") {
+            do {
+                let data = try Data(contentsOf: URL(fileURLWithPath: jsonPath), options: .mappedIfSafe)
+                return try T.loadFrom(json: data, decoder: decoder)
+            } catch {
+                print("Error occured when loading JSON data from bundle: \(bundleIdentifier ?? "&lt;no identifier&gt;"), fileName: \(jsonFileName), error: \(error)")
+                throw error
+            }
+        }
+        throw JsonDataLoadingError.fileNotFound(fileName: jsonFileName)
+    }
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>6B7F45D1-3624-4766-8E59-3B3103F20900</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>Definition and implementation of JSON data loading protocols supporting loading json form bundle file, string or data.</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Impl: JSON Data Loading</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

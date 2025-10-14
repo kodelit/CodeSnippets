@@ -9,13 +9,11 @@
 ## Code:
 ```swift
 // MARK: - Xcode Preview
-// Works from Xcode 11 and macOS 10.15
 // swiftlint:disable type_name
 
 #if canImport(SwiftUI) && DEBUG
 import SwiftUI
 
-@available(iOS 13.0, tvOS 13.0, *)
 struct <#Name#>ViewControllerRepresentable: UIViewControllerRepresentable {
     typealias UIViewControllerType = <#Name#>ViewController
 
@@ -29,9 +27,8 @@ struct <#Name#>ViewControllerRepresentable: UIViewControllerRepresentable {
     func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {}
 }
 
-@available(iOS 13.0, tvOS 13.0, *)
 struct UIKit<#Name#>ViewControllerProvider: PreviewProvider {
-    static var previews: <#Name#>ViewControllerRepresentable { <#Name#>ViewControllerRepresentable() }
+    static var previews: some View { <#Name#>ViewControllerRepresentable() }
 }
 
 #endif

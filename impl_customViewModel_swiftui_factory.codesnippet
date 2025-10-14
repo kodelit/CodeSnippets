@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>impl_customViewModel_swiftui_factory</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>import Factory
+
+@MainActor
+final class &lt;#ViewModelName#&gt;: ObservableObject {
+    @LazyInjected(\.networkReachability) private var networkReachability: NetworkReachability
+    @Published var isLoading: Bool = false
+    /// Tells if the view can proceed with the main flow/happy path.
+    ///
+    /// If false it may mean that for example:
+    /// - there is no internet connection
+    /// - other conditions are not fulfilled
+    @Published var isEnabled: Bool = false
+
+    /// Start point of the screen
+    func onFirstAppear() {
+        bind()
+        Task {
+            // Do all async work reqired on start here.
+        }
+    }
+}
+
+private extension &lt;#ViewModelName#&gt; {
+    func bind() {
+        networkReachability.isReachablePublisher
+            .assign(to: &amp;$isFunctionalityEnabled)
+    }
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>911CC778-148F-4F8B-8D5C-681C436DC835</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>SwiftUI: ViewModel + Factory</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

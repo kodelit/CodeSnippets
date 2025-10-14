@@ -1,0 +1,136 @@
+# Impl: Contained Swift UI hosting view controller
+- **shortcut**: `impl_containedUIHostingViewController`
+- **language**: Swift
+- **platform**: 
+
+## Summary
+
+
+## Code:
+```swift
+import Combine
+import SwiftUI
+import UIKit
+
+extension UIView {
+    /// Tells if the view is considered displayed on the screen.
+    ///
+    /// View is considered visible if it's added to the window.
+    var isVisible: Bool { window != nil }
+}
+
+/// Usefull as a root view of the view controller presented in the Container View on the storyboard screen.
+///
+/// - note: It's workaround allowing to animate height constraint of the view presented in the Container View on the storyboard screen.
+/// If we don't use it trying to animate height constraint has no effect - height is not changing.
+private final class ContainedViewControllerView: UIView {
+    override func didMoveToSuperview() {
+        super.didMoveToSuperview()
+        
+        guard let superview else { return }
+        translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            superview.topAnchor.constraint(equalTo: topAnchor),
+            superview.bottomAnchor.constraint(equalTo: bottomAnchor),
+            superview.leadingAnchor.constraint(equalTo: leadingAnchor),
+            superview.trailingAnchor.constraint(equalTo: trailingAnchor)
+        ])
+    }
+}
+
+/// Abstract view controller for hosting SwiftUI views.
+///
+/// This is ment to be inherited and placed into the ContainerView in the storyboard.
+/// When some containerd view controller inherits from this abstract view controller it has to override `loadRootView()` method without calling `super.loadRootView()`.
+///
+/// - warning: Do not call `super.loadRootView()` because default implementation will crash the app. This method has to be overriden.
+class ContainedUIHostingViewController<Content>: UIViewController where Content: View {
+    private weak var heightConstraint: NSLayoutConstraint?
+    private var cancelables: Set<AnyCancellable> = []
+    private let contentSizeUpdateSubject = CurrentValueSubject<CGSize, Never>(.zero)
+    
+    private lazy var swiftUiHostingController: UIViewController = {
+        let contentRectBinding = Binding(
+            get: { [contentSizeUpdateSubject] in
+                contentSizeUpdateSubject.value
+            },
+            set: { [contentSizeUpdateSubject] size in
+                contentSizeUpdateSubject.send(size)
+            }
+        )
+        let host = UIHostingController(
+            rootView: loadRootView()
+                .onSizeChange { contentRectBinding.wrappedValue = $0 }
+        )
+        host.view.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(host.view)
+
+        NSLayoutConstraint.activate([
+            host.view.topAnchor.constraint(equalTo: view.topAnchor),
+            host.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            host.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            host.view.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
+        host.view.setContentHuggingPriority(.required, for: .vertical)
+        host.view.backgroundColor = .clear
+        if #available(iOS 16.0, *) {
+            host.sizingOptions = [.intrinsicContentSize]
+        }
+        return host
+    }()
+    
+    func loadRootView() -> Content {
+        fatalError("Not implemented.")
+    }
+    
+    override func loadView() {
+        view = ContainedViewControllerView()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        addChild(swiftUiHostingController)
+        
+        view.clipsToBounds = true
+        view.setContentHuggingPriority(.required, for: .vertical)
+        
+        let heightConstraint = view.heightAnchor.constraint(equalToConstant: .zero)
+        heightConstraint.isActive = true
+        self.heightConstraint = heightConstraint
+        bind()
+    }
+    
+    private func bind() {
+        contentSizeUpdateSubject
+            .receive(on: DispatchQueue.main)
+            .removeDuplicates()
+            .map { $0.height }
+            .sink { [weak self] height in
+                self?.update(height: height)
+            }
+            .store(in: &cancelables)
+    }
+    
+    private func update(height: CGFloat) {
+        heightConstraint?.constant = height
+
+        // Animate if view visible
+        guard view.isVisible else { return }
+
+        let superviewToAnimate = Self.parentStackView(of: view) ?? view.superview
+        UIView.animate(withDuration: 0.3, delay: 0, options: [.beginFromCurrentState]) { [weak superviewToAnimate] in
+            superviewToAnimate?.layoutIfNeeded()
+        }
+    }
+    
+    private static func parentStackView(of view: UIView) -> UIView? {
+        guard let superview = view.superview else { return nil }
+        if let stackView = superview as? UIStackView {
+            return stackView
+        }
+        return parentStackView(of: superview)
+    }
+}
+
+```

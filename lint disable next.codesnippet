@@ -3,28 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>ext_taskWrappingSyncMethod</string>
+	<string>lint disable next</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>extension Task where Failure == Never {
-    static func performOnMain(priority: TaskPriority? = nil, _ operation: @autoclosure @escaping () -&gt; Success) async -&gt; Success {
-        let task = Task.init(priority: priority, operation: { @MainActor in
-            operation()
-        })
-        return await task.value
-    }
-}</string>
+	<string>// swiftlint:disable:next &lt;#rule#&gt;</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>C1146BE5-8CE4-4A1B-B314-748F8E6E65CC</string>
+	<string>F77B13FA-9706-404C-BBF0-E4CD3AC962B8</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Ext: Task + Wrapping sync method and perorming on main thread</string>
+	<string>SwiftLint: Disable next warning for rule</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

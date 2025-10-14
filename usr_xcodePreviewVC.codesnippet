@@ -10,13 +10,11 @@
 	</array>
 	<key>IDECodeSnippetContents</key>
 	<string>// MARK: - Xcode Preview
-// Works from Xcode 11 and macOS 10.15
 // swiftlint:disable type_name
 
 #if canImport(SwiftUI) &amp;&amp; DEBUG
 import SwiftUI
 
-@available(iOS 13.0, tvOS 13.0, *)
 struct &lt;#Name#&gt;ViewControllerRepresentable: UIViewControllerRepresentable {
     typealias UIViewControllerType = &lt;#Name#&gt;ViewController
 
@@ -30,9 +28,8 @@ struct &lt;#Name#&gt;ViewControllerRepresentable: UIViewControllerRepresentable 
     func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {}
 }
 
-@available(iOS 13.0, tvOS 13.0, *)
 struct UIKit&lt;#Name#&gt;ViewControllerProvider: PreviewProvider {
-    static var previews: &lt;#Name#&gt;ViewControllerRepresentable { &lt;#Name#&gt;ViewControllerRepresentable() }
+    static var previews: some View { &lt;#Name#&gt;ViewControllerRepresentable() }
 }
 
 #endif

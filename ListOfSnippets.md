@@ -22,6 +22,7 @@ shortcut | name | summary | language | platform |
 `usr_AlertPlaceholder`|[Placeholder alert](details/usr_AlertPlaceholder.md)||Swift|iphoneos|
 `test_mockMethod_2Params_ReturningValue`|[Tests: Mock method with 2 params, returning value](details/test_mockMethod_2Params_ReturningValue.md)||Swift|All|
 `test_mockMethod_1Param_ReturningValue`|[Tests: Mock method with 1 param, returning value](details/test_mockMethod_1Param_ReturningValue.md)||Swift|All|
+`test_enqueuForNextRunloop`|[Tests: Enqueue for next runloop](details/test_enqueuForNextRunloop.md)|Enqueue the next step in order to allow the updates to finish propagating through the publishers first.|Swift|All|
 `test_againstMemoryLeaks`|[Test: Against Memory Leaks](details/test_againstMemoryLeaks.md)||Swift|All|
 `stack_Licence`|[Stack: Licence](details/stack_Licence.md)|Licence with copyright and soruce for StackOverflow code|Swift|All|
 `rxc_staticPropertySubject`|[Combine: Static Property Subject](details/rxc_staticPropertySubject.md)||Swift|All|
@@ -54,6 +55,7 @@ shortcut | name | summary | language | platform |
 `rx_Binding`|[Rx: Binding](details/rx_Binding.md)||Swift|All|
 `rx_Binder`|[Rx: Binder declaration](details/rx_Binder.md)||Swift|All|
 `prot_impl_ManualTransitionManagerTarget`|[Protocol Impl: ManualTransitionManagerTarget](details/prot_impl_ManualTransitionManagerTarget.md)||Swift|All|
+`prop_lazyInjected_factory`|[Property: Factory - Lazy Injected](details/prop_lazyInjected_factory.md)||Swift|All|
 `prop_WithAssociatedObject`|[Extension Property](details/prop_WithAssociatedObject.md)|Associated Object Property|Swift|All|
 `prop_ClassNibReferenceProperty`|[Prop: Static NIB file reference property](details/prop_ClassNibReferenceProperty.md)||Swift|All|
 `podspec_dependencies`|[Podspec: dependencies declaration](details/podspec_dependencies.md)||Ruby|All|
@@ -70,31 +72,48 @@ shortcut | name | summary | language | platform |
 `mark_Init`|[MARK: Init](details/mark_Init.md)||Swift|All|
 `mark_ExternalDataInput`|[MARK: External Data Input ](details/mark_ExternalDataInput.md)||Swift|All|
 `mark_Actions`|[MARK: - Actions](details/mark_Actions.md)||Swift|All|
+`mainActorTask`|[My Code Snippet](details/mainActorTask.md)||Swift|All|
+`lint disable next`|[SwiftLint: Disable next warning for rule](details/lint disable next.md)||Swift|All|
 `layout_VisualFormat`|[Layout: VisualFormat](details/layout_VisualFormat.md)|Constraints declaration in visual format|Swift|All|
+`inline_duration`|[Inline: Duration with time interval between dates](details/inline_duration.md)||Swift|All|
 `inline_TimestampAsUInt`|[Inline: Timestamp as UInt](details/inline_TimestampAsUInt.md)||Swift|All|
 `inline_Timestamp`|[Inline: Timestamp (TimeInterval, Double)](details/inline_Timestamp.md)||Swift|All|
 `inline_Tag`|[Inline: Default runtime TAG of an object](details/inline_Tag.md)|Idetifies object in runtime, might be use to set View tag to find view later in views hierarchy|Swift|All|
 `inline_RandomUInt`|[Inline: Random UInt](details/inline_RandomUInt.md)||Swift|All|
 `inline_RandomInt`|[Inline: Random Int](details/inline_RandomInt.md)||Swift|All|
 `inline_RadToDeg`|[Inline: Conversion of Radians to Degrees](details/inline_RadToDeg.md)||Swift|All|
+`impl_validatableWithRegexProtocol`|[Impl: Validatable with Regext Protocol](details/impl_validatableWithRegexProtocol.md)||Swift|All|
+`impl_userDefaultsPropertyWrapper`|[Impl: UserDefaultsPropertyWrapper](details/impl_userDefaultsPropertyWrapper.md)||Swift|All|
+`impl_urlOpenningProtocolAndWorker`|[Impl: URL Opening protocol and Worker implementation](details/impl_urlOpenningProtocolAndWorker.md)||Swift|All|
 `impl_tca_dependencyInterface`|[Ipml: TCA: Dependency Interface](details/impl_tca_dependencyInterface.md)|Dependency in CoposableArchitecture|Swift|All|
 `impl_tca_ReducerStruct`|[Impl: Struct Reducer](details/impl_tca_ReducerStruct.md)||Swift|All|
+`impl_swiftScriptBase`|[Swift Script Base](details/impl_swiftScriptBase.md)||Swift|All|
 `impl_swfitUIFontStyle`|[Impl: SwftUI+FontStyle](details/impl_swfitUIFontStyle.md)||Swift|All|
+`impl_propertyLockClass`|[Impl: Class with property lock](details/impl_propertyLockClass.md)||Swift|All|
+`impl_propertyLastUpdateTracking`|[Impl: Property last update tracking](details/impl_propertyLastUpdateTracking.md)||Swift|All|
 `impl_jsonLoading`|[Impl: Loading with JSON](details/impl_jsonLoading.md)||Swift|All|
+`impl_jsonDataLoader`|[Impl: JSON Data Loading](details/impl_jsonDataLoader.md)|Definition and implementation of JSON data loading protocols supporting loading json form bundle file, string or data.|Swift|All|
+`impl_infoPlistPropertyWrapper`|[Impl: InfoPlistPropertyWrapper](details/impl_infoPlistPropertyWrapper.md)||Swift|All|
 `impl_dynamicCodingKeys`|[Impl: Dynamic CodingKeys](details/impl_dynamicCodingKeys.md)||Swift|All|
+`impl_dateVariantStore`|[DateVariantsStore](details/impl_dateVariantStore.md)||Swift|All|
+`impl_customView_swiftui`|[SwiftUI: Custom View](details/impl_customView_swiftui.md)||Swift|All|
+`impl_customViewModel_swiftui_factory`|[SwiftUI: ViewModel + Factory](details/impl_customViewModel_swiftui_factory.md)||Swift|All|
 `impl_cornerRadiusStyle`|[Impl: CornerRadius style](details/impl_cornerRadiusStyle.md)||Swift|All|
+`impl_containedUIHostingViewController`|[Impl: Contained Swift UI hosting view controller](details/impl_containedUIHostingViewController.md)||Swift|All|
 `impl_ServiceDependency`|[Impl: Service Dependency](details/impl_ServiceDependency.md)|Simplified access to required services|Swift|All|
 `impl_RefreshableView`|[Impl: RefreshableView](details/impl_RefreshableView.md)||Swift|All|
 `impl_RawStringRepresentableStruct`|[Impl: Struct raw String replresentable, Equatable, Codable](details/impl_RawStringRepresentableStruct.md)||Swift|All|
 `impl_RawIntRepresentableStruct`|[Impl: Struct raw Int replresentable, Equatable, Codable](details/impl_RawIntRepresentableStruct.md)||Swift|All|
 `impl_PodspecFile`|[Impl: Podspec](details/impl_PodspecFile.md)|.podspec file implementation template|Ruby|All|
+`impl_NotificationHandler`|[Impl: Notification Handler](details/impl_NotificationHandler.md)||Swift|All|
 `impl_NibRepresentable`|[Impl: NIBRepresentable protocol](details/impl_NibRepresentable.md)|NIBRepresentable protocol implementation for view|Swift|All|
 `impl_ManualTransitionManager`|[Impl: Manual Transition Manager](details/impl_ManualTransitionManager.md)|Requires: RxSwift|Swift|All|
-`impl_LazyAsyncValueCache`|[Impl: LazyAsyncValueCache](details/impl_LazyAsyncValueCache.md)|Lazy loaded value, removed on memory warning, denends on LazyAsyncValue implementation|Swift|All|
 `impl_LazyAsyncValue`|[Impl: LazyAsyncValue](details/impl_LazyAsyncValue.md)||Swift|All|
+`impl_ExtendedLazyAsyncValue`|[Impl: Extended LazyAsyncValue](details/impl_ExtendedLazyAsyncValue.md)||Swift|All|
 `impl_DefaultCloseButtonModifier`|[Impl: Default Close Button Modifier](details/impl_DefaultCloseButtonModifier.md)||Swift|All|
 `impl_AsyncSVGImage`|[Impl: AsyncSVGImage](details/impl_AsyncSVGImage.md)|AsyncImage view supporting also SVG images.|Swift|All|
 `impl_AsyncContentView_AsyncContentDwonloader`|[Impl: AsyncContentView and AsyncContentDwonloader](details/impl_AsyncContentView_AsyncContentDwonloader.md)|View which is presenting placeholder untill the content is downloaded.|Swift|All|
+`impl_ApplicationStateObserver`|[Impl: ApplicationStateObserver](details/impl_ApplicationStateObserver.md)||Swift|All|
 `impl_ActivityController`|[Impl: ActivityController](details/impl_ActivityController.md)||Swift|All|
 `ifAvailable`|[if #availabl(...,*)](details/ifAvailable.md)||Swift|All|
 `func_InstantiateViewFromNib`|[Func: Instantiate view from nib](details/func_InstantiateViewFromNib.md)|Implementation of method for instantiating views from nib.|Swift|All|
@@ -103,8 +122,9 @@ shortcut | name | summary | language | platform |
 `ext_prop_ServiceDependency`|[Extending property: ServiceDependency property definition](details/ext_prop_ServiceDependency.md)|Class extension adding new property definition|Swift|All|
 `ext_UIViewController+Presentation_fileprivate`|[Ext: UIViewController + Presentation ( fileprivate )](details/ext_UIViewController+Presentation_fileprivate.md)||Swift|All|
 `ext_UIViewController+Presentation`|[Ext: UIViewController+Presentation.swift](details/ext_UIViewController+Presentation.md)|UIViewController enstension and protocol allowing convinient display of the modal view controller|Swift|All|
+`ext_UIView+findFirstOrAll`|[Ext: UIView + Find first/all](details/ext_UIView+findFirstOrAll.md)||Swift|All|
 `ext_UIView+Nib`|[Ext: UIView+Nib.swift](details/ext_UIView+Nib.md)|Support for loading and instantiating views from Nib (Xib)|Swift|iphoneos|
-`ext_UIImage_SVG`|[Ext: UIImage+SVG](details/ext_UIImage_SVG.md)||Swift|All|
+`ext_UIImage_SVG`|[Ext: UIImage+SVG](details/ext_UIImage_SVG.md)|Generats SVG image with data using native iOS library. Ready for Swift 6|Swift|All|
 `ext_UIApplication+Rx`|[Ext: UIApplication+Rx](details/ext_UIApplication+Rx.md)||Swift|All|
 `ext_ObjcExceptionCatcher`|[Ext: ObjC exception chatcher ](details/ext_ObjcExceptionCatcher.md)|Header (.h) file with inline method to catch objc exeptions in swift|Objective-C|All|
 `ext_Memoization`|[Ext: Memoization](details/ext_Memoization.md)||Swift|All|
@@ -121,3 +141,4 @@ shortcut | name | summary | language | platform |
 `classBody_NIBRepresentableView`|[Class Body: NIBRepresentable view](details/classBody_NIBRepresentableView.md)||Swift|iphoneos|
 `bodySetupModifiers`|[SwiftUI: body .setup() modifiers](details/bodySetupModifiers.md)||Swift|All|
 `bodySetupMethods`|[SwiftUI: body .setup() modifier methods implementations](details/bodySetupMethods.md)||Swift|All|
+`backup_payeeEvent`|[Backup: PayeeEvent](details/backup_payeeEvent.md)||Swift|All|

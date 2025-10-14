@@ -3,28 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>ext_taskWrappingSyncMethod</string>
+	<string>prop_lazyInjected_factory</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>extension Task where Failure == Never {
-    static func performOnMain(priority: TaskPriority? = nil, _ operation: @autoclosure @escaping () -&gt; Success) async -&gt; Success {
-        let task = Task.init(priority: priority, operation: { @MainActor in
-            operation()
-        })
-        return await task.value
-    }
-}</string>
+	<string>@LazyInjected(\.&lt;#propertyName#&gt;) var &lt;#propertyName#&gt;: &lt;#type#&gt;</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>C1146BE5-8CE4-4A1B-B314-748F8E6E65CC</string>
+	<string>229502C8-BB63-42A8-A453-578FAE3F8C93</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Ext: Task + Wrapping sync method and perorming on main thread</string>
+	<string>Property: Factory - Lazy Injected</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

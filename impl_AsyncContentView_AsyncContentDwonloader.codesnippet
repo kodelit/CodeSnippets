@@ -64,7 +64,7 @@ struct AsyncContentView&lt;T, Content, Placeholder&gt;: View where Content: View
     @Published var value: T?
     
     init(preloadedValue: T? = nil, loader: @escaping @Sendable () async throws -&gt; T?) {
-        cache = .init(loader: loader)
+        cache = .init(preloadedValue: preloadedValue, loader: loader)
     }
     
     func loadValueIfNeeded(animated: Bool = true) async {

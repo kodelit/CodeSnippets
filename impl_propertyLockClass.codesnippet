@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>impl_propertyLockClass</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>// - source: https://forums.swift.org/t/preventing-regressions-when-conforming-to-sendable-with-unchecked/62137/4
+
+final class CustomClass: @unchecked Sendable {
+    private var _property: Int = 0
+    private var propertyLock = NSLock()
+    func withProperty(_ operation: (inout Int) -&gt; Void) {
+        propertyLock.lock()
+        defer { propertyLock.unlock() }
+        operation(&amp;_property)
+    }
+}
+
+//@Test func raceCondition() async {
+//    let object = CustomClass()
+//    await withTaskGroup(of: Void.self) { group in
+//        for _ in 1...10_000 {
+//            group.addTask { object.withProperty { $0 += 1 } }
+//        }
+//    }
+//    #expect(object.property == 10_000)  // ✅
+//}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>354845CB-D6F6-49D1-BE2C-280159444529</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Impl: Class with property lock</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

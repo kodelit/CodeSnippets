@@ -11,22 +11,37 @@
 	<key>IDECodeSnippetContents</key>
 	<string>typealias Sut = &lt;#TypeName#&gt;
     
-    func createSut() -&gt; Sut {
-        let sut = &lt;#TypeName#&gt;()
+    func loadSut() -&gt; Sut {
+        let sut = Sut()
         return sut
     }
-    
-    func test_againstMemoryLeaks() {
+
+
+
+    @Test("Basic test against memory leaks")
+    func memoryLeaks() async throws {
         // given
-        var sut: Sut? = createSut()
+        var sut: Sut? = loadSut()
         weak var weakSut = sut
-        
+
         // when
         sut = nil
         
         // then
-        XCTAssertNil(weakSut)
-    }</string>
+        #expect(weakSut == nil)
+    }
+    
+    //func test_againstMemoryLeaks() {
+    //    // given
+    //    var sut: Sut? = loadSut()
+    //    weak var weakSut = sut
+    //    
+    //    // when
+    //    sut = nil
+    //    
+    //    // then
+    //    XCTAssertNil(weakSut)
+    //}</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>6F74A892-4384-4FAE-8753-CF92053E1F5B</string>
 	<key>IDECodeSnippetLanguage</key>

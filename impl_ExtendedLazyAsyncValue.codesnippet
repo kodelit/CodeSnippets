@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>impl_ExtendedLazyAsyncValue</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>// swiftlint:disable:next file_header
+//
+//  LazyExtendedAsyncValue.swift
+//
+//  Created by Grzegorz Maciak on 31/01/2025.
+//  Copyright © 2025 Grzegorz Maciak. All rights reserved.
+//  This code is distributed under the terms and conditions of the MIT license.
+//  See: https://opensource.org/licenses/MIT
+//
+
+import Foundation
+
+protocol ExtendedAsyncValueLoading&lt;T&gt;: Actor {
+    associatedtype T: Sendable
+    typealias PreInvalidationOperation&lt;Success&gt; = @Sendable (T?) async throws -&gt; Success
+    typealias Operation&lt;Success&gt; = @Sendable (T) async throws -&gt; Success
+    
+    /// Returns the value
+    ///
+    /// The method returns the value or default value if loading will fail:
+    /// - from the cache if it's already loaded
+    /// - loads it first if not loaded
+    func getValue(defaultValue: T) async -&gt; T
+    
+    /// Returns the value
+    ///
+    /// The method returns the value:
+    /// - from the cache if it's already loaded
+    /// - loads it first if not loaded
+    @discardableResult func getValue() async throws -&gt; T
+    
+    /// Invalidates and loads the value again.
+    @discardableResult func reloadValue() async throws -&gt; T
+    
+    /// Invalidates the value so it might be loaded again when needed.
+    func invalidateValue() async
+    
+    /// Blocks the value or value loading for the time of operation and invalidates the value if already loaded after operation is done.
+    func invalidateValue&lt;Success&gt;(after operation: @escaping PreInvalidationOperation&lt;Success&gt;) async throws -&gt; Success
+    
+    /// Blocks the value or value loading for the time of operation.
+    ///
+    /// Performs the operation on the value blocking the value from being change during the operation but not blocking the actor itself.
+    /// It allows to delay changing the value therefore other operations on the value and value update operation have to wait.
+    @discardableResult
+    func perform&lt;Success&gt;(operation: @escaping Operation&lt;Success&gt;) async throws -&gt; Success
+}
+
+//extension ExtendedAsyncValueLoading {
+//    func invalidateValue(after operation: PreInvalidationOperation&lt;Void&gt;) async throws {
+//        let _: Void = try await invalidateValue(after: operation)
+//    }
+//}
+
+/// Stores data of any type fetched on demand and cached until the value is removed or reset.
+///
+/// The wrapped value is not removed in case of memory warning. If you would like it to be removed in such case please use ``LazyAsynchValueCache``
+/// - note: Inspared by: https://stackoverflow.com/a/70586582/1776859
+///
+/// - warning: For security reasons `preloadedValue` cannot be provided when `sourceOfTruth` is provided because providing `sourceOfTruth` indicates that the value should be stored outside the actor, and only accessed through ``LazyExtendedAsyncValue``.
+/// - warning: `sourceOfTruth` if provided should exist along with `didUpdateValue` closure in which we should update the source of thruth (value storage).
+actor LazyExtendedAsyncValue&lt;T: Sendable&gt;: ExtendedAsyncValueLoading {
+    typealias ValueObtainer = @Sendable () async throws -&gt; T
+    typealias PreInvalidationOperation&lt;Success&gt; = @Sendable (T?) async throws -&gt; Success
+    typealias Operation&lt;Success&gt; = @Sendable (T) async throws -&gt; Success
+    
+    private enum Status {
+        case notLoaded
+        case loading(Task&lt;T, Error&gt;)
+        case working(untilDone: @Sendable () async -&gt; Void)
+        case ready(obtainValue: ValueObtainer)
+        
+        var valueSource: ValueObtainer? {
+            guard case let .ready(obtainValue) = self else {
+                return nil
+            }
+            return obtainValue
+        }
+    }
+    
+    private var status: Status = .notLoaded
+    var loader: @Sendable () async throws -&gt; T
+    var sourceOfTruth: ValueObtainer?
+    var didUpdateValue: (@Sendable (T) async throws -&gt; Void)?
+    
+    /// - Parameters:
+    ///   - preloadedValue: convenience parameter for preset value to use in corner cases when we already have the value.
+    ///   - loader: A closure providing the requested result.
+    init(
+        preloadedValue: T? = nil,
+        loader: @escaping @Sendable () async throws -&gt; T
+    ) {
+        if let preloadedValue, sourceOfTruth == nil {
+            status = .ready(obtainValue: { preloadedValue })
+        }
+        self.loader = loader
+    }
+    
+    /// - Parameters:
+    ///   - sourceOfTruth: loading method returning value on demand form the "source of true". When you don't want to store the value in memory like values which should be stored in the keychain and obtained only when needed, you may provide this closure which will load the value on demand.
+    ///   - loader: A closure providing the requested result.
+    ///   - didUpdateValue: closure updating the source of truth or other words the value store.
+    init(
+        sourceOfTruth: @escaping ValueObtainer,
+        loader: @escaping @Sendable () async throws -&gt; T,
+        didUpdateValue: @escaping @Sendable (_ value: T) async throws -&gt; Void
+    ) {
+        self.loader = loader
+        self.sourceOfTruth = sourceOfTruth
+        self.didUpdateValue = didUpdateValue
+    }
+    
+    // MARK: - Value management
+    
+    func getValue(defaultValue: T) async -&gt; T {
+        (try? await getValue()) ?? defaultValue
+    }
+    
+    @discardableResult
+    func getValue() async throws -&gt; T {
+        try await getValue(ignoreWorkingState: false)
+    }
+    
+    private func getValue(ignoreWorkingState: Bool) async throws -&gt; T {
+        switch status {
+        case let .ready(source):
+            return try await source()
+        case let .loading(task):
+            return try await task.value
+        case let .working(untilDone):
+            if ignoreWorkingState {
+                break
+            }
+            await untilDone()
+            // In order to avoid the case when some other task could start using the value let's go through the state check again.
+            return try await getValue()
+        case .notLoaded:
+            break
+        }
+        
+        let task = Task&lt;T, Error&gt; {
+            try await loader()
+        }
+        
+        status = .loading(task)
+        do {
+            let value = try await task.value
+            try await didUpdateValue?(value)
+            status = .ready(obtainValue: valueObtainer(for: value))
+            return value
+        } catch {
+            status = .notLoaded
+            throw error
+        }
+    }
+    
+    @discardableResult
+    func reloadValue() async throws -&gt; T {
+        await invalidateValue()
+        return try await getValue()
+    }
+    
+    func invalidateValue() async {
+        if case let .working(completion) = status {
+            // If there is some work being performed on the value, just wait until it's done to avoid interfering.
+            await completion()
+            // Start again in order to verifying if the status is not changed to `.working` again by some other task
+            return await invalidateValue()
+        }
+        guard case .ready = status else {
+            return
+        }
+        status = .notLoaded
+    }
+    
+    func invalidateValue&lt;Success&gt;(after operation: @escaping PreInvalidationOperation&lt;Success&gt;) async throws -&gt; Success where Success: Sendable {
+        let operationStatus = preInvalidationOperation()
+        var valueSource: ValueObtainer?
+        switch operationStatus {
+        case .noValue:
+            break
+        case .pending(let completion):
+            try await completion()
+            return try await invalidateValue(after: operation)
+        case .ready(let valueObtainer):
+            valueSource = valueObtainer
+        }
+        let oldStatus = status
+        let task: Task&lt;Success, Error&gt; = Task {
+            let value = try await valueSource?()
+            return try await operation(value)
+        }
+        
+        status = .working(untilDone: { _ = try? await task.value })
+        do {
+            let value = try await task.value
+            status = .notLoaded
+            return value
+        } catch {
+            status = oldStatus
+            throw error
+        }
+    }
+    
+    // MARK: - Operation on value
+    
+    @discardableResult
+    func perform&lt;Success&gt;(operation: @escaping Operation&lt;Success&gt;) async throws -&gt; Success where Success: Sendable {
+        let operationStatus = operationStatus()
+        switch operationStatus {
+        case .pending(let completion):
+            try await completion()
+            return try await perform(operation: operation)
+        case .ready(let valueSource):
+            let oldStatus = status
+            let task: Task&lt;Success, Error&gt; = Task {
+                let value = try await valueSource()
+                return try await operation(value)
+            }
+            
+            status = .working(untilDone: { _ = try? await task.value })
+            do {
+                let operationResult = try await task.value
+                status = oldStatus
+                return operationResult
+            } catch {
+                status = oldStatus
+                throw error
+            }
+        }
+    }
+}
+
+// MARK: - Private helpers
+
+private extension LazyExtendedAsyncValue {
+    enum PreInvalidationOperationStatus {
+        case noValue
+        case pending(completion: () async throws -&gt; Void)
+        case ready(valueSource: ValueObtainer)
+    }
+    
+    func preInvalidationOperation(loadValueIfNotReady: Bool = true) -&gt; PreInvalidationOperationStatus {
+        switch status {
+        case .notLoaded:
+            return .noValue
+        case .loading(let task):
+            return .pending(completion: { _ = try await task.value })
+        case .working(let completion):
+            return .pending(completion: { await completion() })
+        case .ready(obtainValue: let obtainValue):
+            return .ready(valueSource: obtainValue)
+        }
+    }
+    
+    enum OperationStatus {
+        case pending(completion: () async throws -&gt; Void)
+        case ready(valueSource: ValueObtainer)
+    }
+    
+    func operationStatus(loadValueIfNotReady: Bool = true) -&gt; OperationStatus {
+        switch status {
+        case .notLoaded:
+            guard loadValueIfNotReady else {
+                return .ready(valueSource: { fatalError() })
+            }
+            return .pending(completion: { [weak self] in try await self?.getValue() })
+        case .loading(let task):
+            return .pending(completion: { _ = try await task.value })
+        case .working(let completion):
+            return .pending(completion: { await completion() })
+        case .ready(obtainValue: let obtainValue):
+            return .ready(valueSource: obtainValue)
+        }
+    }
+    
+    func valueObtainer(for value: T) -&gt; ValueObtainer {
+        guard let sourceOfTruth else {
+            return { value }
+        }
+        return sourceOfTruth
+    }
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>BFDECC3F-2884-458B-8F7C-B7DCC05BDBAD</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Impl: Extended LazyAsyncValue</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

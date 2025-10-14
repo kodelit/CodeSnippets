@@ -32,6 +32,8 @@
 	<string>C78DA732-C2A7-4337-B0FA-917FBB6BD504</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
 	<key>IDECodeSnippetTitle</key>
 	<string>Rx Impl: CellViewModel Implementation</string>
 	<key>IDECodeSnippetUserSnippet</key>

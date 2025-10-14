@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>test_enqueuForNextRunloop</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>        // Enqueue the next step in order to allow the updates to finish propagating through the publishers first.
+        await withCheckedContinuation { continuation in
+            DispatchQueue.main.async {
+                &lt;#code to perform#&gt;
+                continuation.resume(returning: ())
+            }
+        }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>A88132CC-A3CB-425E-9172-17CF630A6504</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>Enqueue the next step in order to allow the updates to finish propagating through the publishers first.</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Tests: Enqueue for next runloop</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

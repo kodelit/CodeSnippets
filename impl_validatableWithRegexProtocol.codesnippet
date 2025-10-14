@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>impl_validatableWithRegexProtocol</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>public protocol Validatable {
+    var isValid: Bool { get }
+}
+
+public protocol ValidatableWithRegex: Validatable {
+    var validationPattern: String { get }
+}
+
+public extension ValidatableWithRegex {
+    func validate(_ value: String) throws -&gt; Bool {
+        let regex = try Regex(validationPattern)
+        return try regex.firstMatch(in: value) != nil
+    }
+}
+
+public extension ValidatableWithRegex where Self: RawRepresentable, RawValue == String {
+    var isValid: Bool {
+        do {
+            return try validate(rawValue)
+        } catch {
+            assertionFailure("Invalid regex pattern, error: \(error)")
+            return false
+        }
+    }
+}
+
+//extension Regex: @retroactive ExpressibleByExtendedGraphemeClusterLiteral {}
+//extension Regex: @retroactive ExpressibleByUnicodeScalarLiteral {}
+//extension Regex: @retroactive ExpressibleByStringLiteral {
+//    public typealias StringLiteralType = String
+//
+//    public init(stringLiteral value: String) {
+//        guard let regex = try? Self(value) else {
+//            fatalError("Validation regex failed to compile.")
+//        }
+//        self = regex
+//    }
+//}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>6A0F6DB6-B995-4D35-92BA-1311D3478EB1</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Impl: Validatable with Regext Protocol</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -9,9 +9,19 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>import Foundation
+	<string>// swiftlint:disable:next file_header
+//
+//  LazyAsyncValue.swift
+//
+//  Created by Grzegorz Maciak on 31/01/2025.
+//  Copyright © 2025 Grzegorz Maciak. All rights reserved.
+//  This code is distributed under the terms and conditions of the MIT license.
+//  See: https://opensource.org/licenses/MIT
+//
 
-protocol AsyncValueLoading&lt;T&gt; {
+import Foundation
+
+public protocol AsyncValueLoading&lt;T&gt; {
     associatedtype T: Sendable
     /// Returns the value
     ///
@@ -24,60 +34,51 @@ protocol AsyncValueLoading&lt;T&gt; {
     func invalidateValue() async
     /// Invalidates and loads the value again.
     @discardableResult func reloadValue() async throws -&gt; T
-    /// Performs the operation on the value blocking the value from being change during the operation.
-    ///
-    /// It allows to delay changing the value therefore other opearations on the value and value update operation have to wait.
-    func perform&lt;Success&gt;(opearation: @Sendable @escaping (T) async throws -&gt; Success) async throws -&gt; Success
 }
 
 /// Stores data of any type fetched on demand and cached until the value is removed or reset.
 ///
 /// The wrapped value is not removed in case of memory warning. If you would like it to be removed in such case please use ``LazyAsynchValueCache``
 /// - note: Inspared by: https://stackoverflow.com/a/70586582/1776859
-actor LazyAsyncValue&lt;T: Sendable&gt;: AsyncValueLoading {
+public actor LazyAsyncValue&lt;T: Sendable&gt;: AsyncValueLoading {
     private enum Status {
         case notLoaded
         case loading(Task&lt;T, Error&gt;)
-        case working(untilDone: () async -&gt; Void)
         case ready(T)
     }
-
+    
     private var status: Status = .notLoaded
-    var loader: () async throws -&gt; T
+    public var loader: () async throws -&gt; T
     
     /// - Parameters:
     ///   - preloadedValue: convenience parameter for preset value to use in corner cases when we already have the value.
     ///   - loader: A closure providing the requested result.
-    init(preloadedValue: T? = nil, loader: @escaping @Sendable () async throws -&gt; T) {
+    public init(preloadedValue: T? = nil, loader: @escaping @Sendable () async throws -&gt; T) {
         if let preloadedValue {
             status = .ready(preloadedValue)
         }
         self.loader = loader
     }
     
-    func getValue(defaultValue: T) async -&gt; T {
+    public func getValue(defaultValue: T) async -&gt; T {
         (try? await getValue()) ?? defaultValue
     }
-
+    
     @discardableResult
-    func getValue() async throws -&gt; T {
+    public func getValue() async throws -&gt; T {
         switch status {
         case let .ready(value):
             return value
         case let .loading(task):
             return try await task.value
-        case let .working(untilDone):
-            await untilDone()
-            // In order to avoid the case when some other task could start using the value let's go through the state check again.
-            return try await getValue()
         case .notLoaded:
             break
         }
-
+        
         let task = Task&lt;T, Error&gt; {
             try await loader()
         }
-
+        
         status = .loading(task)
         do {
             let value = try await task.value
@@ -88,46 +89,75 @@ actor LazyAsyncValue&lt;T: Sendable&gt;: AsyncValueLoading {
             throw error
         }
     }
-
-    func invalidateValue() async {
-        if case let .working(completion) = status {
-            // If there is some work being performed on the value, just wait until it's done to avoid interfering.
-            await completion()
-            // Start again in order to verifying if the status is not changed to `.working` again by some other task
-            await invalidateValue()
-            return
-        }
+    
+    public func invalidateValue() async {
         guard case .ready = status else {
             return
         }
         status = .notLoaded
     }
-
+    
     @discardableResult
-    func reloadValue() async throws -&gt; T {
+    public func reloadValue() async throws -&gt; T {
         await invalidateValue()
         return try await getValue()
     }
+}
+
+// MARK: - LazyAsyncValueCache
+
+import Foundation
+#if os(iOS)
+import UIKit
+// Depends on: LazyAsyncValue
+
+/// Wrapper for laizly and asychronously loaded value.
+///
+/// An instance requires to define the loading closure which loads data asynchronously, then caches it.
+///
+/// - warning: Cache will be reset when application will receive a memory warning, and is going to try to load the value again when needed/requested.
+@available(iOS 15, *)
+public final class LazyAsyncValueCache&lt;T: Sendable&gt; {
+    private let value: LazyAsyncValue&lt;T&gt;
+    private let observer: Task&lt;Void, Never&gt;?
     
-    func perform&lt;Success&gt;(opearation: @Sendable @escaping (T) async throws -&gt; Success) async throws -&gt; Success {
-        let value = try await getValue()
-        
-        // In order to avoid reentrency problem the state will be replaced by the task which will return the state when it's not used anymore
-        let task: Task&lt;Success, Error&gt; = Task {
-            try await opearation(value)
-        }
-        status = .working(untilDone: { _ = try? await task.value })
-        do {
-            let taskValue = try await task.value
-            status = .ready(value)
-            return taskValue
-        } catch {
-            status = .ready(value)
-            throw error
+    public init(preloadedValue: T? = nil, loader: @escaping @Sendable () async throws -&gt; T) {
+        let value = LazyAsyncValue(preloadedValue: preloadedValue, loader: loader)
+        self.value = value
+        self.observer = Task(priority: .utility) {
+            let notificationsSequence = NotificationCenter.default.notifications(named: UIApplication.didReceiveMemoryWarningNotification)
+            for await _ in notificationsSequence {
+                await value.invalidateValue()
+            }
         }
     }
+    
+    deinit {
+        observer?.cancel()
+    }
 }
-</string>
+
+@available(iOS 15, *)
+extension LazyAsyncValueCache: AsyncValueLoading {
+    public func getValue(defaultValue: T) async -&gt; T {
+        await value.getValue(defaultValue: defaultValue)
+    }
+    
+    @discardableResult
+    public func getValue() async throws -&gt; T {
+        try await value.getValue()
+    }
+    
+    public func invalidateValue() async {
+        await value.invalidateValue()
+    }
+    
+    @discardableResult
+    public func reloadValue() async throws -&gt; T {
+        try await value.reloadValue()
+    }
+}
+#endif</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>FED2B97E-3172-4722-84EB-D13EEEF12C70</string>
 	<key>IDECodeSnippetLanguage</key>

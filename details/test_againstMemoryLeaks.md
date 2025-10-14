@@ -10,20 +10,35 @@
 ```swift
 typealias Sut = <#TypeName#>
     
-    func createSut() -> Sut {
-        let sut = <#TypeName#>()
+    func loadSut() -> Sut {
+        let sut = Sut()
         return sut
     }
-    
-    func test_againstMemoryLeaks() {
+
+
+
+    @Test("Basic test against memory leaks")
+    func memoryLeaks() async throws {
         // given
-        var sut: Sut? = createSut()
+        var sut: Sut? = loadSut()
         weak var weakSut = sut
-        
+
         // when
         sut = nil
         
         // then
-        XCTAssertNil(weakSut)
+        #expect(weakSut == nil)
     }
+    
+    //func test_againstMemoryLeaks() {
+    //    // given
+    //    var sut: Sut? = loadSut()
+    //    weak var weakSut = sut
+    //    
+    //    // when
+    //    sut = nil
+    //    
+    //    // then
+    //    XCTAssertNil(weakSut)
+    //}
 ```

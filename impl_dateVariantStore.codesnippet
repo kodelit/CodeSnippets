@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>impl_dateVariantStore</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>#if DEVELOPMENT
+import UIKit
+
+public actor DateVariantsStore {
+    var store: Set&lt;String&gt; = []
+
+    init() { }
+
+    /// Method for investingating how many different date formats the app has to handle and what formats it would be.
+    nonisolated
+    public func enqueueToRegister(variant value: String) {
+        Task {
+            await register(variant: value)
+        }
+    }
+
+    public func register(variant value: String) {
+        store.insert(value)
+    }
+
+    /// Method to use in debug view to share the date formats occuring in the app.
+    func share() async {
+        let text = store.joined(separator: "\n")
+        // swiftlint:disable:next force_unwrapping
+        let data = text.data(using: .utf8)!
+        let tempURL = FileManager.default.temporaryDirectory
+            .appendingPathComponent("\(UUID().uuidString)-DateVariants.txt")
+        try? data.write(to: tempURL)
+        let activityVC = await UIActivityViewController(activityItems: [tempURL], applicationActivities: nil)
+        await UIApplication.shared.keyWindow?.rootViewController?.present(activityVC, animated: true)
+    }
+}
+
+public let dateVariantsStore: DateVariantsStore = .init()
+#endif
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>AD8279C9-9320-4B25-B941-3FF20BCDF14F</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>DateVariantsStore</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>

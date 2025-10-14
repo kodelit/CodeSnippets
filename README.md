@@ -8,7 +8,7 @@
 
 Poniżej fragment widoku edytora podczas wpisywania słowa `var`. Widać okno z listą podpowiedzi, z której za pomocą strzałek na klawiaturze i przycisku `return` można wybrać snippet:
 
-![autocompletion](assets/var_autocomplition_popup.png)
+![autocompletion](assets/var_autocomplition_popup.png "Autocompletion Popup")
 
 Widok po wybraniu pierwszego podpowiadanego snippeta, w tym przypadku jest on jednym z wielu zdefiniowanych od nowości w *xcode*:
 
