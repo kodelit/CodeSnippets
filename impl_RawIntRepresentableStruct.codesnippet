@@ -9,7 +9,8 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>        public struct &lt;#Name#&gt;: Codable, Hashable, RawRepresentable, Equatable, ExpressibleByIntegerLiteral {
+	<string>        nonisolated
+        public struct &lt;#Name#&gt;: Codable, Hashable, RawRepresentable, Equatable, ExpressibleByIntegerLiteral, Sendable {
             
             public let rawValue: Int
             public init(rawValue: Int) { self.rawValue = rawValue }

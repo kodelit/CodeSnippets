@@ -32,7 +32,7 @@
 	<key>IDECodeSnippetSummary</key>
 	<string>ViewController declaration conforming ReactiveView protocol</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Rx: ViewController: ReactiveView</string>
+	<string>Rx: ViewController: ReactiveView (RxSwift)</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

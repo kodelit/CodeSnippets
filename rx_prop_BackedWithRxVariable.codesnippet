@@ -21,7 +21,7 @@ var &lt;#propertyName#&gt;: &lt;#type#&gt; {
 	<key>IDECodeSnippetSummary</key>
 	<string>Declaration of property backed with BehaviorRelay</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Rx: Property with RxSwift Subject</string>
+	<string>Rx: Property with RxSwift Subject (RxSwift)</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

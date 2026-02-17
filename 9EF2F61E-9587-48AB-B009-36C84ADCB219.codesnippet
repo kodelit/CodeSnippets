@@ -3,27 +3,24 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>rx_func_SetupReactiveX</string>
+	<string>var_errorCode</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>ClassImplementation</string>
+		<string>CodeBlock</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>func setupReactiveX() {
-        #if !TARGET_INTERFACE_BUILDER
-        
-        &lt;#code#&gt;
-        
-        #endif
-    }</string>
+	<string>let errorCode = ErrorCode(rawValue: eventId)
+        switch errorCode {</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>A6AB4602-B61C-4F0E-A0A1-236185A2E4E1</string>
+	<string>9EF2F61E-9587-48AB-B009-36C84ADCB219</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetPlatformFamily</key>
+	<string>iphoneos</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Rx: setup ReactiveX method template (RxSwift)</string>
+	<string>Temp: Var: Error code with switch</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

@@ -3,27 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>rx_func_SetupReactiveX</string>
+	<string>usr_sanitizeUrl</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
-		<string>ClassImplementation</string>
+		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>func setupReactiveX() {
-        #if !TARGET_INTERFACE_BUILDER
-        
-        &lt;#code#&gt;
-        
-        #endif
-    }</string>
+	<string>        let sanitizedUrl = url.absoluteString.replacingOccurrences(of: #"reference_code=[^&amp;]+"#, with: "reference_code=[REDACTED]", options: .regularExpression)</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>A6AB4602-B61C-4F0E-A0A1-236185A2E4E1</string>
+	<string>4CEF04AF-105C-49A2-A857-3723609A7266</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Rx: setup ReactiveX method template (RxSwift)</string>
+	<string>Sanitize URL</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

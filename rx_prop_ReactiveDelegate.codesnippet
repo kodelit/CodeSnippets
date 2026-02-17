@@ -17,8 +17,10 @@
 	<string>4368D544-A62C-4716-8891-6728C4ABAA33</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Rx: Reactive delegate (proxy) property</string>
+	<string>Rx: Reactive delegate (proxy) property (RxSwift)</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

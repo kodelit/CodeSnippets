@@ -16,8 +16,10 @@
 	<string>8A1FCCEF-F958-4D6D-9384-ED68D997E90A</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Rx: Binder declaration</string>
+	<string>Rx: Binder declaration (RxSwift)</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

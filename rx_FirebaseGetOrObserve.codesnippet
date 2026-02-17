@@ -36,8 +36,10 @@
 	<string>53F026B1-A24D-410A-B3B4-B0F5A0BECF23</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Rx: Get single item or observe changes of the Firebase value</string>
+	<string>Rx: Get single item or observe changes of the Firebase value (RxSwift)</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

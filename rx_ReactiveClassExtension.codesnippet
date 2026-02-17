@@ -19,8 +19,10 @@ extension Reactive where Base: &lt;#ClassName#&gt; {
 	<string>BFA71205-D72D-44B5-B005-37C13A7A652E</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Rx: Reactive class extension</string>
+	<string>Rx: Reactive class extension (RxSwift)</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

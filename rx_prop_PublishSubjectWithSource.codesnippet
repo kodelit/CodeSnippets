@@ -19,8 +19,10 @@
 	<string>71E21C3A-DCBD-4A06-9B3E-8AE38D6E4739</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Rx: PublishSubject with additional soruce</string>
+	<string>Rx: var: PublishSubject with additional soruce (RxSwift)</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

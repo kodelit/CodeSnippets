@@ -26,7 +26,7 @@ get { return _&lt;#propertyName#&gt;.value }
 	<key>IDECodeSnippetSummary</key>
 	<string>Declaration of property backed with BehaviorRelay, and source PublishSubject as a additional reactive source</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Rx: Property with Source subject</string>
+	<string>Rx: Property with Source subject (RxSwift)</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

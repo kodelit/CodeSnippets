@@ -18,8 +18,10 @@
 	<string>84D7A975-0409-4A8C-B0BE-16B887D03B91</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Rx: subscribeNext(...) with weak self as target</string>
+	<string>Rx: subscribeNext(...) with weak self as target (RxSwift)</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

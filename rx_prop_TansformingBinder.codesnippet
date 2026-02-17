@@ -20,8 +20,10 @@
 	<string>80147C8B-71D8-48E4-B62B-7221A07816AF</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Rx: Var: Transforming Binder variable</string>
+	<string>Rx: Var: Transforming Binder variable (RxSwift)</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

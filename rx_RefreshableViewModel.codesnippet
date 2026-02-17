@@ -28,8 +28,10 @@ func reload(with data: &lt;#DataType#&gt;) {
 	<string>B44645FE-F7DC-4490-9A20-3B502D595F2F</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Rx: ReactiveDetailViewModel protocol implementation</string>
+	<string>Rx: ReactiveDetailViewModel protocol implementation (RxSwift)</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

@@ -50,8 +50,10 @@ public class Rx&lt;#ClassName#&gt;DelegateProxy : DelegateProxy&lt;&lt;#ClassNam
 	<string>3268F48D-8854-4025-BE8F-6701C536726A</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Rx Impl: Delegate Proxy Implementation</string>
+	<string>Rx Impl: Delegate Proxy Implementation (RxSwift)</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

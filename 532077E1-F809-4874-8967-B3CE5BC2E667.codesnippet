@@ -3,42 +3,52 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>impl_tca_ReducerStruct</string>
+	<string>impl_tca_view</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
 	<string>import ComposableArchitecture
-import Foundation
+import SwiftUI
 
-@Reducer
-struct &lt;#Name#&gt;Feature {
-    @ObservableState
-    struct State: Equatable {
+struct &lt;#Name#&gt;View: View {
+    @Bindable var store: StoreOf&lt;&lt;#Name#&gt;Feature&gt;
 
-    }
-    enum Action {
-        case onViewFistAppear
-    }
-
-    var body: some ReducerOf&lt;Self&gt; {
-        Reduce { state, action in
-            switch action {
-            case .onViewFistAppear:
-                return .none
-            }
+    var body: some View {
+        Form {
+            Text("Hello World")
+        }
+        .navigationTitle(Text(store.title))
+        .onFirstAppear {
+            store.send(.onViewFistAppear)
         }
     }
-}</string>
+}
+
+#if DEBUG
+
+#Preview {
+    @Previewable var store: StoreOf&lt;&lt;#Name#&gt;Feature&gt; = .init(
+        initialState: &lt;#Name#&gt;Feature.State()
+    ) {
+        &lt;#Name#&gt;Feature()
+    }
+
+    NavigationStack {
+        &lt;#Name#&gt;View(store: store)
+    }
+}
+
+#endif</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>59847B2D-19EF-49A6-8346-F100ABDD8BD3</string>
+	<string>532077E1-F809-4874-8967-B3CE5BC2E667</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
 	<key>IDECodeSnippetSummary</key>
 	<string></string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Impl: TCA: Struct Reducer</string>
+	<string>Impl: TCA: View</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
